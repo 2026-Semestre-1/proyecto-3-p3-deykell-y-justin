@@ -5,7 +5,20 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
-
+#--- colores ---#
+azul = "#0E1DC4"
+blanco = "#FFFFFF"
+negro = "#0D0D0D"
+verde_neon = "#00FF00"
+gris = "#242424"
+rojo = "#F40B0B"
+gris_claro = "#CFCFCF"
+turqueza = "#37B8B1"
+amarillo = "#FFFC40"
+anaranjado = "#FF7300"
+verde = "#009929"
+celeste = "#00C3EB"
+azul_oscuro = "#003262"
 
 
 class Pais:
@@ -94,6 +107,11 @@ class Partido:
         elif not (isinstance(goles_equipo1, int) and isinstance(goles_equipo2, int)):
             return "Error: los parámetros deben ser int"
         
+        self.id = id_partido
+        self.goles_equipo1 = goles_equipo1
+        self.goles_equipo2 = goles_equipo2
+        self.fase = fase
+        self.fecha = fecha 
         equipo_1 = Seleccion()
         equipo_2 = Seleccion()
         
@@ -164,32 +182,191 @@ class Pantalla_Principal(tk.Tk):
 
     def botones(self):
 
-        admin_paises_selecciones = tk.Button(self,
+        self.admin_paises_selecciones = tk.Button(self,
                                              text= "Administrar Países \ny Selecciones",
-                                             font=(30))
-        admin_paises_selecciones.place(x=457, y=328, width=292, height=125)
+                                             font=(30),
+                                             command= self.paises_selecciones)
+        self.admin_paises_selecciones.place(x=457, y=328, width=292, height=125)
 
-        admin_entrenadores_jugadores = tk.Button(self,
+        self.admin_entrenadores_jugadores = tk.Button(self,
                                              text= "Administrar Entrenadores \ny Jugadores",
-                                             font=(30))
-        admin_entrenadores_jugadores.place(x=774, y=328, width=292, height=125)
+                                             font=(30),
+                                             command= self.entrenadores_jugadores)
+        self.admin_entrenadores_jugadores.place(x=774, y=328, width=292, height=125)
         
-        config_mundial = tk.Button(self,
+        self.config_mundial = tk.Button(self,
                                    text= "Configurar Mundial Países \n(Grupos)",
-                                   font=(30))
-        config_mundial.place(x=457, y=480, width=292, height=125)    
+                                   font=(30),
+                                   command= self.configurar_mundial)
+        self.config_mundial.place(x=457, y=480, width=292, height=125)    
 
-        estadisticas = tk.Button(self,
+        self.boton_estadisticas = tk.Button(self,
                                  text= "Estadísticas / Ranking",
-                                 font=(30))
-        estadisticas.place(x=774, y=480, width=292, height=125)
+                                 font=(30),
+                                 command= self.estadísticas)
+        self.boton_estadisticas.place(x=774, y=480, width=292, height=125)
 
-        jugar = tk.Button(self,
+        self.jugar = tk.Button(self,
                           text= "Jugar Mundial",
-                          font=(30))
-        jugar.place(x=517, y=636, width=481, height=71)
+                          font=(30),
+                          command= self.jugar_mundial)
+        self.jugar.place(x=517, y=636, width=481, height=71)
+
+        self.registrar = tk.Button(self,
+                                   text= "➕ Registrar País",
+                                   font= ("Arial Balck", 20, "bold"),
+                                   fg=blanco,
+                                   bg=azul,
+                                   activeforeground=negro,
+                                   activebackground=azul,
+                                   relief="raised",
+                                   bd=5,
+                                   cursor="hand2",
+                                )
+        self.registrar.place(x=40, y=80, width=400, height=60)
+
+    def paises_selecciones(self):
+
+        self.withdraw()
+        Administrar_Paises_Selecciones()
+
+    def entrenadores_jugadores(self):
+
+        self.withdraw()
+        Administrar_Entrenadores_Jugadores()
+
+    def configurar_mundial(self):
+
+        self.withdraw()
+        Configuracion_Mundial()
+
+    def jugar_mundial(self):
+        self.withdraw()
+        Jugar_Mundial()
+
+    def estadísticas(self):
+
+        self.withdraw()
+        Estadisticas()
+
+    
+        
+class Administrar_Paises_Selecciones(tk.Toplevel):
+
+    def __init__(self):
+        tk.Toplevel.__init__(self)
+        
+        self.geometry("1535x930+-7+-0")
+        self.title("Administrar Países y Selecciones")
+        self.resizable(False, False)
+
+        #self.fondo()
+
+        self.labels()
+        self.frames()
+
+    """def fondo(self):
+
+        imagen_fondo = Image.open("paises_selecciones.png")
+        imagen_fondo.resize((1535, 930))
+
+        self.fondo = ImageTk.PhotoImage(imagen_fondo)
+        label_fondo = tk.Label(self, image=self.fondo)
+        label_fondo.place(x=0, y=0, relwidth=1, relheight=1)"""
+
+    def labels(self):
+        
+        label_azul = tk.Label(self,
+                              bg=azul_oscuro)
+        label_azul.place(x=0, y=0, width=300, height=1535)
+
+        label_titulo1 = tk.Label(self,
+                                 text="Administración",
+                                 font=("Arial", 17, "bold"),
+                                 bg=azul_oscuro,
+                                 fg=blanco)
+        label_titulo1.place(x=30, y=10, width=200, height=30)
+
+        label_titulo2 = tk.Label(self,
+                                 text="Países y Selecciones",
+                                 font=("Arial", 11, "bold"),
+                                 bg=azul_oscuro,
+                                 fg=blanco)
+        label_titulo2.place(x=30, y=40, width=200, height=20)
+
+        label_texto = tk.Label(self,
+                 text="Registre y Cree sus Paises y Selecciones aquí",
+                 font=("Arial", 10, "bold"),
+                 anchor="w")
+        label_texto.place(x=320, y=40, width=600, height=20)
+        
+
+    def frames(self):
+
+        frame_principal1 = tk.Frame(self,
+                                    bd=1,
+                                    relief="solid")
+        frame_principal1.place(x=250, y=80, width=600, height=800)
 
 
+
+        label_paises = tk.Label(self,
+                                text="🌐 Países",
+                                font=("Arial", 16),
+                                fg=azul,
+                                anchor="w")
+        label_paises.place(x=270, y=84, width=200, height=30)
+
+        frame_registrar_paises = tk.Frame(self,
+                                          bd=1,
+                                          relief="solid")
+        frame_registrar_paises.place(x=270, y=120, width=560, height=300)
+        
+
+
+
+
+
+
+        frame_principal2 = tk.Frame(self,
+                                    bd=1,
+                                    relief="solid")
+        frame_principal2.place(x=900, y=80, width=600, height=800)
+
+        
+
+
+
+    
+
+
+class Administrar_Entrenadores_Jugadores(tk.Toplevel):
+
+    def __init__(self):
+        tk.Toplevel.__init__(self)
+        self.geometry("1535x930+-7+-0")
+        self.resizable(False, False)
+
+class Configuracion_Mundial(tk.Toplevel):
+
+    def __init__(self):
+        tk.Toplevel.__init__(self)
+        self.geometry("1535x930+-7+-0")
+        self.resizable(False, False)
+
+class Jugar_Mundial(tk.Toplevel):
+
+    def __init__(self):
+        tk.Toplevel.__init__(self)
+        self.geometry("1535x930+-7+-0")
+        self.resizable(False, False)
+
+class Estadisticas(tk.Toplevel):
+
+    def __init__(self):
+        tk.Toplevel.__init__(self)
+        self.geometry("1535x930+-7+-0")
+        self.resizable(False, False)
 
 
 
