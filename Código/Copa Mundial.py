@@ -3,6 +3,7 @@
 # Librerías
 
 import tkinter as tk
+from tkinter import ttk
 from PIL import ImageTk, Image
 
 #--- colores ---#
@@ -321,6 +322,85 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                           bd=1,
                                           relief="solid")
         frame_registrar_paises.place(x=270, y=120, width=560, height=300)
+
+        label_registrar = tk.Label(self,
+                                   text= "Registrar / Editar Paises",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_registrar.place(x=280, y=130, width=300, height=30)
+
+        label_codigo = tk.Label(self,
+                                   text= "Código FIFA:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_codigo.place(x=280, y=170, width=300, height=30)
+
+        label_nombre_pais = tk.Label(self,
+                                   text= "Nombre del País:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_nombre_pais.place(x=280, y=210, width=300, height=30)
+
+        label_continente = tk.Label(self,
+                                   text= "Continente:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_continente.place(x=280, y=250, width=300, height=30)
+
+        label_ranking = tk.Label(self,
+                                   text= "Ranking FIFA:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_ranking.place(x=280, y=290, width=300, height=30)
+
+
+        entry_codigo = tk.Entry(self,
+                                fg=gris)
+        entry_codigo.insert(0, "Ej: CRC")
+        entry_codigo.place(x=500, y=170, width=200, height=30)
+
+        entry_nombre = tk.Entry(self,
+                                fg=gris)
+        entry_nombre.insert(0, "Ej: Costa Rica")
+        entry_nombre.place(x=500, y=210, width=300, height=30)
+
+        continentes = ["América", "Europa", "África", "Oceanía"]
+        conbobox_continente = ttk.Combobox(self,
+                                          values=continentes,
+                                          state="readonly")
+        conbobox_continente.set("Seleccione un Continente")
+        conbobox_continente.place(x=500, y=250, width=300, height=30)
+
+        spinbox_ranking = tk.Spinbox(self,
+                                     from_=1,
+                                     to=100,
+                                     width=300)
+        spinbox_ranking.place(x=500, y=290, width=300, height=30)
+        
+
+        
+
+
+
+
+        
+
+
+        
+
+        frame_paises_registrados = tk.LabelFrame(self,
+                                          text="Nombre del Pais:",
+                                          font=("Arial", 14),
+                                          fg=azul,
+                                          bd=1,
+                                          relief="solid")
+        frame_paises_registrados.place(x=270, y=460, width=560, height=400)
+
+
+
+
+
+
         
 
 
