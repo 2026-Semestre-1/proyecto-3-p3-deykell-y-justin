@@ -376,15 +376,36 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                      to=100,
                                      width=300)
         spinbox_ranking.place(x=500, y=290, width=300, height=30)
-        
 
-        
+        self.boton_limpiar = tk.Button(self,
+                                  text="🧹Limpiar",
+                                  font=("Arial", 14),
+                                  bd=2,
+                                  relief= "groove",
+                                  fg=gris,
+                                  bg=amarillo,
+                                  anchor="w")
+        self.boton_limpiar.place(x=680, y=350, width=100, height=40)
 
+        self.boton_añadir_pais = tk.Button(self,
+                                           text="➕ Añadir País",
+                                           font=("Arial", 14),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_añadir_pais.place(x=300, y=350, width=160, height=40)
 
-
-
-        
-
+        self.boton_guardar = tk.Button(self,
+                                           text="💾 Guardar Cambios",
+                                           font=("Arial", 14),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=azul,
+                                           anchor="w")
+        self.boton_guardar.place(x=480, y=350, width=170, height=40)
 
         
 
@@ -395,6 +416,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                           bd=1,
                                           relief="solid")
         frame_paises_registrados.place(x=270, y=460, width=560, height=400)
+
 
 
 
