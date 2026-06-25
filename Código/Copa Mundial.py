@@ -684,13 +684,123 @@ class Configuracion_Mundial(tk.Toplevel):
         tk.Toplevel.__init__(self)
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
-
+###JuSTIN
 class Jugar_Mundial(tk.Toplevel):
 
+    """
+    Nombre: __init__
+    Entrada: no recibe parámetros adicionales.
+    Salida: inicializa la ventana Jugar Mundial.
+    Restricciones: se debe llamar desde la pantalla principal del programa.
+    """
     def __init__(self):
         tk.Toplevel.__init__(self)
+
         self.geometry("1535x930+-7+-0")
+        self.title("Jugar Mundial")
         self.resizable(False, False)
+        self.config(bg=blanco)
+
+        self.menu_lateral()
+        self.titulo_pantalla()
+        self.estado_torneo()
+        self.simular_mundial()
+        self.resultados_recientes()
+        self.tabla_grupo()
+        self.campeon_actual()
+        self.llave_eliminatoria()
+
+    """
+    Nombre: crear_menu_lateral
+    Entrada: no recibe parámetros.
+    Salida: crea el menú lateral izquierdo de la ventana.
+    Restricciones: usa colores globales previamente definidos.
+    """
+    def menu_lateral(self):
+        frame_menu = tk.Frame(self,
+                              bg=azul_oscuro)
+        frame_menu.place(x=0, y=0, width=300, height=930)
+
+        label_titulo = tk.Label(self,
+                                text="Copa Mundial",
+                                font=("Arial", 24, "bold"),
+                                bg=azul_oscuro,
+                                fg=blanco)
+        label_titulo.place(x=25, y=55, width=250, height=40)
+
+        label_subtitulo = tk.Label(self,
+                                   text="Simulación del Torneo",
+                                   font=("Arial", 14, "bold"),
+                                   bg=azul_oscuro,
+                                   fg=blanco)
+        label_subtitulo.place(x=25, y=95, width=250, height=30)
+
+        boton_inicio = tk.Button(self,
+                                 text="Inicio",
+                                 font=("Arial", 14, "bold"),
+                                 bg=azul_oscuro,
+                                 fg=blanco,
+                                 bd=1,
+                                 relief="solid",
+                                 anchor="w")
+        boton_inicio.place(x=25, y=180, width=250, height=55)
+
+        boton_paises = tk.Button(self,
+                                 text="Países y Selecciones",
+                                 font=("Arial", 13, "bold"),
+                                 bg=azul_oscuro,
+                                 fg=blanco,
+                                 bd=1,
+                                 relief="solid",
+                                 anchor="w")
+        boton_paises.place(x=25, y=250, width=250, height=55)
+
+        boton_jugadores = tk.Button(self,
+                                    text="Entrenadores y Jugadores",
+                                    font=("Arial", 12, "bold"),
+                                    bg=azul_oscuro,
+                                    fg=blanco,
+                                    bd=1,
+                                    relief="solid",
+                                    anchor="w")
+        boton_jugadores.place(x=25, y=320, width=250, height=55)
+
+        boton_configurar = tk.Button(self,
+                                     text="Configurar Mundial",
+                                     font=("Arial", 13, "bold"),
+                                     bg=azul_oscuro,
+                                     fg=blanco,
+                                     bd=1,
+                                     relief="solid",
+                                     anchor="w")
+        boton_configurar.place(x=25, y=390, width=250, height=55)
+
+        boton_jugar = tk.Button(self,
+                                text="Jugar Mundial",
+                                font=("Arial", 14, "bold"),
+                                bg=azul,
+                                fg=blanco,
+                                bd=1,
+                                relief="solid",
+                                anchor="w")
+        boton_jugar.place(x=25, y=460, width=250, height=55)
+
+        boton_estadisticas = tk.Button(self,
+                                       text="Estadísticas",
+                                       font=("Arial", 14, "bold"),
+                                       bg=azul_oscuro,
+                                       fg=blanco,
+                                       bd=1,
+                                       relief="solid",
+                                       anchor="w")
+        boton_estadisticas.place(x=25, y=530, width=250, height=55)
+
+        label_decoracion = tk.Label(self,
+                                    text="COPA\nMUNDIAL\n2026",
+                                    font=("Arial", 30, "bold"),
+                                    bg=azul_oscuro,
+                                    fg=celeste)
+        label_decoracion.place(x=25, y=710, width=250, height=150)
 
 class Estadisticas(tk.Toplevel):
 
@@ -701,6 +811,8 @@ class Estadisticas(tk.Toplevel):
 
 
 
+
+#### JUstin
 
 
 
