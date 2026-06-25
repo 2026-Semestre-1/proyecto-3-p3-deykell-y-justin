@@ -801,7 +801,110 @@ class Jugar_Mundial(tk.Toplevel):
                                     bg=azul_oscuro,
                                     fg=celeste)
         label_decoracion.place(x=25, y=710, width=250, height=150)
+    """
+    Nombre: crear_titulo
+    Entrada: no recibe parámetros
+    Salida: muestra el título y subtítulo de la pantalla
+    Restricciones: debe existir la ventana Jugar Mundial
+    """
+    def titulo_pantalla (self):
+        label_titulo = tk.Label(self,
+                                text="Jugar Mundial",
+                                font=("Arial", 32, "bold"),
+                                bg=blanco,
+                                fg=azul_oscuro,
+                                anchor="w")
+        label_titulo.place(x=340, y=35, width=500, height=55)
 
+        label_subtitulo = tk.Label(self,
+                                   text="Simule la fase de grupos y las rondas eliminatorias",
+                                   font=("Arial", 14),
+                                   bg=blanco,
+                                   fg=gris,
+                                   anchor="w")
+        label_subtitulo.place(x=345, y=90, width=700, height=30)
+
+
+
+
+
+
+
+    """
+    Nombre: crear_estado_torneo
+    Entrada: no recibe parámetros
+    Salida: crea el panel de estado general del torneo
+    Restricciones:
+    """
+    def estado_torneo(self):
+        frame_estado = tk.LabelFrame(self,
+                                     text=" Estado del Torneo ",
+                                     font=("Arial", 14, "bold"),
+                                     fg=azul_oscuro,
+                                     bg=blanco,
+                                     bd=1,
+                                     relief="solid")
+        frame_estado.place(x=340, y=145, width=390, height=245)
+
+        label_fase = tk.Label(frame_estado,
+                              text="Fase actual:",
+                              font=("Arial", 12),
+                              bg=blanco,
+                              anchor="w")
+        label_fase.place(x=25, y=35, width=180, height=30)
+
+        self.label_fase_actual = tk.Label(frame_estado,
+                                          text="Sin iniciar",
+                                          font=("Arial", 12, "bold"),
+                                          bg=blanco,
+                                          fg=azul,
+                                          anchor="e")
+        self.label_fase_actual.place(x=200, y=35, width=150, height=30)
+
+        label_grupos = tk.Label(frame_estado,
+                                text="Grupos configurados:",
+                                font=("Arial", 12),
+                                bg=blanco,
+                                anchor="w")
+        label_grupos.place(x=25, y=85, width=190, height=30)
+
+        self.label_grupos = tk.Label(frame_estado,
+                                     text="0",
+                                     font=("Arial", 12, "bold"),
+                                     bg=blanco,
+                                     fg=azul,
+                                     anchor="e")
+        self.label_grupos.place(x=240, y=85, width=110, height=30)
+
+        label_partidos = tk.Label(frame_estado,
+                                  text="Partidos jugados:",
+                                  font=("Arial", 12),
+                                  bg=blanco,
+                                  anchor="w")
+        label_partidos.place(x=25, y=135, width=190, height=30)
+
+        self.label_partidos = tk.Label(frame_estado,
+                                       text="0",
+                                       font=("Arial", 12, "bold"),
+                                       bg=blanco,
+                                       fg=azul,
+                                       anchor="e")
+        self.label_partidos.place(x=240, y=135, width=110, height=30)
+
+        label_clasificados = tk.Label(frame_estado,
+                                      text="Equipos clasificados:",
+                                      font=("Arial", 12),
+                                      bg=blanco,
+                                      anchor="w")
+        label_clasificados.place(x=25, y=185, width=190, height=30)
+
+        self.label_clasificados = tk.Label(frame_estado,
+                                           text="0",
+                                           font=("Arial", 12, "bold"),
+                                           bg=blanco,
+                                           fg=azul,
+                                           anchor="e")
+        self.label_clasificados.place(x=240, y=185, width=110, height=30)
 class Estadisticas(tk.Toplevel):
 
     def __init__(self):
@@ -809,10 +912,6 @@ class Estadisticas(tk.Toplevel):
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
 
-
-
-
-#### JUstin
 
 
 
