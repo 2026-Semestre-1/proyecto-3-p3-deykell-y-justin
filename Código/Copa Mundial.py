@@ -905,6 +905,23 @@ class Jugar_Mundial(tk.Toplevel):
                                            fg=azul,
                                            anchor="e")
         self.label_clasificados.place(x=240, y=185, width=110, height=30)
+
+    """
+
+    Nombre: crear_acciones
+    Entrada: no recibe parámetros.
+    Salida: crea los botones principales para jugar el mundial.
+    Restricciones: los botones todavía no tienen comandos asignados.
+    """
+    def simular_mundial(self):
+        frame_acciones = tk.LabelFrame(self,
+                                       text=" Acciones ",
+                                       font=("Arial", 14, "bold"),
+                                       fg=azul_oscuro,
+                                       bg=blanco,
+                                       bd=1,
+                                       relief="solid")
+        frame_acciones.place(x=750, y=145, width=330, height=245)
 class Estadisticas(tk.Toplevel):
 
     def __init__(self):
