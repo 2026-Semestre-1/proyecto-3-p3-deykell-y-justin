@@ -27,25 +27,60 @@ class Pais:
     def __init__(self, codigo_fifa, nombre, continente, ranking_fifa):
 
         if not (isinstance(codigo_fifa, str) and isinstance(nombre, str) and isinstance(continente, str)):
-            return "Error: los parámetros deben ser str"
+            print("Error: los parámetros deben ser str")
+            return 
         elif not isinstance(ranking_fifa, int):
-            return "Error: el parámetro debe ser int"
+            print( "Error: el parámetro debe ser int")
+            return 
 
         self.codigo_fifa = codigo_fifa
         self.nombre = nombre
         self.continente = continente
         self.ranking_fifa = ranking_fifa
 
+    def mostrar_datos(self):
+        print("Código FIFA del País: " + self.codigo_fifa)
+        print("Nombre del País: " + self.nombre)
+        print("Continente: " + self.continente)
+        print("Ranking FIFA: " + str(self.ranking_fifa))
+        print("")
+
+    def actualizar_datos(self, codigo_fifa, nombre, continente, ranking_fifa):
+
+        if not (isinstance(codigo_fifa, str) and isinstance(nombre, str) and isinstance(continente, str)):
+            print("Error: los parámetros deben ser str")
+            return 
+        elif not isinstance(ranking_fifa, int):
+            print( "Error: el parámetro debe ser int")
+            return
+        
+        self.codigo_fifa = codigo_fifa
+        self.nombre = nombre
+        self.continente = continente
+        self.ranking_fifa = ranking_fifa
+
+    
+        
+
+    
+
 class Persona:
 
     def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad):
         if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
-            return "Error: los parámetros deben ser str"
+            print("Error: los parámetros deben ser str")
+            return
 
         self.nombre = nombre
         self.apellido = apellido
         self.fecha_nacimiento = fecha_nacimiento
         self.nacionalidad = nacionalidad
+
+    def mostrar_datos(self):
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
+        print("")
 
 
 class Entrenador(Persona):
@@ -54,10 +89,40 @@ class Entrenador(Persona):
         Persona.__init__(self, nombre, apellido, fecha_nacimiento, nacionalidad)
 
         if not (isinstance(licencia, str) and isinstance(sistema_juego, str)):
-            return "Error: los parámetros deben ser str"
+            print("Error: los parámetros deben ser str")
+            return 
         elif not isinstance(experiencia_anios, int):
-            return "Error: el parámetro debe ser int"
+            print("Error: el parámetro debe ser int")
+            return 
 
+        self.licencia = licencia
+        self.experiencia_anios = experiencia_anios
+        self.sistema_juego = sistema_juego
+
+    def mostrar_datos(self):
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
+        print("Licencia: " + self.licencia)
+        print("Experiencia: " + str(self.experiencia_anios))
+        print("Sistema de Juego: " + self.sistema_juego)
+        print("")
+
+    def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, licencia, experiencia_anios, sistema_juego):
+        if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
+            print("Error: los parámetros deben ser str")
+            return
+        if not (isinstance(licencia, str) and isinstance(sistema_juego, str)):
+            print("Error: los parámetros deben ser str")
+            return 
+        elif not isinstance(experiencia_anios, int):
+            print("Error: el parámetro debe ser int")
+            return
+
+        self.nombre = nombre
+        self.apellido = apellido
+        self.fecha_nacimiento = fecha_nacimiento
+        self.nacionalidad = nacionalidad
         self.licencia = licencia
         self.experiencia_anios = experiencia_anios
         self.sistema_juego = sistema_juego
@@ -65,13 +130,15 @@ class Entrenador(Persona):
 
 class Futbolista(Persona):
 
-    def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_targetas_amarillas, total_targetas_rojas, goles, asistencias, puntaje_individual):
-        Persona.__init__(nombre, apellido, fecha_nacimiento, nacionalidad)
+    def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
+        Persona.__init__(self, nombre, apellido, fecha_nacimiento, nacionalidad)
 
-        if not isinstance(posicion, int):
-            return "Error: el parpametro debe ser str"
-        elif not (isinstance(dorsal, int) and isinstance(total_targetas_amarillas, int) and isinstance(total_targetas_rojas, int) and isinstance(goles, int) and isinstance(asistencias, int) and isinstance(puntaje_individual, int)):
-            return "Error: los parámetros deben ser int"
+        if not isinstance(posicion, str):
+            print("Error: el parpametro debe ser str")
+            return
+        elif not (isinstance(dorsal, int) and isinstance(total_tarjetas_amarillas, int) and isinstance(total_tarjetas_rojas, int) and isinstance(goles, int) and isinstance(asistencias, int) and isinstance(puntaje_individual, int)):
+            print( "Error: los parámetros deben ser int")
+            return
 
         self.dorsal = dorsal
         self.posicion = posicion
@@ -81,32 +148,128 @@ class Futbolista(Persona):
         self.asistencias = asistencias
         self.puntaje_individual = puntaje_individual
 
-class Seleccion:
+    def mostrar_datos(self):
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
+        print("Dorsal: " + str(self.dorsal))
+        print("Posicion: " + self.posicion)
+        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
+        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
+        print("Goles: " + str(self.goles))
+        print("Asistencias: " + str(self.asistencias))
+        print("Puntaje Individual: " + str(self.puntaje_individual))
+        print("")
 
-    def __init__(self, codigo_equipo, pais, entrenador, jugadores, total_goles_favor, total_goles_contra, total_tarjetas_amarillas, total_tarjetas_rojas, fuerza_equipo):
+    def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
+        if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
+            print("Error: los parámetros deben ser str")
+            return
+        if not isinstance(posicion, str):
+            print("Error: el parpametro debe ser str")
+            return
+        elif not (isinstance(dorsal, int) and isinstance(total_tarjetas_amarillas, int) and isinstance(total_tarjetas_rojas, int) and isinstance(goles, int) and isinstance(asistencias, int) and isinstance(puntaje_individual, int)):
+            print( "Error: los parámetros deben ser int")
+            return
         
-        if not isinstance(codigo_equipo, str):
-            return "Error: el parámetro debe ser str"
-        if not (isinstance(total_goles_favor, int) and isinstance(total_goles_contra, int) and isinstance(total_tarjetas_amarillas) and isinstance(total_tarjetas_rojas) and isinstance(fuerza_equipo)):
-            return "Error: los parámetros deben ser int"
-
-        self.codigo_equipo = codigo_equipo
-        self.pais = Pais()
-        self.entrenador = entrenador()
-        self.jugadores = []
-        self.total_goles_favor = total_goles_favor
-        self.total_goles_contra = total_goles_contra
+        self.nombre = nombre
+        self.apellido = apellido
+        self.fecha_nacimiento = fecha_nacimiento
+        self.nacionalidad = nacionalidad
+        self.dorsal = dorsal
+        self.posicion = posicion
         self.total_tarjetas_amarillas = total_tarjetas_amarillas
         self.total_tarjetas_rojas = total_tarjetas_rojas
-        self.fuerza_equipo = fuerza_equipo
+        self.goles = goles
+        self.asistencias = asistencias
+        self.puntaje_individual = puntaje_individual
+
+    def registrar_gol(self):
+        self.goles += 1
+
+    def registrar_asistencia(self):
+        self.asistencias += 1
+
+    def registrar_tarjetas(self, tipo):
+        if not isinstance(tipo, str):
+            print("Error: el parámetro debe ser de tipo str")
+            return 
+        
+        if tipo == "amarilla":
+            self.total_tarjetas_amarillas += 1
+        elif tipo == "roja":
+            self.total_tarjetas_rojas += 1
+        else:
+            return "Error: ingrese el tipo de tarjeta (amarilla o roja)"
+        
+        
+
+class Seleccion:
+
+    def __init__(self, codigo_equipo, pais, entrenador):
+        
+        if not isinstance(codigo_equipo, str):
+            print("Error: el parámetro debe ser str")
+            return
+       
+
+        self.codigo_equipo = codigo_equipo
+        self.total_goles_a_favor = 0
+        self.total_goles_en_contra = 0
+        self.total_tarjetas_amarillas = 0
+        self.total_tarjetas_rojas = 0
+        self.fuerza_equipo = 0
+        self.pais = pais
+        self.entrenador = entrenador
+        self.jugadores = []
+
+    def mostrar_datos(self):
+        print("Código de la Selección: " + self.codigo_equipo)
+        print("País: " + self.pais.nombre)
+        print("Entrenador: " + self.entrenador.nombre)
+        print("Jugadores:")
+        for futbolista in self.jugadores:
+            print("Nombre: " + futbolista.nombre + " " + futbolista.apellido)
+            print("Dorsal: " + str(futbolista.dorsal))
+            print("")
+        print("Goles a Favor: " + str(self.total_goles_a_favor))
+        print("Goles en Contra: " + str(self.total_goles_en_contra))
+        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
+        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
+        print("Fuerza de equipo: " + str(self.fuerza_equipo))
+        print("")
+
+    def agregar_jugador(self, futbolista):
+
+        if len(self.jugadores) < 23:
+            self.jugadores += [futbolista]
+        else:
+            return "Error: La plantilla ya cuenta con 23 jugadores"
+        
+    def eliminar_jugador(self, dorsal):
+        lista_sin_jugador = []
+        for jugador in self.jugadores:
+            if jugador.dorsal != dorsal:
+                lista_sin_jugador += [jugador]
+
+        self.jugadores = lista_sin_jugador
+
+    def asignar_entrenador(self, entrenador):
+
+        self.entrenador = entrenador
+
+    #def registrar_resultado(self,):
+    #def calcular_fuerza_equipo(self):
 
 class Partido:
 
     def __init__(self, id_partido, equipo_1, equipo_2, goles_equipo1, goles_equipo2, fase, fecha):
         if not (isinstance(fase, str) and isinstance(fecha, str)):
-            return "Error: los parámetros deben ser str"
+            print( "Error: los parámetros deben ser str")
+            return
         elif not (isinstance(goles_equipo1, int) and isinstance(goles_equipo2, int)):
-            return "Error: los parámetros deben ser int"
+            print("Error: los parámetros deben ser int")
+            return
         
         self.id = id_partido
         self.goles_equipo1 = goles_equipo1
@@ -122,7 +285,8 @@ class Grupo:
     def __init__(self, nombre_grupo, equipos, partidos):
 
         if not isinstance(nombre_grupo, str):
-            return "Error: el parámetro debe ser str"
+            print("Error: el parámetro debe ser str")
+            return
 
         self.nombre_grupo = nombre_grupo
         self.equipos = []
@@ -133,7 +297,8 @@ class Fase:
     def __init__(self, nombre_fase, partidos):
 
         if not isinstance(nombre_fase, str):
-            return "Error: el parámetro debe ser str"
+            print("Error: el parámetro debe ser str")
+            return 
 
         self.nombre_fase = nombre_fase
         self.partidos = []
@@ -144,9 +309,11 @@ class Mundial:
     def __init__(self, nombre, anio, paises, selecciones, grupos, fases, campeon):
         
         if not isinstance(nombre, str):
-            return "Error: el parámetro debe ser str"
+            print("Error: el parámetro debe ser str")
+            return
         elif not isinstance(anio, int):
-            return "Error: el parámetro debe ser int"
+            print("Error: el parámetro debe ser int")
+            return
 
         self.nombre = nombre
         self.anio = anio
@@ -486,9 +653,6 @@ if __name__ == "__main__":
     app.mainloop()
 
     
-
-
- #########
- # Parte Justin       
+        
 
 
