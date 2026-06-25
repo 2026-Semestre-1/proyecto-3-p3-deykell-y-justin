@@ -21,6 +21,11 @@ verde = "#009929"
 celeste = "#00C3EB"
 azul_oscuro = "#003262"
 
+lista_paises = []
+lista_selecciones = []
+lista_jugadores = []
+lista_entrenadores = []
+
 
 class Pais:
 
@@ -521,38 +526,49 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         label_ranking.place(x=280, y=290, width=300, height=30)
 
 
-        entry_codigo = tk.Entry(self,
-                                fg=gris)
-        entry_codigo.insert(0, "Ej: CRC")
-        entry_codigo.place(x=500, y=170, width=200, height=30)
+        self.entry_codigo = tk.Entry(self,
+                                fg=gris,
+                                insertwidth=1,
+                                bd=1,
+                                highlightcolor=azul,
+                                highlightthickness=1)
+        self.entry_codigo.insert(0, "Ej: CRC")
+        self.entry_codigo.place(x=500, y=170, width=200, height=30)
 
-        entry_nombre = tk.Entry(self,
-                                fg=gris)
-        entry_nombre.insert(0, "Ej: Costa Rica")
-        entry_nombre.place(x=500, y=210, width=300, height=30)
+        self.entry_codigo.bind("<FocusIn>", self.borrar_codigo)
+        self.entry_codigo.bind("<FocusOut>", self.restaurar_codigo)
+
+
+       
+        self.entry_nombre = tk.Entry(self,
+                                fg=gris,
+                                insertwidth=1,
+                                bd=1,
+                                highlightcolor=azul,
+                                highlightthickness=1)
+        self.entry_nombre.insert(0, "Ej: Costa Rica")
+        self.entry_nombre.place(x=500, y=210, width=300, height=30)
+
+        self.entry_nombre.bind("<FocusIn>", self.borrar_nombre)
+        self.entry_nombre.bind("<FocusOut>", self.restaurar_nombre)
+
+
+        self.seleccion = tk.StringVar()
 
         continentes = ["América", "Europa", "África", "Oceanía"]
-        conbobox_continente = ttk.Combobox(self,
+        self.conbobox_continente = ttk.Combobox(self,
                                           values=continentes,
-                                          state="readonly")
-        conbobox_continente.set("Seleccione un Continente")
-        conbobox_continente.place(x=500, y=250, width=300, height=30)
+                                          state="readonly",
+                                          textvariable=self.seleccion)
+        self.conbobox_continente.set("Seleccione un Continente")
+        self.conbobox_continente.place(x=500, y=250, width=300, height=30)
 
-        spinbox_ranking = tk.Spinbox(self,
+        self.spinbox_ranking = tk.Spinbox(self,
                                      from_=1,
                                      to=100,
                                      width=300)
-        spinbox_ranking.place(x=500, y=290, width=300, height=30)
 
-        self.boton_limpiar = tk.Button(self,
-                                  text="🧹Limpiar",
-                                  font=("Arial", 14),
-                                  bd=2,
-                                  relief= "groove",
-                                  fg=gris,
-                                  bg=amarillo,
-                                  anchor="w")
-        self.boton_limpiar.place(x=680, y=350, width=100, height=40)
+        self.spinbox_ranking.place(x=500, y=290, width=300, height=30)
 
         self.boton_añadir_pais = tk.Button(self,
                                            text="➕ Añadir País",
@@ -561,7 +577,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                            relief="groove",
                                            fg=blanco,
                                            bg=verde,
-                                           anchor="w")
+                                           anchor="w",
+                                           command=self.añadir)
         self.boton_añadir_pais.place(x=300, y=350, width=160, height=40)
 
         self.boton_guardar = tk.Button(self,
@@ -573,6 +590,20 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                            bg=azul,
                                            anchor="w")
         self.boton_guardar.place(x=480, y=350, width=170, height=40)
+
+        self.boton_limpiar = tk.Button(self,
+                                  text="🧹Limpiar",
+                                  font=("Arial", 14),
+                                  bd=2,
+                                  relief= "groove",
+                                  fg=gris,
+                                  bg=amarillo,
+                                  anchor="w")
+        self.boton_limpiar.place(x=680, y=350, width=100, height=40)
+
+
+
+
 
         
 
@@ -592,15 +623,46 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         
 
-
-
-
-
-
         frame_principal2 = tk.Frame(self,
                                     bd=1,
                                     relief="solid")
         frame_principal2.place(x=900, y=80, width=600, height=800)
+    
+    def borrar_codigo(self, event):
+        if self.entry_codigo.get() == "Ej: CRC":
+            self.entry_codigo.delete(0, "end")
+
+    def restaurar_codigo(self, event):
+        if self.entry_codigo.get() == "":
+            self.entry_codigo.insert(0, "Ej: CRC")
+
+    def borrar_nombre(self, event):
+        if self.entry_nombre.get() == "Ej: Costa Rica":
+            self.entry_nombre.delete(0, "end")
+
+    def restaurar_nombre(self, event):
+        if self.entry_nombre.get() == "":
+            self.entry_nombre.insert(0, "Ej: Costa Rica")
+
+    def añadir(self):
+
+
+        global lista_paises
+        codigo_fifa = self.entry_codigo.get()
+        nombre = self.entry_nombre.get()
+        continente = self.seleccion.get()
+        ranking_fifa = int(self.spinbox_ranking.get())
+
+        nuevo_pais = Pais(codigo_fifa, nombre, continente, ranking_fifa)
+        lista_paises += [nuevo_pais]
+
+        for pais in lista_paises:
+            pais.mostrar_datos()
+
+
+    #def actualizar(self):
+
+    #def limpiar_selecciones(self):
 
         
 
