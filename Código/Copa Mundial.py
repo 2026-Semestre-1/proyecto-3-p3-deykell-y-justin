@@ -711,7 +711,7 @@ class Jugar_Mundial(tk.Toplevel):
         self.llave_eliminatoria()
 
     """
-    Nombre: crear_menu_lateral
+    Nombre: menu_lateral
     Entrada: no recibe parámetros.
     Salida: crea el menú lateral izquierdo de la ventana.
     Restricciones: usa colores globales previamente definidos.
@@ -802,7 +802,7 @@ class Jugar_Mundial(tk.Toplevel):
                                     fg=celeste)
         label_decoracion.place(x=25, y=710, width=250, height=150)
     """
-    Nombre: crear_titulo
+    Nombre: titulo_pantalla
     Entrada: no recibe parámetros
     Salida: muestra el título y subtítulo de la pantalla
     Restricciones: debe existir la ventana Jugar Mundial
@@ -831,7 +831,7 @@ class Jugar_Mundial(tk.Toplevel):
 
 
     """
-    Nombre: crear_estado_torneo
+    Nombre: estado_torneo
     Entrada: no recibe parámetros
     Salida: crea el panel de estado general del torneo
     Restricciones:
@@ -908,10 +908,10 @@ class Jugar_Mundial(tk.Toplevel):
 
     """
 
-    Nombre: crear_acciones
-    Entrada: no recibe parámetros.
+    Nombre: simular_mundial
+    Entrada: no recibe parámetros
     Salida: crea los botones principales para jugar el mundial.
-    Restricciones: los botones todavía no tienen comandos asignados.
+    Restricciones:
     """
     def simular_mundial(self):
         frame_acciones = tk.LabelFrame(self,
@@ -958,6 +958,21 @@ class Jugar_Mundial(tk.Toplevel):
                                  bd=2,
                                  relief="raised")
         boton_volver.place(x=25, y=195, width=280, height=35)
+    """
+    Nombre: resultados_recientes
+    Entrada: no recibe parámetros.
+    Salida: crea una tabla vacía para mostrar los resultados recientes.
+    Restricciones: la tabla será llenada cuando se agregue la funcionalidad.
+    """
+    def resultados_recientes(self):
+        frame_resultados = tk.LabelFrame(self,
+                                         text=" Resultados Recientes ",
+                                         font=("Arial", 14, "bold"),
+                                         fg=azul_oscuro,
+                                         bg=blanco,
+                                         bd=1,
+                                         relief="solid")
+        frame_resultados.place(x=340, y=410, width=740, height=250)
 
 
 
