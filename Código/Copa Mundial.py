@@ -1076,7 +1076,30 @@ class Jugar_Mundial(tk.Toplevel):
                                              fg=gris)
         self.label_estado_campeon.place(x=200, y=98, width=280, height=30)
     
-        
+    """
+    Nombre: llave_eliminatoria
+    Entrada: no recibe parámetros.
+    Salida: dibuja una llave eliminatoria básica.
+    Restricciones: 
+    """
+    def llave_eliminatoria(self):
+        frame_llave = tk.LabelFrame(self,
+                                    text=" Llave Eliminatoria ",
+                                    font=("Arial", 14, "bold"),
+                                    fg=azul_oscuro,
+                                    bg=blanco,
+                                    bd=1,
+                                    relief="solid")
+        frame_llave.place(x=1100, y=120, width=400, height=430)
+
+        canvas_llave = tk.Canvas(frame_llave,
+                                 bg=blanco,
+                                 highlightthickness=0)
+        canvas_llave.place(x=10, y=10, width=370, height=385)
+
+
+
+
     
 
 
