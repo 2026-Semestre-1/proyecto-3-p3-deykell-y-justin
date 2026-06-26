@@ -871,17 +871,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         self.tree_view.bind("<ButtonRelease-1>", self.pais_seleccionado)
 
-        
-
-
-
-
-
-
-
-
-
-
+    
 
     def volver(self):
         self.destroy()
