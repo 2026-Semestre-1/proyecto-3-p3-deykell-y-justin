@@ -331,6 +331,9 @@ class Mundial:
 #===== Interfas Gráfica =====#
 
 
+
+
+
 class Pantalla_Principal(tk.Tk):
 
     def __init__(self):
@@ -687,17 +690,17 @@ class Configuracion_Mundial(tk.Toplevel):
 ###JuSTIN
 """
 Nombre: Jugar_Mundial
-Entrada: no recibe datos directamente desde el usuario en esta primera versión.
-Salida: crea una ventana gráfica para la sección de jugar el mundial.
-Restricciones: debe existir tkinter importado como tk, ttk importado y los colores globales definidos.
+Entrada: no recibe datos directamente desde el usuario en esta primera versión
+Salida: crea una ventana gráfica para la sección de jugar el mundial
+Restricciones: 
 """
 class Jugar_Mundial(tk.Toplevel):
 
     """
     Nombre: __init__
-    Entrada: no recibe parámetros adicionales.
-    Salida: inicializa la ventana Jugar Mundial.
-    Restricciones: se debe llamar desde la pantalla principal del programa.
+    Entrada: no recibe parámetros adicionales
+    Salida: inicializa la ventana Jugar Mundial
+    Restricciones: se debe llamar desde la pantalla principal del programa
     """
     def __init__(self):
         tk.Toplevel.__init__(self)
@@ -718,9 +721,9 @@ class Jugar_Mundial(tk.Toplevel):
 
     """
     Nombre: menu_lateral
-    Entrada: no recibe parámetros.
-    Salida: crea el menú lateral izquierdo de la ventana.
-    Restricciones: usa colores globales previamente definidos.
+    Entrada: no recibe parámetros
+    Salida: crea el menú lateral izquierdo de la ventana
+    Restricciones: usa colores globales previamente definidos
     """
     def menu_lateral(self):
         frame_menu = tk.Frame(self,
@@ -832,9 +835,9 @@ class Jugar_Mundial(tk.Toplevel):
         label_subtitulo.place(x=345, y=78, width=700, height=30)
 
     """
-    Nombre:estado_torneo
-    Entrada: no recibe parámetros.
-    Salida: crea el panel de estado general del torneo.
+    Nombre: estado_torneo
+    Entrada: no recibe parámetros
+    Salida: crea el panel de estado general del torneo
     Restricciones:
     """
     def estado_torneo(self):
@@ -909,9 +912,9 @@ class Jugar_Mundial(tk.Toplevel):
 
     """
     Nombre: simular_mundial
-    Entrada: no recibe parámetros.
-    Salida: crea los botones principales para jugar el mundial.
-    Restricciones: los botones todavía no tienen comandos asignados.
+    Entrada: no recibe parámetros
+    Salida: crea los botones principales para jugar el mundial
+    Restricciones: 
     """
     def simular_mundial(self):
         frame_acciones = tk.LabelFrame(self,
@@ -962,8 +965,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: resultados_recientes
     Entrada: no recibe parámetros.
-    Salida: crea una tabla vacía para mostrar los resultados recientes.
-    Restricciones: la tabla será llenada cuando se agregue la funcionalidad.
+    Salida: crea una tabla vacía para mostrar los resultados recientes
+    Restricciones: 
     """
     def resultados_recientes(self):
         frame_resultados = tk.LabelFrame(self,
@@ -994,9 +997,9 @@ class Jugar_Mundial(tk.Toplevel):
 
     """
     Nombre: tabla_grupo
-    Entrada: no recibe parámetros.
-    Salida: crea una tabla vacía para mostrar posiciones de grupos.
-    Restricciones: la tabla será llenada luego de simular la fase de grupos.
+    Entrada: no recibe parámetros
+    Salida: crea una tabla vacía para mostrar posiciones de grupos
+    Restricciones: 
     """
     def tabla_grupo(self):
         frame_tabla = tk.LabelFrame(self,
@@ -1029,6 +1032,23 @@ class Jugar_Mundial(tk.Toplevel):
         self.tabla_posiciones.place(x=20, y=25, width=570, height=95)
     
 
+    """
+    Nombre: campeon_actual
+    Entrada: no recibe parámetros.
+    Salida: crea el panel visual del campeón actual.
+    Restricciones: al inicio el campeón aparece sin definir
+    """
+    def campeon_actual(self):
+        frame_campeon = tk.LabelFrame(self,
+                                      text=" Campeón Actual ",
+                                      font=("Arial", 14, "bold"),
+                                      fg=azul_oscuro,
+                                      bg="#FFF4C2",
+                                      bd=2,
+                                      relief="solid")
+        frame_campeon.place(x=980, y=575, width=520, height=160)
+    
+
 
 
 
@@ -1057,3 +1077,6 @@ if __name__ == "__main__":
 
     
     
+
+
+
