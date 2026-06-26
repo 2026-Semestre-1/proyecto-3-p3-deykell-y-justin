@@ -1096,6 +1096,49 @@ class Jugar_Mundial(tk.Toplevel):
                                  bg=blanco,
                                  highlightthickness=0)
         canvas_llave.place(x=10, y=10, width=370, height=385)
+        canvas_llave.create_text(50, 20, text="Octavos", font=("Arial", 10, "bold"))
+        canvas_llave.create_text(145, 20, text="Cuartos", font=("Arial", 10, "bold"))
+        canvas_llave.create_text(240, 20, text="Semifinal", font=("Arial", 10, "bold"))
+        canvas_llave.create_text(345, 20, text="Final", font=("Arial", 10, "bold"))
+
+        y = 50
+        contador = 0
+
+        while contador < 8:
+            canvas_llave.create_rectangle(15, y, 85, y + 22, outline=azul)
+            canvas_llave.create_text(50, y + 11, text="Equipo", font=("Arial", 8))
+
+            y = y + 38
+            contador = contador + 1
+
+        y = 61
+        contador = 0
+
+        while contador < 4:
+            canvas_llave.create_line(85, y, 105, y, fill=azul)
+            canvas_llave.create_line(85, y + 38, 105, y + 38, fill=azul)
+            canvas_llave.create_line(105, y, 105, y + 38, fill=azul)
+            canvas_llave.create_line(105, y + 19, 125, y + 19, fill=azul)
+
+            canvas_llave.create_rectangle(125, y + 8, 190, y + 30, outline=azul)
+
+            y = y + 76
+            contador = contador + 1
+
+        y = 80
+        contador = 0
+
+        while contador < 2:
+            canvas_llave.create_line(190, y, 210, y, fill=azul)
+            canvas_llave.create_line(190, y + 76, 210, y + 76, fill=azul)
+            canvas_llave.create_line(210, y, 210, y + 76, fill=azul)
+            canvas_llave.create_line(210, y + 38, 230, y + 38, fill=azul)
+
+            canvas_llave.create_rectangle(230, y + 27, 295, y + 49, outline=azul)
+
+            y = y + 152
+            contador = contador + 1
+
 
 
 
