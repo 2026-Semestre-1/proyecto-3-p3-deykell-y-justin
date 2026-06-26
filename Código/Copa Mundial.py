@@ -922,10 +922,50 @@ class Jugar_Mundial(tk.Toplevel):
                                        bd=1,
                                        relief="solid")
         frame_acciones.place(x=750, y=145, width=330, height=245)
+        boton_grupos = tk.Button(frame_acciones,
+                                 text="Simular Fase de Grupos",
+                                 font=("Arial", 12, "bold"),
+                                 bg=verde,
+                                 fg=blanco,
+                                 bd=2,
+                                 relief="raised")
+        boton_grupos.place(x=25, y=30, width=280, height=45)
+
+        boton_fase = tk.Button(frame_acciones,
+                               text="Avanzar a Siguiente Fase",
+                               font=("Arial", 12, "bold"),
+                               bg=gris_claro,
+                               fg=negro,
+                               bd=2,
+                               relief="raised")
+        boton_fase.place(x=25, y=85, width=280, height=45)
+
+        boton_campeon = tk.Button(frame_acciones,
+                                  text="Ver Campeón",
+                                  font=("Arial", 12, "bold"),
+                                  bg=amarillo,
+                                  fg=negro,
+                                  bd=2,
+                                  relief="raised")
+        boton_campeon.place(x=25, y=140, width=280, height=45)
+
+        boton_volver = tk.Button(frame_acciones,
+                                 text="Volver al Inicio",
+                                 font=("Arial", 12, "bold"),
+                                 bg=celeste,
+                                 fg=negro,
+                                 
+                                 bd=2,
+                                 relief="raised")
+        boton_volver.place(x=25, y=195, width=280, height=35)
+
+
+
 class Estadisticas(tk.Toplevel):
 
     def __init__(self):
         tk.Toplevel.__init__(self)
+
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
 
