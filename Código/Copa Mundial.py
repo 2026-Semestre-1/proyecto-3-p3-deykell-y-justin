@@ -1047,11 +1047,37 @@ class Jugar_Mundial(tk.Toplevel):
                                       bd=2,
                                       relief="solid")
         frame_campeon.place(x=980, y=575, width=520, height=160)
+        imagen_trofeo = Image.open("trofeo.jpg")
+        imagen_trofeo = imagen_trofeo.resize((100, 100))
+
+        self.imagen_trofeo = ImageTk.PhotoImage(imagen_trofeo)
+
+        label_trofeo = tk.Label(frame_campeon,
+                                image=self.imagen_trofeo,
+                                bg="#FFF4C2")
+        label_trofeo.place(x=35, y=25, width=140, height=120)
+
+        self.label_campeon = tk.Label(frame_campeon,
+                                      text="Sin definir",
+                                      
+                                      font=("Arial", 27, "bold"),
+                                      bg="#FFF4C2",
+                                      fg=azul_oscuro)
+        self.label_campeon.place(x=200, y=35, width=280, height=45)
+
+        linea = tk.Label(frame_campeon,
+                         bg=anaranjado)
+        linea.place(x=225, y=87, width=220, height=2)
+
+        self.label_estado_campeon = tk.Label(frame_campeon,
+                                             text="Esperando final",
+                                             font=("Arial", 14, "italic"),
+                                             bg="#FFF4C2",
+                                             fg=gris)
+        self.label_estado_campeon.place(x=200, y=98, width=280, height=30)
     
-
-
-
-
+        
+    
 
 
 class Estadisticas(tk.Toplevel):
@@ -1061,12 +1087,6 @@ class Estadisticas(tk.Toplevel):
 
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
-
-
-
-
-
-
 
 
 
