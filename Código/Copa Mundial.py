@@ -685,6 +685,12 @@ class Configuracion_Mundial(tk.Toplevel):
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
 ###JuSTIN
+"""
+Nombre: Jugar_Mundial
+Entrada: no recibe datos directamente desde el usuario en esta primera versión.
+Salida: crea una ventana gráfica para la sección de jugar el mundial.
+Restricciones: debe existir tkinter importado como tk, ttk importado y los colores globales definidos.
+"""
 class Jugar_Mundial(tk.Toplevel):
 
     """
@@ -696,13 +702,13 @@ class Jugar_Mundial(tk.Toplevel):
     def __init__(self):
         tk.Toplevel.__init__(self)
 
-        self.geometry("1535x930+-7+-0")
+        self.geometry("1535x760+-7+-0")
         self.title("Jugar Mundial")
         self.resizable(False, False)
         self.config(bg=blanco)
 
         self.menu_lateral()
-        self.titulo_pantalla()
+        self.pantalla_titulo()
         self.estado_torneo()
         self.simular_mundial()
         self.resultados_recientes()
@@ -719,21 +725,21 @@ class Jugar_Mundial(tk.Toplevel):
     def menu_lateral(self):
         frame_menu = tk.Frame(self,
                               bg=azul_oscuro)
-        frame_menu.place(x=0, y=0, width=300, height=930)
+        frame_menu.place(x=0, y=0, width=300, height=760)
 
         label_titulo = tk.Label(self,
                                 text="Copa Mundial",
                                 font=("Arial", 24, "bold"),
                                 bg=azul_oscuro,
                                 fg=blanco)
-        label_titulo.place(x=25, y=55, width=250, height=40)
+        label_titulo.place(x=25, y=45, width=250, height=40)
 
         label_subtitulo = tk.Label(self,
                                    text="Simulación del Torneo",
                                    font=("Arial", 14, "bold"),
                                    bg=azul_oscuro,
                                    fg=blanco)
-        label_subtitulo.place(x=25, y=95, width=250, height=30)
+        label_subtitulo.place(x=25, y=85, width=250, height=30)
 
         boton_inicio = tk.Button(self,
                                  text="Inicio",
@@ -743,7 +749,7 @@ class Jugar_Mundial(tk.Toplevel):
                                  bd=1,
                                  relief="solid",
                                  anchor="w")
-        boton_inicio.place(x=25, y=180, width=250, height=55)
+        boton_inicio.place(x=25, y=160, width=250, height=50)
 
         boton_paises = tk.Button(self,
                                  text="Países y Selecciones",
@@ -753,7 +759,7 @@ class Jugar_Mundial(tk.Toplevel):
                                  bd=1,
                                  relief="solid",
                                  anchor="w")
-        boton_paises.place(x=25, y=250, width=250, height=55)
+        boton_paises.place(x=25, y=225, width=250, height=50)
 
         boton_jugadores = tk.Button(self,
                                     text="Entrenadores y Jugadores",
@@ -763,7 +769,7 @@ class Jugar_Mundial(tk.Toplevel):
                                     bd=1,
                                     relief="solid",
                                     anchor="w")
-        boton_jugadores.place(x=25, y=320, width=250, height=55)
+        boton_jugadores.place(x=25, y=290, width=250, height=50)
 
         boton_configurar = tk.Button(self,
                                      text="Configurar Mundial",
@@ -773,7 +779,7 @@ class Jugar_Mundial(tk.Toplevel):
                                      bd=1,
                                      relief="solid",
                                      anchor="w")
-        boton_configurar.place(x=25, y=390, width=250, height=55)
+        boton_configurar.place(x=25, y=355, width=250, height=50)
 
         boton_jugar = tk.Button(self,
                                 text="Jugar Mundial",
@@ -783,7 +789,7 @@ class Jugar_Mundial(tk.Toplevel):
                                 bd=1,
                                 relief="solid",
                                 anchor="w")
-        boton_jugar.place(x=25, y=460, width=250, height=55)
+        boton_jugar.place(x=25, y=420, width=250, height=50)
 
         boton_estadisticas = tk.Button(self,
                                        text="Estadísticas",
@@ -793,28 +799,29 @@ class Jugar_Mundial(tk.Toplevel):
                                        bd=1,
                                        relief="solid",
                                        anchor="w")
-        boton_estadisticas.place(x=25, y=530, width=250, height=55)
+        boton_estadisticas.place(x=25, y=485, width=250, height=50)
 
         label_decoracion = tk.Label(self,
                                     text="COPA\nMUNDIAL\n2026",
-                                    font=("Arial", 30, "bold"),
+                                    font=("Arial", 28, "bold"),
                                     bg=azul_oscuro,
                                     fg=celeste)
-        label_decoracion.place(x=25, y=710, width=250, height=150)
+        label_decoracion.place(x=25, y=610, width=250, height=120)
+
     """
-    Nombre: titulo_pantalla
+    Nombre: pantalla_titulo
     Entrada: no recibe parámetros
     Salida: muestra el título y subtítulo de la pantalla
     Restricciones: debe existir la ventana Jugar Mundial
     """
-    def titulo_pantalla (self):
+    def pantalla_titulo(self):
         label_titulo = tk.Label(self,
                                 text="Jugar Mundial",
                                 font=("Arial", 32, "bold"),
                                 bg=blanco,
                                 fg=azul_oscuro,
                                 anchor="w")
-        label_titulo.place(x=340, y=35, width=500, height=55)
+        label_titulo.place(x=340, y=25, width=500, height=55)
 
         label_subtitulo = tk.Label(self,
                                    text="Simule la fase de grupos y las rondas eliminatorias",
@@ -822,18 +829,12 @@ class Jugar_Mundial(tk.Toplevel):
                                    bg=blanco,
                                    fg=gris,
                                    anchor="w")
-        label_subtitulo.place(x=345, y=90, width=700, height=30)
-
-
-
-
-
-
+        label_subtitulo.place(x=345, y=78, width=700, height=30)
 
     """
-    Nombre: estado_torneo
-    Entrada: no recibe parámetros
-    Salida: crea el panel de estado general del torneo
+    Nombre:estado_torneo
+    Entrada: no recibe parámetros.
+    Salida: crea el panel de estado general del torneo.
     Restricciones:
     """
     def estado_torneo(self):
@@ -844,14 +845,14 @@ class Jugar_Mundial(tk.Toplevel):
                                      bg=blanco,
                                      bd=1,
                                      relief="solid")
-        frame_estado.place(x=340, y=145, width=390, height=245)
+        frame_estado.place(x=340, y=120, width=390, height=205)
 
         label_fase = tk.Label(frame_estado,
                               text="Fase actual:",
                               font=("Arial", 12),
                               bg=blanco,
                               anchor="w")
-        label_fase.place(x=25, y=35, width=180, height=30)
+        label_fase.place(x=25, y=25, width=180, height=25)
 
         self.label_fase_actual = tk.Label(frame_estado,
                                           text="Sin iniciar",
@@ -859,14 +860,14 @@ class Jugar_Mundial(tk.Toplevel):
                                           bg=blanco,
                                           fg=azul,
                                           anchor="e")
-        self.label_fase_actual.place(x=200, y=35, width=150, height=30)
+        self.label_fase_actual.place(x=200, y=25, width=150, height=25)
 
         label_grupos = tk.Label(frame_estado,
                                 text="Grupos configurados:",
                                 font=("Arial", 12),
                                 bg=blanco,
                                 anchor="w")
-        label_grupos.place(x=25, y=85, width=190, height=30)
+        label_grupos.place(x=25, y=70, width=190, height=25)
 
         self.label_grupos = tk.Label(frame_estado,
                                      text="0",
@@ -874,14 +875,14 @@ class Jugar_Mundial(tk.Toplevel):
                                      bg=blanco,
                                      fg=azul,
                                      anchor="e")
-        self.label_grupos.place(x=240, y=85, width=110, height=30)
+        self.label_grupos.place(x=240, y=70, width=110, height=25)
 
         label_partidos = tk.Label(frame_estado,
                                   text="Partidos jugados:",
                                   font=("Arial", 12),
                                   bg=blanco,
                                   anchor="w")
-        label_partidos.place(x=25, y=135, width=190, height=30)
+        label_partidos.place(x=25, y=115, width=190, height=25)
 
         self.label_partidos = tk.Label(frame_estado,
                                        text="0",
@@ -889,14 +890,14 @@ class Jugar_Mundial(tk.Toplevel):
                                        bg=blanco,
                                        fg=azul,
                                        anchor="e")
-        self.label_partidos.place(x=240, y=135, width=110, height=30)
+        self.label_partidos.place(x=240, y=115, width=110, height=25)
 
         label_clasificados = tk.Label(frame_estado,
                                       text="Equipos clasificados:",
                                       font=("Arial", 12),
                                       bg=blanco,
                                       anchor="w")
-        label_clasificados.place(x=25, y=185, width=190, height=30)
+        label_clasificados.place(x=25, y=160, width=190, height=25)
 
         self.label_clasificados = tk.Label(frame_estado,
                                            text="0",
@@ -904,14 +905,13 @@ class Jugar_Mundial(tk.Toplevel):
                                            bg=blanco,
                                            fg=azul,
                                            anchor="e")
-        self.label_clasificados.place(x=240, y=185, width=110, height=30)
+        self.label_clasificados.place(x=240, y=160, width=110, height=25)
 
     """
-
     Nombre: simular_mundial
-    Entrada: no recibe parámetros
+    Entrada: no recibe parámetros.
     Salida: crea los botones principales para jugar el mundial.
-    Restricciones:
+    Restricciones: los botones todavía no tienen comandos asignados.
     """
     def simular_mundial(self):
         frame_acciones = tk.LabelFrame(self,
@@ -921,7 +921,8 @@ class Jugar_Mundial(tk.Toplevel):
                                        bg=blanco,
                                        bd=1,
                                        relief="solid")
-        frame_acciones.place(x=750, y=145, width=330, height=245)
+        frame_acciones.place(x=750, y=120, width=330, height=205)
+
         boton_grupos = tk.Button(frame_acciones,
                                  text="Simular Fase de Grupos",
                                  font=("Arial", 12, "bold"),
@@ -929,7 +930,7 @@ class Jugar_Mundial(tk.Toplevel):
                                  fg=blanco,
                                  bd=2,
                                  relief="raised")
-        boton_grupos.place(x=25, y=30, width=280, height=45)
+        boton_grupos.place(x=25, y=25, width=280, height=38)
 
         boton_fase = tk.Button(frame_acciones,
                                text="Avanzar a Siguiente Fase",
@@ -938,7 +939,7 @@ class Jugar_Mundial(tk.Toplevel):
                                fg=negro,
                                bd=2,
                                relief="raised")
-        boton_fase.place(x=25, y=85, width=280, height=45)
+        boton_fase.place(x=25, y=70, width=280, height=38)
 
         boton_campeon = tk.Button(frame_acciones,
                                   text="Ver Campeón",
@@ -947,17 +948,17 @@ class Jugar_Mundial(tk.Toplevel):
                                   fg=negro,
                                   bd=2,
                                   relief="raised")
-        boton_campeon.place(x=25, y=140, width=280, height=45)
+        boton_campeon.place(x=25, y=115, width=280, height=38)
 
         boton_volver = tk.Button(frame_acciones,
                                  text="Volver al Inicio",
                                  font=("Arial", 12, "bold"),
                                  bg=celeste,
                                  fg=negro,
-                                 
                                  bd=2,
                                  relief="raised")
-        boton_volver.place(x=25, y=195, width=280, height=35)
+        boton_volver.place(x=25, y=160, width=280, height=30)
+
     """
     Nombre: resultados_recientes
     Entrada: no recibe parámetros.
@@ -972,11 +973,12 @@ class Jugar_Mundial(tk.Toplevel):
                                          bg=blanco,
                                          bd=1,
                                          relief="solid")
-        frame_resultados.place(x=340, y=410, width=740, height=250)
+        frame_resultados.place(x=340, y=345, width=740, height=205)
+
         self.tabla_resultados = ttk.Treeview(frame_resultados,
                                              columns=("partido", "fase", "resultado", "ganador"),
                                              show="headings",
-                                             height=7)
+                                             height=6)
 
         self.tabla_resultados.heading("partido", text="Partido")
         self.tabla_resultados.heading("fase", text="Fase")
@@ -988,7 +990,47 @@ class Jugar_Mundial(tk.Toplevel):
         self.tabla_resultados.column("resultado", width=130)
         self.tabla_resultados.column("ganador", width=180)
 
-        self.tabla_resultados.place(x=20, y=25, width=700, height=180)
+        self.tabla_resultados.place(x=20, y=25, width=700, height=140)
+
+    """
+    Nombre: tabla_grupo
+    Entrada: no recibe parámetros.
+    Salida: crea una tabla vacía para mostrar posiciones de grupos.
+    Restricciones: la tabla será llenada luego de simular la fase de grupos.
+    """
+    def tabla_grupo(self):
+        frame_tabla = tk.LabelFrame(self,
+                                    text=" Tabla de Grupo ",
+                                    font=("Arial", 14, "bold"),
+                                    fg=azul_oscuro,
+                                    bg=blanco,
+                                    bd=1,
+                                    relief="solid")
+        frame_tabla.place(x=340, y=575, width=620, height=160)
+
+        self.tabla_posiciones = ttk.Treeview(frame_tabla,
+                                             columns=("equipo", "pts", "gf", "gc", "dg"),
+                                             show="headings",
+                                             height=4)
+
+        self.tabla_posiciones.heading("equipo", text="Equipo")
+        self.tabla_posiciones.heading("pts", text="Pts")
+        self.tabla_posiciones.heading("gf", text="GF")
+        self.tabla_posiciones.heading("gc", text="GC")
+        self.tabla_posiciones.heading("dg", text="DG")
+
+
+        self.tabla_posiciones.column("equipo", width=260)
+        self.tabla_posiciones.column("pts", width=70)
+        self.tabla_posiciones.column("gf", width=70)
+        self.tabla_posiciones.column("gc", width=70)
+        self.tabla_posiciones.column("dg", width=70)
+
+        self.tabla_posiciones.place(x=20, y=25, width=570, height=95)
+    
+
+
+
 
 
 
