@@ -973,6 +973,22 @@ class Jugar_Mundial(tk.Toplevel):
                                          bd=1,
                                          relief="solid")
         frame_resultados.place(x=340, y=410, width=740, height=250)
+        self.tabla_resultados = ttk.Treeview(frame_resultados,
+                                             columns=("partido", "fase", "resultado", "ganador"),
+                                             show="headings",
+                                             height=7)
+
+        self.tabla_resultados.heading("partido", text="Partido")
+        self.tabla_resultados.heading("fase", text="Fase")
+        self.tabla_resultados.heading("resultado", text="Resultado")
+        self.tabla_resultados.heading("ganador", text="Ganador")
+
+        self.tabla_resultados.column("partido", width=260)
+        self.tabla_resultados.column("fase", width=130)
+        self.tabla_resultados.column("resultado", width=130)
+        self.tabla_resultados.column("ganador", width=180)
+
+        self.tabla_resultados.place(x=20, y=25, width=700, height=180)
 
 
 
@@ -997,6 +1013,5 @@ if __name__ == "__main__":
     app = Pantalla_Principal()
     app.mainloop()
 
-    
     
     
