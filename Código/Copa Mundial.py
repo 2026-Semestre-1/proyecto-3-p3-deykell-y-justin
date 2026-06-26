@@ -1135,9 +1135,17 @@ class Jugar_Mundial(tk.Toplevel):
             canvas_llave.create_line(210, y + 38, 230, y + 38, fill=azul)
 
             canvas_llave.create_rectangle(230, y + 27, 295, y + 49, outline=azul)
-
             y = y + 152
             contador = contador + 1
+
+        canvas_llave.create_line(295, 118, 315, 118, fill=azul)
+        canvas_llave.create_line(295, 270, 315, 270, fill=azul)
+        canvas_llave.create_line(315, 118, 315, 270, fill=azul)
+        canvas_llave.create_line(315, 194, 330, 194, fill=azul)
+
+        canvas_llave.create_rectangle(330, 165, 365, 225, outline=azul)
+        canvas_llave.create_text(347, 185, text="Final", font=("Arial", 8, "bold"))
+        canvas_llave.create_text(347, 205, text="Ganador", font=("Arial", 7))
 
 
 
