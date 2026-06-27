@@ -32,6 +32,16 @@ lista_jugadores = []
 lista_entrenadores = []
 
 
+# Función para contar elementos manualmente
+def contar(elementos):
+    cantidad = 0
+
+    for elemento in elementos:
+        cantidad = cantidad + 1
+
+    return cantidad
+
+
 
 
 class Pais:
@@ -59,7 +69,7 @@ class Pais:
         print("Código FIFA del País: " + self.codigo_fifa)
         print("Nombre del País: " + self.nombre)
         print("Continente: " + self.continente)
-        print("Ranking FIFA: " + str(self.ranking_fifa))
+        print("Ranking FIFA:", self.ranking_fifa)
         print("")
 
     def actualizar_datos(self, codigo_fifa, nombre, continente, ranking_fifa):
@@ -121,7 +131,7 @@ class Entrenador(Persona):
         print("Fecha de Nacimiento: " + self.fecha_nacimiento)
         print("Nacionalidad: " + self.nacionalidad)
         print("Licencia: " + self.licencia)
-        print("Experiencia: " + str(self.experiencia_anios))
+        print("Experiencia:", self.experiencia_anios)
         print("Sistema de Juego: " + self.sistema_juego)
         print("")
 
@@ -169,13 +179,13 @@ class Futbolista(Persona):
         print("Nombre: " + self.nombre + " " + self.apellido)
         print("Fecha de Nacimiento: " + self.fecha_nacimiento)
         print("Nacionalidad: " + self.nacionalidad)
-        print("Dorsal: " + str(self.dorsal))
+        print("Dorsal:", self.dorsal)
         print("Posicion: " + self.posicion)
-        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
-        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
-        print("Goles: " + str(self.goles))
-        print("Asistencias: " + str(self.asistencias))
-        print("Puntaje Individual: " + str(self.puntaje_individual))
+        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
+        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
+        print("Goles:", self.goles)
+        print("Asistencias:", self.asistencias)
+        print("Puntaje Individual:", self.puntaje_individual)
         print("")
 
     def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
@@ -247,18 +257,18 @@ class Seleccion:
         print("Jugadores:")
         for futbolista in self.jugadores:
             print("Nombre: " + futbolista.nombre + " " + futbolista.apellido)
-            print("Dorsal: " + str(futbolista.dorsal))
+            print("Dorsal:", futbolista.dorsal)
             print("")
-        print("Goles a Favor: " + str(self.total_goles_a_favor))
-        print("Goles en Contra: " + str(self.total_goles_en_contra))
-        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
-        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
-        print("Fuerza de equipo: " + str(self.fuerza_equipo))
+        print("Goles a Favor:", self.total_goles_a_favor)
+        print("Goles en Contra:", self.total_goles_en_contra)
+        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
+        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
+        print("Fuerza de equipo:", self.fuerza_equipo)
         print("")
 
     def agregar_jugador(self, futbolista):
 
-        if len(self.jugadores) < 23:
+        if contar(self.jugadores) < 23:
             self.jugadores += [futbolista]
         else:
             return "Error: La plantilla ya cuenta con 23 jugadores"
@@ -667,7 +677,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_paises_registrados.place(x=270, y=460, width=560, height=400)
 
         label_total_paises = tk.Label(self,
-                                      text=f"Total: {len(lista_paises)} paises",
+                                      text=f"Total: {contar(lista_paises)} paises",
                                       font=("Arial", 10, "bold"))
         label_total_paises.place(x=680, y=480, width=100, height=30)
 
@@ -805,7 +815,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_selecciones_registradas.place(x=920, y=460, width=560, height=400)
 
         label_total_selecciones = tk.Label(self,
-                                      text=f"Total: {len(lista_selecciones)} selecciones",
+                                      text=f"Total: {contar(lista_selecciones)} selecciones",
                                       font=("Arial", 10, "bold"))
         label_total_selecciones.place(x=1320, y=480, width=130, height=30)
 
@@ -939,7 +949,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif not len(codigo_fifa) == 3:
+        elif not contar(codigo_fifa) == 3:
             messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
@@ -972,7 +982,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
             lista_paises += [nuevo_pais]
 
 
-            numero = len(lista_paises)
+            numero = contar(lista_paises)
 
             if numero % 2 == 0:
                 self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
@@ -1002,7 +1012,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         lista_paises += [nuevo_pais]
 
 
-        numero = len(lista_paises) - 1
+        numero = contar(lista_paises) - 1
 
         if numero % 2 == 0:
             self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
@@ -1046,7 +1056,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif not len(codigo_fifa) == 3:
+        elif not contar(codigo_fifa) == 3:
             messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
@@ -1070,7 +1080,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         for pais in contenido_paises_dividido:
             if  pais[0] == codigo_fifa:
-                pais[3] = str(ranking_fifa)
+                pais[3] = self.spinbox_ranking.get().strip()
                 break
 
         archivo_paises_modificar = open("paises.txt", "w")
@@ -1125,7 +1135,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         selected = self.tree_view.focus()
     
         values = self.tree_view.item(selected, "values")
-        if not values or len(values) < 4:
+        if not values or contar(values) < 4:
             return 
     
         self.entry_codigo.insert(0, values[0])
