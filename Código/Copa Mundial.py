@@ -3,9 +3,9 @@
 # Librerías
 
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
+
 from PIL import ImageTk, Image
-import random
 
 #--- colores ---#
 azul = "#0E1DC4"
@@ -21,11 +21,15 @@ anaranjado = "#FF7300"
 verde = "#009929"
 celeste = "#00C3EB"
 azul_oscuro = "#003262"
+azul_seleccion = "#347083"
+
 
 lista_paises = []
 lista_selecciones = []
 lista_jugadores = []
 lista_entrenadores = []
+
+
 
 
 class Pais:
@@ -38,6 +42,11 @@ class Pais:
         elif not isinstance(ranking_fifa, int):
             print( "Error: el parámetro debe ser int")
             return 
+        elif not 1 <= ranking_fifa <= 100:
+            print("Error: el ranking fifa debe estar entre 1 y 100")
+            return
+        elif nombre == "" or continente == "" or codigo_fifa == "":
+            print("Error: los parámetros no pueden estar vacíos")
 
         self.codigo_fifa = codigo_fifa
         self.nombre = nombre
@@ -65,6 +74,10 @@ class Pais:
         self.continente = continente
         self.ranking_fifa = ranking_fifa
 
+    
+        
+
+    
 
 class Persona:
 
@@ -205,6 +218,7 @@ class Futbolista(Persona):
             return "Error: ingrese el tipo de tarjeta (amarilla o roja)"
         
         
+
 class Seleccion:
 
     def __init__(self, codigo_equipo, pais, entrenador):
@@ -213,6 +227,7 @@ class Seleccion:
             print("Error: el parámetro debe ser str")
             return
        
+
         self.codigo_equipo = codigo_equipo
         self.total_goles_a_favor = 0
         self.total_goles_en_contra = 0
@@ -261,7 +276,6 @@ class Seleccion:
     #def registrar_resultado(self,):
     #def calcular_fuerza_equipo(self):
 
-
 class Partido:
 
     def __init__(self, id_partido, equipo_1, equipo_2, goles_equipo1, goles_equipo2, fase, fecha):
@@ -292,7 +306,6 @@ class Grupo:
         self.nombre_grupo = nombre_grupo
         self.equipos = []
         self.partidos = []
-
 
 class Fase:
 
@@ -325,13 +338,39 @@ class Mundial:
         self.campeon = Seleccion()
         
 
+archivo_paises = open("paises.txt", "r")
+contenido_paises = archivo_paises.readlines()
+archivo_paises.close()
+
+archivo_selecciones = open("selecciones.txt", "r")
+contenido_selecciones = archivo_selecciones.readlines()
+archivo_selecciones.close()
+
+archivo_entrenadores = open("entrenadores.txt", "r")
+contenido_entrenadores = archivo_entrenadores.readlines()
+archivo_entrenadores.close()
+
+archivo_jugadores = open("jugadores.txt", "r")
+contenido_jugadores = archivo_jugadores.readlines()
+archivo_jugadores.close()
+
+contenido_paises_dividido = [linea.strip().split(";") for linea in contenido_paises]
+
+for linea in contenido_paises_dividido:
+    nuevo_pais = Pais(linea[0], linea[1], linea[2], int(linea[3]))
+    lista_paises += [nuevo_pais]
+
+contenido_selecciones_dividido = [linea.strip().split(";") for linea in contenido_selecciones]
+
+contenido_entrenadores_dividido = [linea.strip().split(";") for linea in contenido_entrenadores]
+
 #===== Interfas Gráfica =====#
 
 
 class Pantalla_Principal(tk.Tk):
 
     def __init__(self):
-        tk.Tk.__init__(self)
+        super().__init__()
 
         self.geometry("1535x930+-7+-0")
         self.title("Ventana")
@@ -398,7 +437,7 @@ class Pantalla_Principal(tk.Tk):
     def paises_selecciones(self):
 
         self.withdraw()
-        Administrar_Paises_Selecciones()
+        Administrar_Paises_Selecciones(self)
 
     def entrenadores_jugadores(self):
 
@@ -420,14 +459,20 @@ class Pantalla_Principal(tk.Tk):
         Estadisticas()
 
     
+        
 class Administrar_Paises_Selecciones(tk.Toplevel):
 
-    def __init__(self):
-        tk.Toplevel.__init__(self)
+    def __init__(self, principal):
+        super().__init__(principal)
+
+        self.principal = principal
         
         self.geometry("1535x930+-7+-0")
         self.title("Administrar Países y Selecciones")
         self.resizable(False, False)
+
+
+
 
         #self.fondo()
 
@@ -472,10 +517,14 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
     def frames(self):
 
+#Frame de la Izquierda
+
         frame_principal1 = tk.Frame(self,
                                     bd=1,
                                     relief="solid")
         frame_principal1.place(x=250, y=80, width=600, height=800)
+
+
 
         label_paises = tk.Label(self,
                                 text="🌐 Países",
@@ -483,6 +532,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                 fg=azul,
                                 anchor="w")
         label_paises.place(x=270, y=84, width=200, height=30)
+
+#Frame registrar países
 
         frame_registrar_paises = tk.Frame(self,
                                           bd=1,
@@ -519,6 +570,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                    anchor="w")
         label_ranking.place(x=280, y=290, width=300, height=30)
 
+
         self.entry_codigo = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -531,6 +583,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.entry_codigo.bind("<FocusIn>", self.borrar_codigo)
         self.entry_codigo.bind("<FocusOut>", self.restaurar_codigo)
 
+
+       
         self.entry_nombre = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -543,15 +597,16 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.entry_nombre.bind("<FocusIn>", self.borrar_nombre)
         self.entry_nombre.bind("<FocusOut>", self.restaurar_nombre)
 
+
         self.seleccion = tk.StringVar()
 
         continentes = ["América", "Europa", "África", "Oceanía"]
-        self.conbobox_continente = ttk.Combobox(self,
+        self.combobox_continente = ttk.Combobox(self,
                                           values=continentes,
                                           state="readonly",
                                           textvariable=self.seleccion)
-        self.conbobox_continente.set("Seleccione un Continente")
-        self.conbobox_continente.place(x=500, y=250, width=300, height=30)
+        self.combobox_continente.set("Seleccione un Continente")
+        self.combobox_continente.place(x=500, y=250, width=300, height=30)
 
         self.spinbox_ranking = tk.Spinbox(self,
                                      from_=1,
@@ -559,6 +614,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                      width=300)
 
         self.spinbox_ranking.place(x=500, y=290, width=300, height=30)
+        self.spinbox_ranking.delete(0, "end")
 
         self.boton_añadir_pais = tk.Button(self,
                                            text="➕ Añadir País",
@@ -578,7 +634,9 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                            relief="groove",
                                            fg=blanco,
                                            bg=azul,
-                                           anchor="w")
+                                           anchor="w",
+                                           command=self.actualizar,
+                                           state="disabled")
         self.boton_guardar.place(x=480, y=350, width=170, height=40)
 
         self.boton_limpiar = tk.Button(self,
@@ -588,22 +646,250 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                   relief= "groove",
                                   fg=gris,
                                   bg=amarillo,
-                                  anchor="w")
+                                  anchor="w",
+                                  command=self.limpiar_selecciones)
         self.boton_limpiar.place(x=680, y=350, width=100, height=40)
 
+
+
+
+
+#Frame de los países registrados
+
         frame_paises_registrados = tk.LabelFrame(self,
-                                          text="Nombre del Pais:",
+                                          text="Lista de Países Registrados",
                                           font=("Arial", 14),
                                           fg=azul,
                                           bd=1,
                                           relief="solid")
         frame_paises_registrados.place(x=270, y=460, width=560, height=400)
 
+        label_total_paises = tk.Label(self,
+                                      text=f"Total: {len(lista_paises)} paises",
+                                      font=("Arial", 10, "bold"))
+        label_total_paises.place(x=680, y=480, width=100, height=30)
+
+        
+
+
+
+
+
+
+
+#Frame de la derecha
+
+        label_paises = tk.Label(self,
+                                text="🌐 Selecciones",
+                                font=("Arial", 16),
+                                fg=azul,
+                                anchor="w")
+        label_paises.place(x=910, y=84, width=200, height=30)
+
+
         frame_principal2 = tk.Frame(self,
                                     bd=1,
                                     relief="solid")
         frame_principal2.place(x=900, y=80, width=600, height=800)
     
+        frame_registrar_paises = tk.Frame(self,
+                                          bd=1,
+                                          relief="solid")
+        frame_registrar_paises.place(x=920, y=120, width=560, height=300)
+
+        label_registrar_seleccion = tk.Label(self,
+                                   text= "Registrar / Editar Selección",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_registrar_seleccion.place(x=930, y=130, width=300, height=30)
+
+        label_codigo = tk.Label(self,
+                                   text= "Código Seleccción:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_codigo.place(x=930, y=170, width=300, height=30)
+
+        label_pais = tk.Label(self,
+                                   text= "País:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_pais.place(x=930, y=210, width=300, height=30)
+
+        label_entrenador = tk.Label(self,
+                                   text= "Entrenador:",
+                                   font=("Arial", 10, "bold"),
+                                   anchor="w")
+        label_entrenador.place(x=930, y=250, width=300, height=30)
+
+        self.entry_codigo_seleccion = tk.Entry(self,
+                                fg=gris,
+                                insertwidth=1,
+                                bd=1,
+                                highlightcolor=azul,
+                                highlightthickness=1)
+        self.entry_codigo_seleccion.insert(0, "Ej: CRC")
+        self.entry_codigo_seleccion.place(x=1180, y=170, width=200, height=30)
+
+        self.entry_codigo_seleccion.bind("<FocusIn>", self.borrar_codigo_seleccion)
+        self.entry_codigo_seleccion.bind("<FocusOut>", self.restaurar_codigo_seleccion)
+
+        self.pais_seleccion = tk.StringVar()
+        paises = []
+
+        for pais in lista_paises:
+            paises += [pais.nombre]
+
+        self.combobox_pais = ttk.Combobox(self,
+                                          values=paises,
+                                          state="readonly",
+                                          textvariable=self.pais_seleccion)
+        self.combobox_pais.set("Seleccione un pais")
+        self.combobox_pais.place(x=1180, y=210, width=200, height=30)
+
+        self.entrenador_seleccion = tk.StringVar()
+        entrenadores = []
+
+        for entrenador in lista_entrenadores:
+            entrenadores += [entrenador.nombre]
+
+        self.combobox_entrenador = ttk.Combobox(self,
+                                          values=entrenadores,
+                                          state="readonly",
+                                          textvariable=self.entrenador_seleccion)
+        self.combobox_entrenador.set("Seleccione un entrenador")
+        self.combobox_entrenador.place(x=1180, y=250, width=200, height=30)
+
+
+
+        self.boton_añadir_seleccion = tk.Button(self,
+                                           text="➕ Añadir Selección",
+                                           font=("Arial", 14),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_añadir_seleccion.place(x=940, y=350, width=190, height=40)
+
+        self.boton_guardar_seleccion = tk.Button(self,
+                                           text="💾 Guardar Cambios",
+                                           font=("Arial", 14),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=azul,
+                                           anchor="w")
+        self.boton_guardar_seleccion.place(x=1150, y=350, width=170, height=40)
+
+        self.boton_limpiar_seleccion = tk.Button(self,
+                                  text="🧹Limpiar",
+                                  font=("Arial", 14),
+                                  bd=2,
+                                  relief= "groove",
+                                  fg=gris,
+                                  bg=amarillo,
+                                  anchor="w")
+        self.boton_limpiar_seleccion.place(x=1350, y=350, width=100, height=40)
+
+
+#Frame de los selecciones registrados
+
+        frame_selecciones_registradas = tk.LabelFrame(self,
+                                          text="Lista de Selecciones Registradas",
+                                          font=("Arial", 14),
+                                          fg=azul,
+                                          bd=1,
+                                          relief="solid")
+        frame_selecciones_registradas.place(x=920, y=460, width=560, height=400)
+
+        label_total_selecciones = tk.Label(self,
+                                      text=f"Total: {len(lista_selecciones)} selecciones",
+                                      font=("Arial", 10, "bold"))
+        label_total_selecciones.place(x=1320, y=480, width=130, height=30)
+
+        self.boton_volver = tk.Button(self, 
+                                     text= "Regresar al menú principal",
+                                     font= ("Arial Balck", 15, "bold"),
+                                     fg=blanco,
+                                     bg=gris_claro,
+                                     activeforeground=negro,
+                                     activebackground=gris,
+                                     relief="flat",
+                                     bd=5,
+                                     cursor="hand2",
+                                     command=self.volver)
+        self.boton_volver.place(x=1200, y=20, width=300, height=40)
+
+        style = ttk.Style()
+        style.theme_use("default")
+        style.configure("Treeview",
+                        background= "#D3D3D3",
+                        foreground= negro,
+                        rowheight=25,
+                        fieldbackground="#D3D3D3")
+        
+        style.map("Treeview",
+                   background= [("selected", azul_seleccion)])
+        
+        self.tree_frame = tk.Frame(self,
+                                   bd=1,
+                                   relief="flat")
+        self.tree_frame.place(x=280, y=510, width=530, height=330) 
+
+        tree_scroll = tk.Scrollbar(self.tree_frame)
+        tree_scroll.pack(side="right", fill="y")
+        
+        self.tree_view = ttk.Treeview(self.tree_frame, yscrollcommand=tree_scroll.set, selectmode="extended")
+        self.tree_view.pack()
+
+        tree_scroll.config(command=self.tree_view.yview)
+
+        self.tree_view["columns"] = ("codigo", "nombre", "continente", "ranking")
+
+        self.tree_view.column("#0", width=0, stretch=False)
+        self.tree_view.column("codigo", anchor="center", width=80)
+        self.tree_view.column("nombre", anchor="w", width=180)
+        self.tree_view.column("continente", anchor="w", width=160)
+        self.tree_view.column("ranking", anchor="center", width=100)
+
+        self.tree_view.heading("#0", text="", anchor="w")
+        self.tree_view.heading("codigo", text="Código FIFA", anchor="center")
+        self.tree_view.heading("nombre", text="Nombre", anchor="center")
+        self.tree_view.heading("continente", text="Continente", anchor="center")
+        self.tree_view.heading("ranking", text="Ranking fifa", anchor="center")
+
+        self.tree_view.tag_configure("oddrow", background=blanco)
+        self.tree_view.tag_configure("evenrow", background=celeste)
+
+
+        numero = 0
+
+        for pais in lista_paises:
+            if numero % 2 == 0:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(pais.codigo_fifa, pais.nombre, pais.continente, pais.ranking_fifa), tags=("evenrow",))
+            else:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(pais.codigo_fifa, pais.nombre, pais.continente, pais.ranking_fifa), tags=("oddrow",))
+            numero += 1
+
+        self.tree_view.bind("<ButtonRelease-1>", self.pais_seleccionado)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    def volver(self):
+        self.destroy()
+        self.principal.deiconify()
+
+
     def borrar_codigo(self, event):
         if self.entry_codigo.get() == "Ej: CRC":
             self.entry_codigo.delete(0, "end")
@@ -620,24 +906,241 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         if self.entry_nombre.get() == "":
             self.entry_nombre.insert(0, "Ej: Costa Rica")
 
+    def borrar_codigo_seleccion(self, event):
+        if self.entry_codigo_seleccion.get() == "Ej: CRC":
+            self.entry_codigo_seleccion.delete(0, "end")
+
+    def restaurar_codigo_seleccion(self, event):
+        if self.entry_codigo_seleccion.get() == "":
+            self.entry_codigo_seleccion.insert(0, "Ej: CRC")
+
     def añadir(self):
 
         global lista_paises
-        codigo_fifa = self.entry_codigo.get()
-        nombre = self.entry_nombre.get()
-        continente = self.seleccion.get()
-        ranking_fifa = int(self.spinbox_ranking.get())
+
+        codigo_fifa = self.entry_codigo.get().strip()
+        nombre = self.entry_nombre.get().strip()
+        continente = self.seleccion.get().strip()
+        ranking_fifa = self.spinbox_ranking.get().strip()
+
+
+
+        if codigo_fifa == "Ej: CRC":
+            messagebox.showerror("¡Error!", "Ingrese el código FIFA del país")
+            return 
+        elif nombre == "Ej: Costa Rica":
+            messagebox.showerror("¡Error!", "Ingrese el nombre del país")
+            return 
+        elif continente == "Seleccione un Continente":
+            messagebox.showerror("¡Error!", "Debe seleccionar un continente para el país")
+            return 
+        elif ranking_fifa == "":
+            messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
+            return 
+        elif not len(codigo_fifa) == 3:
+            messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
+            return 
+        
+
+        codigo_fifa = codigo_fifa.upper()
+        continente = continente.title()
+        nombre = nombre.title()  
+        ranking_fifa = int(ranking_fifa)
+
+        for pais in lista_paises:
+            if pais.nombre == nombre:
+                messagebox.showerror("Error", "El el nombre del páis ingresado ya ha sido registrado")
+                return 
+            elif pais.codigo_fifa == codigo_fifa:
+                messagebox.showerror("Error", "El código FIFA ingresado ya le ha sido asignado a un país")
+                return 
+            elif pais.ranking_fifa == ranking_fifa:
+                messagebox.showerror("Error", "El ranking FIFA ingresado ya le ha sido asignado a un país")
+                return
+
+
+        if lista_paises == []:
+
+            archivo = open("paises.txt", "a")
+            linea = (f"{codigo_fifa};{nombre};{continente};{ranking_fifa}")
+            archivo.write(linea)
+            archivo.close()
+
+            nuevo_pais = Pais(codigo_fifa, nombre, continente, ranking_fifa)
+            lista_paises += [nuevo_pais]
+
+
+            numero = len(lista_paises)
+
+            if numero % 2 == 0:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
+            else:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("oddrow",))
+
+            
+            messagebox.showinfo(None, "País registrado correctamente")
+
+            self.entry_codigo.delete(0, "end")
+            self.entry_nombre.delete(0, "end")
+            self.combobox_continente.delete(0, "end")
+            self.spinbox_ranking.delete(0, "end")
+            
+            self.entry_codigo.insert(0, "Ej: CRC")
+            self.entry_nombre.insert(0, "Ej: Costa Rica")
+            self.combobox_continente.set("Seleccione un Continente")
+            return
+
+            
+        archivo = open("paises.txt", "a")
+        linea = (f"\n{codigo_fifa};{nombre};{continente};{ranking_fifa}")
+        archivo.write(linea)
+        archivo.close()
 
         nuevo_pais = Pais(codigo_fifa, nombre, continente, ranking_fifa)
         lista_paises += [nuevo_pais]
 
+
+        numero = len(lista_paises) - 1
+
+        if numero % 2 == 0:
+            self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
+        else:
+            self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("oddrow",))
+
+        messagebox.showinfo(None, "País registrado correctamente")
+        
+
+        self.entry_codigo.delete(0, "end")
+        self.entry_nombre.delete(0, "end")
+        self.combobox_continente.delete(0, "end")
+        self.spinbox_ranking.delete(0, "end")
+            
+        self.entry_codigo.insert(0, "Ej: CRC")
+        self.entry_nombre.insert(0, "Ej: Costa Rica")
+        self.combobox_continente.set("Seleccione un Continente")
+        
         for pais in lista_paises:
             pais.mostrar_datos()
 
+    def actualizar(self):
+       
+        global lista_paises
 
-    #def actualizar(self):
+        codigo_fifa = self.entry_codigo.get().strip()
+        nombre = self.entry_nombre.get().strip()
+        continente = self.seleccion.get().strip()
+        ranking_fifa = self.spinbox_ranking.get().strip()
 
-    #def limpiar_selecciones(self):
+
+        if codigo_fifa == "Ej: CRC":
+            messagebox.showerror("¡Error!", "Ingrese el código FIFA del país")
+            return 
+        elif nombre == "Ej: Costa Rica":
+            messagebox.showerror("¡Error!", "Ingrese el nombre del país")
+            return 
+        elif continente == "Seleccione un Continente":
+            messagebox.showerror("¡Error!", "Debe seleccionar un continente para el país")
+            return 
+        elif ranking_fifa == "":
+            messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
+            return 
+        elif not len(codigo_fifa) == 3:
+            messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
+            return 
+        
+
+        codigo_fifa = codigo_fifa.upper()
+        continente = continente.title()
+        nombre = nombre.title()  
+        ranking_fifa = int(ranking_fifa)
+
+        archivo_paises = open("paises.txt", "r")
+        contenido_paises = archivo_paises.readlines()
+        archivo_paises.close()
+
+        contenido_paises_dividido = [linea.strip().split(";") for linea in contenido_paises]
+
+        for pais in lista_paises:
+            if pais.nombre == nombre and pais.codigo_fifa == codigo_fifa:
+                pais.actualizar_datos(codigo_fifa, nombre, continente, ranking_fifa)
+                break
+        
+
+        for pais in contenido_paises_dividido:
+            if  pais[0] == codigo_fifa:
+                pais[3] = str(ranking_fifa)
+                break
+
+        archivo_paises_modificar = open("paises.txt", "w")
+
+        for pais in contenido_paises_dividido:
+            linea = f"{pais[0]};{pais[1]};{pais[2]};{pais[3]}\n"
+            archivo_paises_modificar.write(linea)
+
+        archivo_paises_modificar.close()
+
+        selected = self.tree_view.focus()
+
+        self.tree_view.item(selected, text="", values=(codigo_fifa, nombre, continente, ranking_fifa))
+
+        messagebox.showinfo(None, "País actualizado correctamente")
+        self.limpiar_selecciones()
+
+    
+
+
+
+    
+    def limpiar_selecciones(self):
+            
+            self.entry_codigo.config(state="normal")
+            self.entry_nombre.config(state="normal")
+            self.boton_guardar.config(state="disabled")
+            self.boton_añadir_pais.config(state="normal")
+            self.combobox_continente.config(state="readonly")
+            
+            self.entry_codigo.delete(0, "end")
+            self.entry_nombre.delete(0, "end")
+            self.combobox_continente.delete(0, "end")
+            self.spinbox_ranking.delete(0, "end")
+            
+            self.entry_codigo.insert(0, "Ej: CRC")
+            self.entry_nombre.insert(0, "Ej: Costa Rica")
+            self.combobox_continente.set("Seleccione un Continente")
+
+
+
+    def pais_seleccionado(self, e=None):  
+
+        self.entry_codigo.config(state="normal")
+        self.entry_nombre.config(state="normal")  
+            
+        self.entry_codigo.delete(0, "end")
+        self.entry_nombre.delete(0, "end")
+        self.combobox_continente.delete(0, "end")
+        self.spinbox_ranking.delete(0, "end")
+    
+        selected = self.tree_view.focus()
+    
+        values = self.tree_view.item(selected, "values")
+        if not values or len(values) < 4:
+            return 
+    
+        self.entry_codigo.insert(0, values[0])
+        self.entry_nombre.insert(0, values[1])
+        self.combobox_continente.set(values[2])
+        self.spinbox_ranking.insert(0, values[3])
+
+        self.entry_codigo.config(state="disabled")
+        self.entry_nombre.config(state="disabled")
+        self.boton_guardar.config(state="active")
+        self.boton_añadir_pais.config(state="disabled")
+        self.combobox_continente.config(state="disabled")
+
+
+
+
+    
 
 
 class Administrar_Entrenadores_Jugadores(tk.Toplevel):
@@ -646,6 +1149,128 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         tk.Toplevel.__init__(self)
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
+        self.title("Administración de Entrenadores y Jugadores")
+
+        self.frames()
+
+
+    def frames(self):
+
+        self.frame_grande = tk.Frame(self,
+                                     bd=1,
+                                     relief="solid")
+        self.frame_grande.place(x=10, y=10, width=1515, height=830)
+
+
+
+        self.frame_registrar_entrenadores = tk.Frame(self, 
+                                                     bd=1, 
+                                                     relief="solid")
+        self.frame_registrar_entrenadores.place(x=30, y=20, width=550, height=400)
+
+        label_titulo_registrar = tk.Label(self, 
+                                          text="📋 Registrar / Editar Entrenador",
+                                          font=("arial", 12, "bold"),
+                                          anchor="w")
+        label_titulo_registrar.place(x=35, y=40, width=400, height=30)
+
+        label_personales_entrenador = tk.Label(self,
+                                               text="Datos Personales del Entrenador",
+                                               font=("arial", 10, "bold"),
+                                               anchor="w")
+        label_personales_entrenador.place(x=40, y=80, width=300, height=30)
+
+        label_nombre_entrenador = tk.Label(self,
+                                           text="Nombre:",
+                                           font=("arial", 10, "bold"),
+                                           anchor="w")
+        label_nombre_entrenador.place(x=50, y=120, width=150, height=30)
+
+        label_apellidos_entrenador = tk.Label(self, 
+                                              text="Apellidos:",
+                                              font=("arial", 10, "bold"),
+                                              anchor="w")
+        label_apellidos_entrenador.place(x=50, y=160, width=150, height=30)
+
+        label_nacionalidad_entrenador = tk.Label(self,
+                                                 text="Nacionalidad:",
+                                                 font=("arial", 10, "bold"),
+                                                 anchor="w")
+        label_nacionalidad_entrenador.place(x=50, y=200, width=150, height=30)
+
+        label_fecha_entrenador = tk.Label(self,
+                                          text="Fecha de Nacimiento:",
+                                          font=("arial", 10, "bold"),
+                                          anchor="w")
+        label_fecha_entrenador.place(x=50, y=240, width=200, height=30)
+                                          
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        self.frame_asignar_seleccion = tk.Frame(self,
+                                                bd=1,
+                                                relief="solid")
+        self.frame_asignar_seleccion.place(x=590, y=20, width=350, height=400)
+
+        self.frame_entrenadores = tk.Frame(self,
+                                           bd=1,
+                                           relief="solid")
+        self.frame_entrenadores.place(x=950, y=20, width=560, height=400)
+
+        self.frame_registrar_jugadores = tk.Frame(self,
+                                                  bd=1,
+                                                  relief="solid")
+        self.frame_registrar_jugadores.place(x=30, y=430, width=750, height=400)
+
+        self.frame_seleccion = tk.Frame(self,
+                                        bd=1,
+                                        relief="solid")
+        self.frame_seleccion.place(x=790, y=430, width=200, height=400)
+
+        self.frame_jugadores = tk.Frame(self,
+                                        bd=1,
+                                        relief="solid")
+        self.frame_jugadores.place(x=1000, y=430, width=510, height=400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class Configuracion_Mundial(tk.Toplevel):
@@ -654,7 +1279,6 @@ class Configuracion_Mundial(tk.Toplevel):
         tk.Toplevel.__init__(self)
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
-
 
 ###JuSTIN
 """
@@ -928,8 +1552,7 @@ class Jugar_Mundial(tk.Toplevel):
                                  bg=celeste,
                                  fg=negro,
                                  bd=2,
-                                 relief="raised",
-                                 command=self.volver_inicio)
+                                 relief="raised")
         boton_volver.place(x=25, y=160, width=280, height=30)
 
     """
@@ -992,6 +1615,7 @@ class Jugar_Mundial(tk.Toplevel):
         self.tabla_posiciones.heading("gc", text="GC")
         self.tabla_posiciones.heading("dg", text="DG")
 
+
         self.tabla_posiciones.column("equipo", width=260)
         self.tabla_posiciones.column("pts", width=70)
         self.tabla_posiciones.column("gf", width=70)
@@ -1016,7 +1640,6 @@ class Jugar_Mundial(tk.Toplevel):
                                       bd=2,
                                       relief="solid")
         frame_campeon.place(x=980, y=575, width=520, height=160)
-
         imagen_trofeo = Image.open("trofeo.jpg")
         imagen_trofeo = imagen_trofeo.resize((100, 100))
 
@@ -1029,6 +1652,7 @@ class Jugar_Mundial(tk.Toplevel):
 
         self.label_campeon = tk.Label(frame_campeon,
                                       text="Sin definir",
+                                      
                                       font=("Arial", 27, "bold"),
                                       bg="#FFF4C2",
                                       fg=azul_oscuro)
@@ -1065,7 +1689,6 @@ class Jugar_Mundial(tk.Toplevel):
                                  bg=blanco,
                                  highlightthickness=0)
         canvas_llave.place(x=10, y=10, width=370, height=385)
-
         canvas_llave.create_text(50, 20, text="Octavos", font=("Arial", 10, "bold"))
         canvas_llave.create_text(145, 20, text="Cuartos", font=("Arial", 10, "bold"))
         canvas_llave.create_text(240, 20, text="Semifinal", font=("Arial", 10, "bold"))
@@ -1109,24 +1732,11 @@ class Jugar_Mundial(tk.Toplevel):
             y = y + 152
             contador = contador + 1
 
-        canvas_llave.create_line(295, 118, 315, 118, fill=azul)
-        canvas_llave.create_line(295, 270, 315, 270, fill=azul)
-        canvas_llave.create_line(315, 118, 315, 270, fill=azul)
-        canvas_llave.create_line(315, 194, 330, 194, fill=azul)
 
-        canvas_llave.create_rectangle(330, 165, 365, 225, outline=azul)
-        canvas_llave.create_text(347, 185, text="Final", font=("Arial", 8, "bold"))
-        canvas_llave.create_text(347, 205, text="Ganador", font=("Arial", 7))
 
-    """
-    Nombre: volver_inicio
-    Entrada: no recibe parámetros
-    Salida: muestra nuevamente la pantalla principal y cierra la ventana Jugar Mundial
-    Restricciones: la pantalla principal debe estar oculta con withdraw
-    """
-    def volver_inicio(self):
-        self.master.deiconify()
-        self.destroy()
+
+
+    
 
 
 class Estadisticas(tk.Toplevel):
@@ -1138,7 +1748,14 @@ class Estadisticas(tk.Toplevel):
         self.resizable(False, False)
 
 
+
+
 if __name__ == "__main__":
     app = Pantalla_Principal()
     app.mainloop()
+
+    
+    
+
+
 
