@@ -2200,4 +2200,8 @@ class Estadisticas(tk.Toplevel):
                                    bg=blanco,
                                    fg=gris)
         label_jugadores.place(x=20, y=78, width=260, height=25)
+    
 
+if __name__ == "__main__":
+    app = Pantalla_Principal()
+    app.mainloop()
