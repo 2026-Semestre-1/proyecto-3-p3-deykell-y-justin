@@ -7,6 +7,8 @@ from tkinter import ttk, messagebox
 
 from PIL import ImageTk, Image
 
+import random
+
 #--- colores ---#
 azul = "#0E1DC4"
 blanco = "#FFFFFF"
@@ -456,7 +458,7 @@ class Pantalla_Principal(tk.Tk):
     def estadísticas(self):
 
         self.withdraw()
-        Estadisticas()
+        Estadisticas(self)
 
     
         
@@ -1762,52 +1764,10 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
                                            bg=verde,
                                            anchor="center")
         self.boton_ver_jugadoress.place(x=655, y=760, width=270, height=40)
-
-
-
-
-
-
-
-
-
-
-
-
         self.frame_jugadores = tk.Frame(self,
                                         bd=1,
                                         relief="solid")
         self.frame_jugadores.place(x=950, y=430, width=560, height=400)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2279,12 +2239,539 @@ class Jugar_Mundial(tk.Toplevel):
 
 class Estadisticas(tk.Toplevel):
 
-    def __init__(self):
-        tk.Toplevel.__init__(self)
+    """
+    Nombre: Estadisticas
+    Entrada: principal
+    Salida: crea la ventana de estadísticas y ranking
+    Restricciones: principal debe ser la pantalla principal
+    """
+    def __init__(self, principal):
+        tk.Toplevel.__init__(self, principal)
+
+        self.principal = principal
 
         self.geometry("1535x930+-7+-0")
+        self.title("Estadísticas / Ranking")
         self.resizable(False, False)
+        self.config(bg=blanco)
 
+        self.encabezado()
+        self.resumen_general()
+        self.ranking_paises()
+        self.ranking_jugadores()
+        self.estadisticas_selecciones()
+        self.botones()
+        self.actualizar_estadisticas()
+
+
+    """
+    Nombre: contar_lista
+    Entrada: lista
+    Salida: cantidad de elementos de la lista
+    Restricciones:
+    """
+    def contar_lista(self, lista):
+        cantidad = 0
+
+        for elemento in lista:
+            cantidad = cantidad + 1
+
+        return cantidad
+
+
+    """
+    Nombre: encabezado
+    Entrada: no recibe parámetros
+    Salida: crea el título de la ventana
+    Restricciones: usa colores globales
+    """
+    def encabezado(self):
+        frame_titulo = tk.Frame(self,
+                                bg=azul_oscuro)
+        frame_titulo.place(x=0, y=0, width=1535, height=90)
+
+        label_titulo = tk.Label(frame_titulo,
+                                text="Estadísticas / Ranking",
+                                font=("Arial", 30, "bold"),
+                                bg=azul_oscuro,
+                                fg=blanco,
+                                anchor="w")
+        label_titulo.place(x=40, y=15, width=600, height=45)
+
+        label_subtitulo = tk.Label(frame_titulo,
+                                   text="Resumen general de países, selecciones, entrenadores y jugadores",
+                                   font=("Arial", 13, "bold"),
+                                   bg=azul_oscuro,
+                                   fg=celeste,
+                                   anchor="w")
+        label_subtitulo.place(x=45, y=58, width=800, height=25)
+
+
+    """
+    Nombre: resumen_general
+    Entrada: no recibe parámetros
+    Salida: crea tarjetas de resumen
+    Restricciones: usa listas globales
+    """
+    def resumen_general(self):
+        frame_paises = tk.LabelFrame(self,
+                                     text=" Países ",
+                                     font=("Arial", 13, "bold"),
+                                     fg=azul_oscuro,
+                                     bg=blanco,
+                                     bd=2,
+                                     relief="solid")
+        frame_paises.place(x=40, y=120, width=320, height=120)
+
+        self.label_total_paises = tk.Label(frame_paises,
+                                           text=0,
+                                           font=("Arial", 35, "bold"),
+                                           bg=blanco,
+                                           fg=azul)
+        self.label_total_paises.place(x=20, y=25, width=260, height=55)
+
+        label_paises = tk.Label(frame_paises,
+                                text="registrados",
+                                font=("Arial", 13),
+                                bg=blanco,
+                                fg=gris)
+        label_paises.place(x=20, y=78, width=260, height=25)
+
+
+        frame_selecciones = tk.LabelFrame(self,
+                                          text=" Selecciones ",
+                                          font=("Arial", 13, "bold"),
+                                          fg=azul_oscuro,
+                                          bg=blanco,
+                                          bd=2,
+                                          relief="solid")
+        frame_selecciones.place(x=400, y=120, width=320, height=120)
+
+        self.label_total_selecciones = tk.Label(frame_selecciones,
+                                                text=0,
+                                                font=("Arial", 35, "bold"),
+                                                bg=blanco,
+                                                fg=verde)
+        self.label_total_selecciones.place(x=20, y=25, width=260, height=55)
+
+        label_selecciones = tk.Label(frame_selecciones,
+                                     text="registradas",
+                                     font=("Arial", 13),
+                                     bg=blanco,
+                                     fg=gris)
+        label_selecciones.place(x=20, y=78, width=260, height=25)
+
+
+        frame_entrenadores = tk.LabelFrame(self,
+                                           text=" Entrenadores ",
+                                           font=("Arial", 13, "bold"),
+                                           fg=azul_oscuro,
+                                           bg=blanco,
+                                           bd=2,
+                                           relief="solid")
+        frame_entrenadores.place(x=760, y=120, width=320, height=120)
+
+        self.label_total_entrenadores = tk.Label(frame_entrenadores,
+                                                 text=0,
+                                                 font=("Arial", 35, "bold"),
+                                                 bg=blanco,
+                                                 fg=anaranjado)
+        self.label_total_entrenadores.place(x=20, y=25, width=260, height=55)
+
+        label_entrenadores = tk.Label(frame_entrenadores,
+                                      text="registrados",
+                                      font=("Arial", 13),
+                                      bg=blanco,
+                                      fg=gris)
+        label_entrenadores.place(x=20, y=78, width=260, height=25)
+
+
+        frame_jugadores = tk.LabelFrame(self,
+                                        text=" Jugadores ",
+                                        font=("Arial", 13, "bold"),
+                                        fg=azul_oscuro,
+                                        bg=blanco,
+                                        bd=2,
+                                        relief="solid")
+        frame_jugadores.place(x=1120, y=120, width=320, height=120)
+
+        self.label_total_jugadores = tk.Label(frame_jugadores,
+                                              text=0,
+                                              font=("Arial", 35, "bold"),
+                                              bg=blanco,
+                                              fg=rojo)
+        self.label_total_jugadores.place(x=20, y=25, width=260, height=55)
+
+        label_jugadores = tk.Label(frame_jugadores,
+                                   text="registrados",
+                                   font=("Arial", 13),
+                                   bg=blanco,
+                                   fg=gris)
+        label_jugadores.place(x=20, y=78, width=260, height=25)
+
+
+    """
+    Nombre: ranking_paises
+    Entrada: no recibe parámetros
+    Salida: crea tabla del ranking FIFA de países
+    Restricciones: usa lista_paises
+    """
+    def ranking_paises(self):
+        frame_ranking_paises = tk.LabelFrame(self,
+                                             text=" Ranking FIFA de Países ",
+                                             font=("Arial", 14, "bold"),
+                                             fg=azul_oscuro,
+                                             bg=blanco,
+                                             bd=1,
+                                             relief="solid")
+        frame_ranking_paises.place(x=40, y=270, width=700, height=280)
+
+        self.tabla_paises = ttk.Treeview(frame_ranking_paises,
+                                         columns=("posicion", "codigo", "pais", "continente", "ranking"),
+                                         show="headings",
+                                         height=8)
+
+        self.tabla_paises.heading("posicion", text="#")
+        self.tabla_paises.heading("codigo", text="Código")
+        self.tabla_paises.heading("pais", text="País")
+        self.tabla_paises.heading("continente", text="Continente")
+        self.tabla_paises.heading("ranking", text="Ranking")
+
+        self.tabla_paises.column("posicion", width=50, anchor="center")
+        self.tabla_paises.column("codigo", width=90, anchor="center")
+        self.tabla_paises.column("pais", width=220, anchor="w")
+        self.tabla_paises.column("continente", width=180, anchor="w")
+        self.tabla_paises.column("ranking", width=100, anchor="center")
+
+        self.tabla_paises.place(x=20, y=25, width=650, height=220)
+
+
+    """
+    Nombre: ranking_jugadores
+    Entrada: no recibe parámetros
+    Salida: crea tabla del ranking de jugadores
+    Restricciones: usa lista_jugadores
+    """
+    def ranking_jugadores(self):
+        frame_ranking_jugadores = tk.LabelFrame(self,
+                                                text=" Ranking de Jugadores ",
+                                                font=("Arial", 14, "bold"),
+                                                fg=azul_oscuro,
+                                                bg=blanco,
+                                                bd=1,
+                                                relief="solid")
+        frame_ranking_jugadores.place(x=780, y=270, width=700, height=280)
+
+        self.tabla_jugadores = ttk.Treeview(frame_ranking_jugadores,
+                                            columns=("posicion", "jugador", "posicion_juego", "goles", "asistencias", "puntaje"),
+                                            show="headings",
+                                            height=8)
+
+        self.tabla_jugadores.heading("posicion", text="#")
+        self.tabla_jugadores.heading("jugador", text="Jugador")
+        self.tabla_jugadores.heading("posicion_juego", text="Posición")
+        self.tabla_jugadores.heading("goles", text="Goles")
+        self.tabla_jugadores.heading("asistencias", text="Asist.")
+        self.tabla_jugadores.heading("puntaje", text="Puntaje")
+
+        self.tabla_jugadores.column("posicion", width=50, anchor="center")
+        self.tabla_jugadores.column("jugador", width=230, anchor="w")
+        self.tabla_jugadores.column("posicion_juego", width=130, anchor="center")
+        self.tabla_jugadores.column("goles", width=80, anchor="center")
+        self.tabla_jugadores.column("asistencias", width=80, anchor="center")
+        self.tabla_jugadores.column("puntaje", width=90, anchor="center")
+
+        self.tabla_jugadores.place(x=20, y=25, width=650, height=220)
+
+
+    """
+    Nombre: estadisticas_selecciones
+    Entrada: no recibe parámetros
+    Salida: crea tabla de estadísticas de selecciones
+    Restricciones: usa lista_selecciones
+    """
+    def estadisticas_selecciones(self):
+        frame_selecciones = tk.LabelFrame(self,
+                                          text=" Estadísticas de Selecciones ",
+                                          font=("Arial", 14, "bold"),
+                                          fg=azul_oscuro,
+                                          bg=blanco,
+                                          bd=1,
+                                          relief="solid")
+        frame_selecciones.place(x=40, y=580, width=1440, height=250)
+
+        self.tabla_selecciones = ttk.Treeview(frame_selecciones,
+                                              columns=("codigo", "pais", "gf", "gc", "amarillas", "rojas", "fuerza"),
+                                              show="headings",
+                                              height=7)
+
+        self.tabla_selecciones.heading("codigo", text="Código")
+        self.tabla_selecciones.heading("pais", text="País")
+        self.tabla_selecciones.heading("gf", text="Goles Favor")
+        self.tabla_selecciones.heading("gc", text="Goles Contra")
+        self.tabla_selecciones.heading("amarillas", text="Amarillas")
+        self.tabla_selecciones.heading("rojas", text="Rojas")
+        self.tabla_selecciones.heading("fuerza", text="Fuerza")
+
+        self.tabla_selecciones.column("codigo", width=100, anchor="center")
+        self.tabla_selecciones.column("pais", width=300, anchor="w")
+        self.tabla_selecciones.column("gf", width=140, anchor="center")
+        self.tabla_selecciones.column("gc", width=140, anchor="center")
+        self.tabla_selecciones.column("amarillas", width=140, anchor="center")
+        self.tabla_selecciones.column("rojas", width=140, anchor="center")
+        self.tabla_selecciones.column("fuerza", width=140, anchor="center")
+
+        self.tabla_selecciones.place(x=20, y=25, width=1390, height=180)
+
+
+    """
+    Nombre: botones
+    Entrada: no recibe parámetros
+    Salida: crea botones de actualizar y volver
+    Restricciones: principal debe existir
+    """
+    def botones(self):
+        boton_actualizar = tk.Button(self,
+                                     text="Actualizar Estadísticas",
+                                     font=("Arial", 14, "bold"),
+                                     bg=verde,
+                                     fg=blanco,
+                                     bd=2,
+                                     relief="raised",
+                                     command=self.actualizar_estadisticas)
+        boton_actualizar.place(x=990, y=855, width=250, height=45)
+
+        boton_volver = tk.Button(self,
+                                 text="Regresar al menú principal",
+                                 font=("Arial", 14, "bold"),
+                                 bg=gris_claro,
+                                 fg=negro,
+                                 bd=2,
+                                 relief="raised",
+                                 command=self.volver)
+        boton_volver.place(x=1260, y=855, width=250, height=45)
+
+
+    """
+    Nombre: limpiar_tabla
+    Entrada: tabla
+    Salida: elimina todas las filas de una tabla
+    Restricciones: tabla debe ser Treeview
+    """
+    def limpiar_tabla(self, tabla):
+        filas = tabla.get_children()
+
+        for fila in filas:
+            tabla.delete(fila)
+
+
+    """
+    Nombre: ordenar_paises
+    Entrada: no recibe parámetros
+    Salida: retorna países ordenados por ranking FIFA
+    Restricciones: menor ranking significa mejor posición
+    """
+    def ordenar_paises(self):
+        paises_ordenados = []
+
+        for pais in lista_paises:
+            paises_ordenados += [pais]
+
+        cantidad = self.contar_lista(paises_ordenados)
+
+        i = 0
+
+        while i < cantidad - 1:
+            j = i + 1
+
+            while j < cantidad:
+                if paises_ordenados[j].ranking_fifa < paises_ordenados[i].ranking_fifa:
+                    temporal = paises_ordenados[i]
+                    paises_ordenados[i] = paises_ordenados[j]
+                    paises_ordenados[j] = temporal
+
+                j = j + 1
+
+            i = i + 1
+
+        return paises_ordenados
+
+
+    """
+    Nombre: ordenar_jugadores
+    Entrada: no recibe parámetros
+    Salida: retorna jugadores ordenados por goles, asistencias y puntaje
+    Restricciones: mayor cantidad queda primero
+    """
+    def ordenar_jugadores(self):
+        jugadores_ordenados = []
+
+        for jugador in lista_jugadores:
+            jugadores_ordenados += [jugador]
+
+        cantidad = self.contar_lista(jugadores_ordenados)
+
+        i = 0
+
+        while i < cantidad - 1:
+            j = i + 1
+
+            while j < cantidad:
+                cambiar = False
+
+                if jugadores_ordenados[j].goles > jugadores_ordenados[i].goles:
+                    cambiar = True
+
+                elif jugadores_ordenados[j].goles == jugadores_ordenados[i].goles and jugadores_ordenados[j].asistencias > jugadores_ordenados[i].asistencias:
+                    cambiar = True
+
+                elif jugadores_ordenados[j].goles == jugadores_ordenados[i].goles and jugadores_ordenados[j].asistencias == jugadores_ordenados[i].asistencias and jugadores_ordenados[j].puntaje_individual > jugadores_ordenados[i].puntaje_individual:
+                    cambiar = True
+
+                if cambiar == True:
+                    temporal = jugadores_ordenados[i]
+                    jugadores_ordenados[i] = jugadores_ordenados[j]
+                    jugadores_ordenados[j] = temporal
+
+                j = j + 1
+
+            i = i + 1
+
+        return jugadores_ordenados
+
+
+    """
+    Nombre: ordenar_selecciones
+    Entrada: no recibe parámetros
+    Salida: retorna selecciones ordenadas por goles a favor
+    Restricciones: mayor cantidad queda primero
+    """
+    def ordenar_selecciones(self):
+        selecciones_ordenadas = []
+
+        for seleccion in lista_selecciones:
+            selecciones_ordenadas += [seleccion]
+
+        cantidad = self.contar_lista(selecciones_ordenadas)
+
+        i = 0
+
+        while i < cantidad - 1:
+            j = i + 1
+
+            while j < cantidad:
+                if selecciones_ordenadas[j].total_goles_a_favor > selecciones_ordenadas[i].total_goles_a_favor:
+                    temporal = selecciones_ordenadas[i]
+                    selecciones_ordenadas[i] = selecciones_ordenadas[j]
+                    selecciones_ordenadas[j] = temporal
+
+                j = j + 1
+
+            i = i + 1
+
+        return selecciones_ordenadas
+
+
+    """
+    Nombre: cargar_paises
+    Entrada: no recibe parámetros
+    Salida: carga países en la tabla de ranking
+    Restricciones: usa lista_paises
+    """
+    def cargar_paises(self):
+        paises_ordenados = self.ordenar_paises()
+
+        contador = 0
+
+        for pais in paises_ordenados:
+            self.tabla_paises.insert("",
+                                     "end",
+                                     values=(contador + 1,
+                                             pais.codigo_fifa,
+                                             pais.nombre,
+                                             pais.continente,
+                                             pais.ranking_fifa))
+
+            contador = contador + 1
+
+
+    """
+    Nombre: cargar_jugadores
+    Entrada: no recibe parámetros
+    Salida: carga jugadores en la tabla de ranking
+    Restricciones: usa lista_jugadores
+    """
+    def cargar_jugadores(self):
+        jugadores_ordenados = self.ordenar_jugadores()
+
+        contador = 0
+
+        for jugador in jugadores_ordenados:
+            nombre_completo = jugador.nombre + " " + jugador.apellido
+
+            self.tabla_jugadores.insert("",
+                                        "end",
+                                        values=(contador + 1,
+                                                nombre_completo,
+                                                jugador.posicion,
+                                                jugador.goles,
+                                                jugador.asistencias,
+                                                jugador.puntaje_individual))
+
+            contador = contador + 1
+
+
+    """
+    Nombre: cargar_selecciones
+    Entrada: no recibe parámetros
+    Salida: carga selecciones en la tabla de estadísticas
+    Restricciones: usa lista_selecciones
+    """
+    def cargar_selecciones(self):
+        selecciones_ordenadas = self.ordenar_selecciones()
+
+        for seleccion in selecciones_ordenadas:
+            self.tabla_selecciones.insert("",
+                                          "end",
+                                          values=(seleccion.codigo_equipo,
+                                                  seleccion.pais.nombre,
+                                                  seleccion.total_goles_a_favor,
+                                                  seleccion.total_goles_en_contra,
+                                                  seleccion.total_tarjetas_amarillas,
+                                                  seleccion.total_tarjetas_rojas,
+                                                  seleccion.fuerza_equipo))
+
+
+    """
+    Nombre: actualizar_estadisticas
+    Entrada: no recibe parámetros
+    Salida: actualiza totales y tablas
+    Restricciones: las listas globales deben existir
+    """
+    def actualizar_estadisticas(self):
+        self.label_total_paises.config(text=self.contar_lista(lista_paises))
+        self.label_total_selecciones.config(text=self.contar_lista(lista_selecciones))
+        self.label_total_entrenadores.config(text=self.contar_lista(lista_entrenadores))
+        self.label_total_jugadores.config(text=self.contar_lista(lista_jugadores))
+
+        self.limpiar_tabla(self.tabla_paises)
+        self.limpiar_tabla(self.tabla_jugadores)
+        self.limpiar_tabla(self.tabla_selecciones)
+
+        self.cargar_paises()
+        self.cargar_jugadores()
+        self.cargar_selecciones()
+
+
+    """
+    Nombre: volver
+    Entrada: no recibe parámetros
+    Salida: cierra estadísticas y vuelve al menú principal
+    Restricciones: principal debe existir
+    """
+    def volver(self):
+        self.destroy()
+        self.principal.deiconify()
 
 
 
@@ -2294,6 +2781,5 @@ if __name__ == "__main__":
 
     
     
-
 
 
