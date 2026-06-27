@@ -2200,6 +2200,40 @@ class Estadisticas(tk.Toplevel):
                                    bg=blanco,
                                    fg=gris)
         label_jugadores.place(x=20, y=78, width=260, height=25)
+    """
+    Nombre: tabla_ranking_paises
+    Entrada: no recibe parámetros
+    Salida: crea tabla para países
+    Restricciones: usa lista_paises
+    """
+    def tabla_ranking_paises(self):
+        frame_paises = tk.LabelFrame(self,
+                                     text=" Ranking FIFA de Países ",
+                                     font=("Arial", 14, "bold"),
+                                     fg=azul_oscuro,
+                                     bg=blanco,
+                                     bd=1,
+                                     relief="solid")
+        frame_paises.place(x=40, y=270, width=700, height=280)
+
+        self.tabla_paises = ttk.Treeview(frame_paises,
+                                         columns=("posicion", "codigo", "pais", "continente", "ranking"),
+                                         show="headings",
+                                         height=8)
+
+        self.tabla_paises.heading("posicion", text="#")
+        self.tabla_paises.heading("codigo", text="Código")
+        self.tabla_paises.heading("pais", text="País")
+        self.tabla_paises.heading("continente", text="Continente")
+        self.tabla_paises.heading("ranking", text="Ranking")
+
+        self.tabla_paises.column("posicion", width=50, anchor="center")
+        self.tabla_paises.column("codigo", width=90, anchor="center")
+        self.tabla_paises.column("pais", width=220, anchor="w")
+        self.tabla_paises.column("continente", width=180, anchor="w")
+        self.tabla_paises.column("ranking", width=100, anchor="center")
+
+        self.tabla_paises.place(x=20, y=25, width=650, height=220)
     
 
 if __name__ == "__main__":
