@@ -2234,6 +2234,21 @@ class Estadisticas(tk.Toplevel):
         self.tabla_paises.column("ranking", width=100, anchor="center")
 
         self.tabla_paises.place(x=20, y=25, width=650, height=220)
+    """
+    Nombre: tabla_ranking_jugadores
+    Entrada: no recibe parámetros
+    Salida: crea tabla de jugadores
+    Restricciones: usa lista_jugadores
+    """
+    def tabla_ranking_jugadores(self):
+        frame_jugadores = tk.LabelFrame(self,
+                                        text=" Ranking de Jugadores ",
+                                        font=("Arial", 14, "bold"),
+                                        fg=azul_oscuro,
+                                        bg=blanco,
+                                        bd=1,
+                                        relief="solid")
+        frame_jugadores.place(x=780, y=270, width=700, height=280)
     
 
 if __name__ == "__main__":
