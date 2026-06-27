@@ -4,8 +4,8 @@
 
 import tkinter as tk
 from tkinter import ttk, messagebox
-from PIL import ImageTk, Image
 
+from PIL import ImageTk, Image
 
 #--- colores ---#
 azul = "#0E1DC4"
@@ -30,99 +30,43 @@ lista_jugadores = []
 lista_entrenadores = []
 
 
-def contar(elementos):
-    cantidad = 0
-
-    for elemento in elementos:
-        cantidad = cantidad + 1
-
-    return cantidad
-
-
-def tiene_tres_caracteres(texto):
-    cantidad = 0
-
-    for caracter in texto:
-        cantidad = cantidad + 1
-
-    if cantidad == 3:
-        return True
-    else:
-        return False
-
-
-def buscar_pais(dato_pais):
-    for pais in lista_paises:
-        if pais.nombre == dato_pais or pais.codigo_fifa == dato_pais:
-            return pais
-
-    return 0
-
-
-def buscar_entrenador(dato_entrenador):
-    for entrenador in lista_entrenadores:
-        nombre_completo = entrenador.nombre + " " + entrenador.apellido
-
-        if entrenador.nombre == dato_entrenador or nombre_completo == dato_entrenador:
-            return entrenador
-
-    return 0
 
 
 class Pais:
 
-    """
-    Nombre: Pais
-    Entrada: codigo_fifa, nombre, continente, ranking_fifa
-    Salida: crea un país
-    Restricciones: codigo_fifa, nombre y continente deben ser texto; ranking_fifa debe ser entero
-    """
     def __init__(self, codigo_fifa, nombre, continente, ranking_fifa):
 
         if not (isinstance(codigo_fifa, str) and isinstance(nombre, str) and isinstance(continente, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return 
         elif not isinstance(ranking_fifa, int):
-            print("Error: el ranking fifa debe ser entero")
+            print( "Error: el parámetro debe ser int")
             return 
         elif not 1 <= ranking_fifa <= 100:
             print("Error: el ranking fifa debe estar entre 1 y 100")
             return
         elif nombre == "" or continente == "" or codigo_fifa == "":
             print("Error: los parámetros no pueden estar vacíos")
-            return
 
         self.codigo_fifa = codigo_fifa
         self.nombre = nombre
         self.continente = continente
         self.ranking_fifa = ranking_fifa
 
-    """
-    Nombre: mostrar_datos
-    Entrada: no recibe parámetros
-    Salida: muestra los datos del país
-    Restricciones: el país debe estar creado
-    """
     def mostrar_datos(self):
-        print("Código FIFA del País:", self.codigo_fifa)
-        print("Nombre del País:", self.nombre)
-        print("Continente:", self.continente)
-        print("Ranking FIFA:", self.ranking_fifa)
+        print("Código FIFA del País: " + self.codigo_fifa)
+        print("Nombre del País: " + self.nombre)
+        print("Continente: " + self.continente)
+        print("Ranking FIFA: " + str(self.ranking_fifa))
         print("")
 
-    """
-    Nombre: actualizar_datos
-    Entrada: codigo_fifa, nombre, continente, ranking_fifa
-    Salida: actualiza los datos del país
-    Restricciones: ranking_fifa debe ser entero
-    """
     def actualizar_datos(self, codigo_fifa, nombre, continente, ranking_fifa):
 
         if not (isinstance(codigo_fifa, str) and isinstance(nombre, str) and isinstance(continente, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return 
         elif not isinstance(ranking_fifa, int):
-            print("Error: el ranking fifa debe ser entero")
+            print( "Error: el parámetro debe ser int")
             return
         
         self.codigo_fifa = codigo_fifa
@@ -130,18 +74,16 @@ class Pais:
         self.continente = continente
         self.ranking_fifa = ranking_fifa
 
+    
+        
+
+    
 
 class Persona:
 
-    """
-    Nombre: Persona
-    Entrada: nombre, apellido, fecha_nacimiento, nacionalidad
-    Salida: crea una persona
-    Restricciones: todos los datos deben ser texto
-    """
     def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad):
         if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return
 
         self.nombre = nombre
@@ -149,71 +91,47 @@ class Persona:
         self.fecha_nacimiento = fecha_nacimiento
         self.nacionalidad = nacionalidad
 
-    """
-    Nombre: mostrar_datos
-    Entrada: no recibe parámetros
-    Salida: muestra los datos de la persona
-    Restricciones: la persona debe estar creada
-    """
     def mostrar_datos(self):
-        print("Nombre:", self.nombre, self.apellido)
-        print("Fecha de Nacimiento:", self.fecha_nacimiento)
-        print("Nacionalidad:", self.nacionalidad)
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
         print("")
 
 
 class Entrenador(Persona):
 
-    """
-    Nombre: Entrenador
-    Entrada: nombre, apellido, fecha_nacimiento, nacionalidad, licencia, experiencia_anios, sistema_juego
-    Salida: crea un entrenador
-    Restricciones: experiencia_anios debe ser entero
-    """
     def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad, licencia, experiencia_anios, sistema_juego):
         Persona.__init__(self, nombre, apellido, fecha_nacimiento, nacionalidad)
 
         if not (isinstance(licencia, str) and isinstance(sistema_juego, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return 
         elif not isinstance(experiencia_anios, int):
-            print("Error: experiencia_anios debe ser entero")
+            print("Error: el parámetro debe ser int")
             return 
 
         self.licencia = licencia
         self.experiencia_anios = experiencia_anios
         self.sistema_juego = sistema_juego
 
-    """
-    Nombre: mostrar_datos
-    Entrada: no recibe parámetros
-    Salida: muestra los datos del entrenador
-    Restricciones: el entrenador debe estar creado
-    """
     def mostrar_datos(self):
-        print("Nombre:", self.nombre, self.apellido)
-        print("Fecha de Nacimiento:", self.fecha_nacimiento)
-        print("Nacionalidad:", self.nacionalidad)
-        print("Licencia:", self.licencia)
-        print("Experiencia:", self.experiencia_anios)
-        print("Sistema de Juego:", self.sistema_juego)
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
+        print("Licencia: " + self.licencia)
+        print("Experiencia: " + str(self.experiencia_anios))
+        print("Sistema de Juego: " + self.sistema_juego)
         print("")
 
-    """
-    Nombre: actualizar_datos
-    Entrada: datos del entrenador
-    Salida: actualiza los datos del entrenador
-    Restricciones: experiencia_anios debe ser entero
-    """
     def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, licencia, experiencia_anios, sistema_juego):
         if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return
         if not (isinstance(licencia, str) and isinstance(sistema_juego, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return 
         elif not isinstance(experiencia_anios, int):
-            print("Error: experiencia_anios debe ser entero")
+            print("Error: el parámetro debe ser int")
             return
 
         self.nombre = nombre
@@ -227,20 +145,14 @@ class Entrenador(Persona):
 
 class Futbolista(Persona):
 
-    """
-    Nombre: Futbolista
-    Entrada: datos personales y deportivos del jugador
-    Salida: crea un futbolista
-    Restricciones: los datos numéricos deben ser enteros
-    """
     def __init__(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
         Persona.__init__(self, nombre, apellido, fecha_nacimiento, nacionalidad)
 
         if not isinstance(posicion, str):
-            print("Error: posicion debe ser texto")
+            print("Error: el parpametro debe ser str")
             return
         elif not (isinstance(dorsal, int) and isinstance(total_tarjetas_amarillas, int) and isinstance(total_tarjetas_rojas, int) and isinstance(goles, int) and isinstance(asistencias, int) and isinstance(puntaje_individual, int)):
-            print("Error: los parámetros deportivos deben ser enteros")
+            print( "Error: los parámetros deben ser int")
             return
 
         self.dorsal = dorsal
@@ -251,40 +163,28 @@ class Futbolista(Persona):
         self.asistencias = asistencias
         self.puntaje_individual = puntaje_individual
 
-    """
-    Nombre: mostrar_datos
-    Entrada: no recibe parámetros
-    Salida: muestra los datos del futbolista
-    Restricciones: el futbolista debe estar creado
-    """
     def mostrar_datos(self):
-        print("Nombre:", self.nombre, self.apellido)
-        print("Fecha de Nacimiento:", self.fecha_nacimiento)
-        print("Nacionalidad:", self.nacionalidad)
-        print("Dorsal:", self.dorsal)
-        print("Posicion:", self.posicion)
-        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
-        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
-        print("Goles:", self.goles)
-        print("Asistencias:", self.asistencias)
-        print("Puntaje Individual:", self.puntaje_individual)
+        print("Nombre: " + self.nombre + " " + self.apellido)
+        print("Fecha de Nacimiento: " + self.fecha_nacimiento)
+        print("Nacionalidad: " + self.nacionalidad)
+        print("Dorsal: " + str(self.dorsal))
+        print("Posicion: " + self.posicion)
+        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
+        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
+        print("Goles: " + str(self.goles))
+        print("Asistencias: " + str(self.asistencias))
+        print("Puntaje Individual: " + str(self.puntaje_individual))
         print("")
 
-    """
-    Nombre: actualizar_datos
-    Entrada: datos personales y deportivos del futbolista
-    Salida: actualiza los datos del futbolista
-    Restricciones: los datos numéricos deben ser enteros
-    """
     def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
         if not (isinstance(nombre, str) and isinstance(apellido, str) and isinstance(fecha_nacimiento, str) and isinstance(nacionalidad, str)):
-            print("Error: los parámetros deben ser texto")
+            print("Error: los parámetros deben ser str")
             return
         if not isinstance(posicion, str):
-            print("Error: posicion debe ser texto")
+            print("Error: el parpametro debe ser str")
             return
         elif not (isinstance(dorsal, int) and isinstance(total_tarjetas_amarillas, int) and isinstance(total_tarjetas_rojas, int) and isinstance(goles, int) and isinstance(asistencias, int) and isinstance(puntaje_individual, int)):
-            print("Error: los parámetros deportivos deben ser enteros")
+            print( "Error: los parámetros deben ser int")
             return
         
         self.nombre = nombre
@@ -299,57 +199,35 @@ class Futbolista(Persona):
         self.asistencias = asistencias
         self.puntaje_individual = puntaje_individual
 
-    """
-    Nombre: registrar_gol
-    Entrada: no recibe parámetros
-    Salida: suma un gol al jugador
-    Restricciones: goles debe ser entero
-    """
     def registrar_gol(self):
-        self.goles = self.goles + 1
+        self.goles += 1
 
-    """
-    Nombre: registrar_asistencia
-    Entrada: no recibe parámetros
-    Salida: suma una asistencia al jugador
-    Restricciones: asistencias debe ser entero
-    """
     def registrar_asistencia(self):
-        self.asistencias = self.asistencias + 1
+        self.asistencias += 1
 
-    """
-    Nombre: registrar_tarjetas
-    Entrada: tipo
-    Salida: suma tarjeta amarilla o roja
-    Restricciones: tipo debe ser texto
-    """
     def registrar_tarjetas(self, tipo):
         if not isinstance(tipo, str):
-            print("Error: el parámetro debe ser texto")
+            print("Error: el parámetro debe ser de tipo str")
             return 
         
         if tipo == "amarilla":
-            self.total_tarjetas_amarillas = self.total_tarjetas_amarillas + 1
+            self.total_tarjetas_amarillas += 1
         elif tipo == "roja":
-            self.total_tarjetas_rojas = self.total_tarjetas_rojas + 1
+            self.total_tarjetas_rojas += 1
         else:
-            return "Error: ingrese el tipo de tarjeta amarilla o roja"
-
+            return "Error: ingrese el tipo de tarjeta (amarilla o roja)"
+        
+        
 
 class Seleccion:
 
-    """
-    Nombre: Seleccion
-    Entrada: codigo_equipo, pais y entrenador
-    Salida: crea una selección
-    Restricciones: codigo_equipo debe ser texto
-    """
     def __init__(self, codigo_equipo, pais, entrenador):
         
         if not isinstance(codigo_equipo, str):
-            print("Error: el parámetro debe ser texto")
+            print("Error: el parámetro debe ser str")
             return
        
+
         self.codigo_equipo = codigo_equipo
         self.total_goles_a_favor = 0
         self.total_goles_en_contra = 0
@@ -360,293 +238,139 @@ class Seleccion:
         self.entrenador = entrenador
         self.jugadores = []
 
-    """
-    Nombre: mostrar_datos
-    Entrada: no recibe parámetros
-    Salida: muestra los datos de la selección
-    Restricciones: la selección debe tener país y entrenador
-    """
     def mostrar_datos(self):
-        print("Código de la Selección:", self.codigo_equipo)
-
-        if self.pais != 0:
-            print("País:", self.pais.nombre)
-
-        if self.entrenador != 0:
-            print("Entrenador:", self.entrenador.nombre)
-
+        print("Código de la Selección: " + self.codigo_equipo)
+        print("País: " + self.pais.nombre)
+        print("Entrenador: " + self.entrenador.nombre)
         print("Jugadores:")
-
         for futbolista in self.jugadores:
-            print("Nombre:", futbolista.nombre, futbolista.apellido)
-            print("Dorsal:", futbolista.dorsal)
+            print("Nombre: " + futbolista.nombre + " " + futbolista.apellido)
+            print("Dorsal: " + str(futbolista.dorsal))
             print("")
-
-        print("Goles a Favor:", self.total_goles_a_favor)
-        print("Goles en Contra:", self.total_goles_en_contra)
-        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
-        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
-        print("Fuerza de equipo:", self.fuerza_equipo)
+        print("Goles a Favor: " + str(self.total_goles_a_favor))
+        print("Goles en Contra: " + str(self.total_goles_en_contra))
+        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
+        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
+        print("Fuerza de equipo: " + str(self.fuerza_equipo))
         print("")
 
-    """
-    Nombre: agregar_jugador
-    Entrada: futbolista
-    Salida: agrega un jugador a la selección
-    Restricciones: máximo 23 jugadores
-    """
     def agregar_jugador(self, futbolista):
 
-        cantidad = contar(self.jugadores)
-
-        if cantidad < 23:
+        if len(self.jugadores) < 23:
             self.jugadores += [futbolista]
         else:
             return "Error: La plantilla ya cuenta con 23 jugadores"
         
-    """
-    Nombre: eliminar_jugador
-    Entrada: dorsal
-    Salida: elimina un jugador según dorsal
-    Restricciones: dorsal debe ser entero
-    """
     def eliminar_jugador(self, dorsal):
         lista_sin_jugador = []
-
         for jugador in self.jugadores:
             if jugador.dorsal != dorsal:
                 lista_sin_jugador += [jugador]
 
         self.jugadores = lista_sin_jugador
 
-    """
-    Nombre: asignar_entrenador
-    Entrada: entrenador
-    Salida: asigna entrenador a la selección
-    Restricciones: entrenador debe existir
-    """
     def asignar_entrenador(self, entrenador):
+
         self.entrenador = entrenador
 
-    """
-    Nombre: registrar_resultado
-    Entrada: goles_favor, goles_contra, amarillas, rojas
-    Salida: actualiza estadísticas de la selección
-    Restricciones: todos los datos deben ser enteros
-    """
-    def registrar_resultado(self, goles_favor, goles_contra, amarillas, rojas):
-        if not (isinstance(goles_favor, int) and isinstance(goles_contra, int) and isinstance(amarillas, int) and isinstance(rojas, int)):
-            print("Error: los datos deben ser enteros")
-            return
-
-        self.total_goles_a_favor = self.total_goles_a_favor + goles_favor
-        self.total_goles_en_contra = self.total_goles_en_contra + goles_contra
-        self.total_tarjetas_amarillas = self.total_tarjetas_amarillas + amarillas
-        self.total_tarjetas_rojas = self.total_tarjetas_rojas + rojas
-
-    """
-    Nombre: calcular_fuerza_equipo
-    Entrada: no recibe parámetros
-    Salida: calcula la fuerza del equipo
-    Restricciones: usa jugadores, entrenador y ranking
-    """
-    def calcular_fuerza_equipo(self):
-        cantidad_jugadores = contar(self.jugadores)
-
-        if cantidad_jugadores == 0:
-            self.fuerza_equipo = 0
-            return self.fuerza_equipo
-
-        suma = 0
-
-        for jugador in self.jugadores:
-            suma = suma + jugador.puntaje_individual
-
-        promedio = suma // cantidad_jugadores
-        fuerza_entrenador = 0
-        fuerza_ranking = 0
-
-        if self.entrenador != 0:
-            fuerza_entrenador = self.entrenador.experiencia_anios
-
-        if self.pais != 0:
-            fuerza_ranking = 101 - self.pais.ranking_fifa
-
-        self.fuerza_equipo = promedio + fuerza_entrenador + fuerza_ranking
-
-        return self.fuerza_equipo
-
+    #def registrar_resultado(self,):
+    #def calcular_fuerza_equipo(self):
 
 class Partido:
 
-    """
-    Nombre: Partido
-    Entrada: id_partido, equipo_1, equipo_2, goles_equipo1, goles_equipo2, fase, fecha
-    Salida: crea un partido
-    Restricciones: fase y fecha deben ser texto; goles deben ser enteros
-    """
     def __init__(self, id_partido, equipo_1, equipo_2, goles_equipo1, goles_equipo2, fase, fecha):
         if not (isinstance(fase, str) and isinstance(fecha, str)):
-            print("Error: los parámetros deben ser texto")
+            print( "Error: los parámetros deben ser str")
             return
         elif not (isinstance(goles_equipo1, int) and isinstance(goles_equipo2, int)):
-            print("Error: los goles deben ser enteros")
+            print("Error: los parámetros deben ser int")
             return
         
         self.id = id_partido
-        self.equipo_1 = equipo_1
-        self.equipo_2 = equipo_2
         self.goles_equipo1 = goles_equipo1
         self.goles_equipo2 = goles_equipo2
         self.fase = fase
-        self.fecha = fecha
-        self.ganador = 0
+        self.fecha = fecha 
+        equipo_1 = Seleccion()
+        equipo_2 = Seleccion()
         
 
 class Grupo:
 
-    """
-    Nombre: Grupo
-    Entrada: nombre_grupo, equipos, partidos
-    Salida: crea un grupo
-    Restricciones: nombre_grupo debe ser texto
-    """
     def __init__(self, nombre_grupo, equipos, partidos):
 
         if not isinstance(nombre_grupo, str):
-            print("Error: el parámetro debe ser texto")
+            print("Error: el parámetro debe ser str")
             return
 
         self.nombre_grupo = nombre_grupo
-        self.equipos = equipos
-        self.partidos = partidos
-
+        self.equipos = []
+        self.partidos = []
 
 class Fase:
 
-    """
-    Nombre: Fase
-    Entrada: nombre_fase, partidos
-    Salida: crea una fase
-    Restricciones: nombre_fase debe ser texto
-    """
     def __init__(self, nombre_fase, partidos):
 
         if not isinstance(nombre_fase, str):
-            print("Error: el parámetro debe ser texto")
+            print("Error: el parámetro debe ser str")
             return 
 
         self.nombre_fase = nombre_fase
-        self.partidos = partidos
+        self.partidos = []
 
 
 class Mundial:
 
-    """
-    Nombre: Mundial
-    Entrada: nombre, anio, paises, selecciones, grupos, fases, campeon
-    Salida: crea un mundial
-    Restricciones: nombre debe ser texto y anio entero
-    """
     def __init__(self, nombre, anio, paises, selecciones, grupos, fases, campeon):
         
         if not isinstance(nombre, str):
-            print("Error: el parámetro debe ser texto")
+            print("Error: el parámetro debe ser str")
             return
         elif not isinstance(anio, int):
-            print("Error: el año debe ser entero")
+            print("Error: el parámetro debe ser int")
             return
 
         self.nombre = nombre
         self.anio = anio
-        self.paises = paises
-        self.selecciones = selecciones
-        self.grupos = grupos
-        self.fases = fases
-        self.campeon = campeon
+        self.paises = []
+        self.selecciones = []
+        self.fases = []
+        self.campeon = Seleccion()
+        
 
+archivo_paises = open("paises.txt", "r")
+contenido_paises = archivo_paises.readlines()
+archivo_paises.close()
 
-def cargar_paises_archivo():
-    global lista_paises
+archivo_selecciones = open("selecciones.txt", "r")
+contenido_selecciones = archivo_selecciones.readlines()
+archivo_selecciones.close()
 
-    archivo_paises = open("paises.txt", "r")
-    contenido_paises = archivo_paises.readlines()
-    archivo_paises.close()
+archivo_entrenadores = open("entrenadores.txt", "r")
+contenido_entrenadores = archivo_entrenadores.readlines()
+archivo_entrenadores.close()
 
-    for linea in contenido_paises:
-        datos = linea.strip().split(";")
+archivo_jugadores = open("jugadores.txt", "r")
+contenido_jugadores = archivo_jugadores.readlines()
+archivo_jugadores.close()
 
-        if contar(datos) == 4:
-            nuevo_pais = Pais(datos[0], datos[1], datos[2], int(datos[3]))
-            lista_paises += [nuevo_pais]
+contenido_paises_dividido = [linea.strip().split(";") for linea in contenido_paises]
 
+for linea in contenido_paises_dividido:
+    nuevo_pais = Pais(linea[0], linea[1], linea[2], int(linea[3]))
+    lista_paises += [nuevo_pais]
 
-def cargar_entrenadores_archivo():
-    global lista_entrenadores
+contenido_selecciones_dividido = [linea.strip().split(";") for linea in contenido_selecciones]
 
-    archivo_entrenadores = open("entrenadores.txt", "r")
-    contenido_entrenadores = archivo_entrenadores.readlines()
-    archivo_entrenadores.close()
-
-    for linea in contenido_entrenadores:
-        datos = linea.strip().split(";")
-
-        if contar(datos) == 7:
-            nuevo_entrenador = Entrenador(datos[0], datos[1], datos[2], datos[3], datos[4], int(datos[5]), datos[6])
-            lista_entrenadores += [nuevo_entrenador]
-
-
-def cargar_jugadores_archivo():
-    global lista_jugadores
-
-    archivo_jugadores = open("jugadores.txt", "r")
-    contenido_jugadores = archivo_jugadores.readlines()
-    archivo_jugadores.close()
-
-    for linea in contenido_jugadores:
-        datos = linea.strip().split(";")
-
-        if contar(datos) == 11:
-            nuevo_jugador = Futbolista(datos[0], datos[1], datos[2], datos[3], int(datos[4]), datos[5], int(datos[6]), int(datos[7]), int(datos[8]), int(datos[9]), int(datos[10]))
-            lista_jugadores += [nuevo_jugador]
-
-
-def cargar_selecciones_archivo():
-    global lista_selecciones
-
-    archivo_selecciones = open("selecciones.txt", "r")
-    contenido_selecciones = archivo_selecciones.readlines()
-    archivo_selecciones.close()
-
-    for linea in contenido_selecciones:
-        datos = linea.strip().split(";")
-
-        if contar(datos) >= 3:
-            pais = buscar_pais(datos[1])
-            entrenador = buscar_entrenador(datos[2])
-            nueva_seleccion = Seleccion(datos[0], pais, entrenador)
-            lista_selecciones += [nueva_seleccion]
-
-
-cargar_paises_archivo()
-cargar_entrenadores_archivo()
-cargar_jugadores_archivo()
-cargar_selecciones_archivo()
-
+contenido_entrenadores_dividido = [linea.strip().split(";") for linea in contenido_entrenadores]
 
 #===== Interfas Gráfica =====#
 
 
 class Pantalla_Principal(tk.Tk):
 
-    """
-    Nombre: Pantalla_Principal
-    Entrada: no recibe parámetros
-    Salida: crea la pantalla principal
-    Restricciones: deben existir las imágenes usadas
-    """
     def __init__(self):
-        tk.Tk.__init__(self)
+        super().__init__()
 
         self.geometry("1535x930+-7+-0")
         self.title("Ventana")
@@ -655,12 +379,7 @@ class Pantalla_Principal(tk.Tk):
         self.fondo()
         self.botones()
 
-    """
-    Nombre: fondo
-    Entrada: no recibe parámetros
-    Salida: coloca imagen de fondo
-    Restricciones: debe existir pantalla_principal.png
-    """
+
     def fondo(self):
 
         imagen_fondo = Image.open("pantalla_principal.png")
@@ -670,12 +389,6 @@ class Pantalla_Principal(tk.Tk):
         label_fondo = tk.Label(self, image=self.fondo)
         label_fondo.place(x=0, y=0, relwidth=1, relheight=1)
 
-    """
-    Nombre: botones
-    Entrada: no recibe parámetros
-    Salida: crea botones principales
-    Restricciones: las clases de ventanas deben existir
-    """
     def botones(self):
 
         self.admin_paises_selecciones = tk.Button(self,
@@ -717,75 +430,40 @@ class Pantalla_Principal(tk.Tk):
                                    activebackground=azul,
                                    relief="raised",
                                    bd=5,
-                                   cursor="hand2")
+                                   cursor="hand2",
+                                )
         self.registrar.place(x=40, y=80, width=400, height=60)
 
-    """
-    Nombre: paises_selecciones
-    Entrada: no recibe parámetros
-    Salida: abre administración de países y selecciones
-    Restricciones: debe existir la ventana correspondiente
-    """
     def paises_selecciones(self):
 
         self.withdraw()
         Administrar_Paises_Selecciones(self)
 
-    """
-    Nombre: entrenadores_jugadores
-    Entrada: no recibe parámetros
-    Salida: abre administración de entrenadores y jugadores
-    Restricciones: debe existir la ventana correspondiente
-    """
     def entrenadores_jugadores(self):
 
         self.withdraw()
-        Administrar_Entrenadores_Jugadores(self)
+        Administrar_Entrenadores_Jugadores()
 
-    """
-    Nombre: configurar_mundial
-    Entrada: no recibe parámetros
-    Salida: abre configuración del mundial
-    Restricciones: debe existir la ventana correspondiente
-    """
     def configurar_mundial(self):
 
         self.withdraw()
-        Configuracion_Mundial(self)
+        Configuracion_Mundial()
 
-    """
-    Nombre: jugar_mundial
-    Entrada: no recibe parámetros
-    Salida: abre jugar mundial
-    Restricciones: debe existir la ventana correspondiente
-    """
     def jugar_mundial(self):
-
         self.withdraw()
-        Jugar_Mundial(self)
+        Jugar_Mundial()
 
-    """
-    Nombre: estadísticas
-    Entrada: no recibe parámetros
-    Salida: abre estadísticas
-    Restricciones: debe existir la clase Estadisticas
-    """
     def estadísticas(self):
 
         self.withdraw()
-        Estadisticas(self)
+        Estadisticas()
 
-
+    
+        
 class Administrar_Paises_Selecciones(tk.Toplevel):
 
-    """
-    Nombre: Administrar_Paises_Selecciones
-    Entrada: principal
-    Salida: crea ventana para administrar países y selecciones
-    Restricciones: principal debe existir
-    """
     def __init__(self, principal):
-        tk.Toplevel.__init__(self, principal)
+        super().__init__(principal)
 
         self.principal = principal
         
@@ -793,15 +471,23 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.title("Administrar Países y Selecciones")
         self.resizable(False, False)
 
+
+
+
+        #self.fondo()
+
         self.labels()
         self.frames()
 
-    """
-    Nombre: labels
-    Entrada: no recibe parámetros
-    Salida: crea títulos
-    Restricciones: usa colores globales
-    """
+    """def fondo(self):
+
+        imagen_fondo = Image.open("paises_selecciones.png")
+        imagen_fondo.resize((1535, 930))
+
+        self.fondo = ImageTk.PhotoImage(imagen_fondo)
+        label_fondo = tk.Label(self, image=self.fondo)
+        label_fondo.place(x=0, y=0, relwidth=1, relheight=1)"""
+
     def labels(self):
         
         label_azul = tk.Label(self,
@@ -828,18 +514,17 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                  anchor="w")
         label_texto.place(x=320, y=40, width=600, height=20)
         
-    """
-    Nombre: frames
-    Entrada: no recibe parámetros
-    Salida: crea la interfaz de países y selecciones
-    Restricciones: usa listas globales
-    """
+
     def frames(self):
+
+#Frame de la Izquierda
 
         frame_principal1 = tk.Frame(self,
                                     bd=1,
                                     relief="solid")
         frame_principal1.place(x=250, y=80, width=600, height=800)
+
+
 
         label_paises = tk.Label(self,
                                 text="🌐 Países",
@@ -847,6 +532,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                 fg=azul,
                                 anchor="w")
         label_paises.place(x=270, y=84, width=200, height=30)
+
+#Frame registrar países
 
         frame_registrar_paises = tk.Frame(self,
                                           bd=1,
@@ -883,6 +570,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                    anchor="w")
         label_ranking.place(x=280, y=290, width=300, height=30)
 
+
         self.entry_codigo = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -895,6 +583,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.entry_codigo.bind("<FocusIn>", self.borrar_codigo)
         self.entry_codigo.bind("<FocusOut>", self.restaurar_codigo)
 
+
+       
         self.entry_nombre = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -906,6 +596,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         self.entry_nombre.bind("<FocusIn>", self.borrar_nombre)
         self.entry_nombre.bind("<FocusOut>", self.restaurar_nombre)
+
 
         self.seleccion = tk.StringVar()
 
@@ -925,7 +616,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.spinbox_ranking.place(x=500, y=290, width=300, height=30)
         self.spinbox_ranking.delete(0, "end")
 
-        self.boton_anadir_pais = tk.Button(self,
+        self.boton_añadir_pais = tk.Button(self,
                                            text="➕ Añadir País",
                                            font=("Arial", 14),
                                            bd=1,
@@ -933,8 +624,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                            fg=blanco,
                                            bg=verde,
                                            anchor="w",
-                                           command=self.anadir)
-        self.boton_anadir_pais.place(x=300, y=350, width=160, height=40)
+                                           command=self.añadir)
+        self.boton_añadir_pais.place(x=300, y=350, width=160, height=40)
 
         self.boton_guardar = tk.Button(self,
                                            text="💾 Guardar Cambios",
@@ -959,6 +650,12 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                   command=self.limpiar_selecciones)
         self.boton_limpiar.place(x=680, y=350, width=100, height=40)
 
+
+
+
+
+#Frame de los países registrados
+
         frame_paises_registrados = tk.LabelFrame(self,
                                           text="Lista de Países Registrados",
                                           font=("Arial", 14),
@@ -968,14 +665,19 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_paises_registrados.place(x=270, y=460, width=560, height=400)
 
         label_total_paises = tk.Label(self,
-                                      text="Total de países registrados:",
+                                      text=f"Total: {len(lista_paises)} paises",
                                       font=("Arial", 10, "bold"))
-        label_total_paises.place(x=610, y=480, width=180, height=30)
+        label_total_paises.place(x=680, y=480, width=100, height=30)
 
-        self.label_numero_paises = tk.Label(self,
-                                            text=contar(lista_paises),
-                                            font=("Arial", 10, "bold"))
-        self.label_numero_paises.place(x=790, y=480, width=30, height=30)
+        
+
+
+
+
+
+
+
+#Frame de la derecha
 
         label_paises = tk.Label(self,
                                 text="🌐 Selecciones",
@@ -984,15 +686,16 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                 anchor="w")
         label_paises.place(x=910, y=84, width=200, height=30)
 
+
         frame_principal2 = tk.Frame(self,
                                     bd=1,
                                     relief="solid")
         frame_principal2.place(x=900, y=80, width=600, height=800)
     
-        frame_registrar_selecciones = tk.Frame(self,
+        frame_registrar_paises = tk.Frame(self,
                                           bd=1,
                                           relief="solid")
-        frame_registrar_selecciones.place(x=920, y=120, width=560, height=300)
+        frame_registrar_paises.place(x=920, y=120, width=560, height=300)
 
         label_registrar_seleccion = tk.Label(self,
                                    text= "Registrar / Editar Selección",
@@ -1056,7 +759,9 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.combobox_entrenador.set("Seleccione un entrenador")
         self.combobox_entrenador.place(x=1180, y=250, width=200, height=30)
 
-        self.boton_anadir_seleccion = tk.Button(self,
+
+
+        self.boton_añadir_seleccion = tk.Button(self,
                                            text="➕ Añadir Selección",
                                            font=("Arial", 14),
                                            bd=1,
@@ -1064,7 +769,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                            fg=blanco,
                                            bg=verde,
                                            anchor="w")
-        self.boton_anadir_seleccion.place(x=940, y=350, width=190, height=40)
+        self.boton_añadir_seleccion.place(x=940, y=350, width=190, height=40)
 
         self.boton_guardar_seleccion = tk.Button(self,
                                            text="💾 Guardar Cambios",
@@ -1086,6 +791,9 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                                   anchor="w")
         self.boton_limpiar_seleccion.place(x=1350, y=350, width=100, height=40)
 
+
+#Frame de los selecciones registrados
+
         frame_selecciones_registradas = tk.LabelFrame(self,
                                           text="Lista de Selecciones Registradas",
                                           font=("Arial", 14),
@@ -1095,14 +803,9 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_selecciones_registradas.place(x=920, y=460, width=560, height=400)
 
         label_total_selecciones = tk.Label(self,
-                                      text="Total de selecciones registradas:",
+                                      text=f"Total: {len(lista_selecciones)} selecciones",
                                       font=("Arial", 10, "bold"))
-        label_total_selecciones.place(x=1230, y=480, width=220, height=30)
-
-        self.label_numero_selecciones = tk.Label(self,
-                                                 text=contar(lista_selecciones),
-                                                 font=("Arial", 10, "bold"))
-        self.label_numero_selecciones.place(x=1450, y=480, width=30, height=30)
+        label_total_selecciones.place(x=1320, y=480, width=130, height=30)
 
         self.boton_volver = tk.Button(self, 
                                      text= "Regresar al menú principal",
@@ -1158,6 +861,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.tree_view.tag_configure("oddrow", background=blanco)
         self.tree_view.tag_configure("evenrow", background=celeste)
 
+
         numero = 0
 
         for pais in lista_paises:
@@ -1165,19 +869,26 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                 self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(pais.codigo_fifa, pais.nombre, pais.continente, pais.ranking_fifa), tags=("evenrow",))
             else:
                 self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(pais.codigo_fifa, pais.nombre, pais.continente, pais.ranking_fifa), tags=("oddrow",))
-            numero = numero + 1
+            numero += 1
 
         self.tree_view.bind("<ButtonRelease-1>", self.pais_seleccionado)
 
-    """
-    Nombre: volver
-    Entrada: no recibe parámetros
-    Salida: vuelve al menú principal
-    Restricciones: principal debe existir
-    """
+        
+
+
+
+
+
+
+
+
+
+
+
     def volver(self):
         self.destroy()
         self.principal.deiconify()
+
 
     def borrar_codigo(self, event):
         if self.entry_codigo.get() == "Ej: CRC":
@@ -1203,20 +914,16 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         if self.entry_codigo_seleccion.get() == "":
             self.entry_codigo_seleccion.insert(0, "Ej: CRC")
 
-    """
-    Nombre: anadir
-    Entrada: datos de los entry y spinbox
-    Salida: registra un país
-    Restricciones: el código FIFA debe tener tres letras
-    """
-    def anadir(self):
+    def añadir(self):
 
         global lista_paises
 
         codigo_fifa = self.entry_codigo.get().strip()
         nombre = self.entry_nombre.get().strip()
         continente = self.seleccion.get().strip()
-        ranking_fifa_texto = self.spinbox_ranking.get().strip()
+        ranking_fifa = self.spinbox_ranking.get().strip()
+
+
 
         if codigo_fifa == "Ej: CRC":
             messagebox.showerror("¡Error!", "Ingrese el código FIFA del país")
@@ -1227,21 +934,22 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif continente == "Seleccione un Continente":
             messagebox.showerror("¡Error!", "Debe seleccionar un continente para el país")
             return 
-        elif ranking_fifa_texto == "":
+        elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif tiene_tres_caracteres(codigo_fifa) == False:
-            messagebox.showerror("!Error¡", "El código FIFA debe contener 3 letras")
+        elif not len(codigo_fifa) == 3:
+            messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
+
         codigo_fifa = codigo_fifa.upper()
         continente = continente.title()
         nombre = nombre.title()  
-        ranking_fifa = int(ranking_fifa_texto)
+        ranking_fifa = int(ranking_fifa)
 
         for pais in lista_paises:
             if pais.nombre == nombre:
-                messagebox.showerror("Error", "El nombre del país ingresado ya ha sido registrado")
+                messagebox.showerror("Error", "El el nombre del páis ingresado ya ha sido registrado")
                 return 
             elif pais.codigo_fifa == codigo_fifa:
                 messagebox.showerror("Error", "El código FIFA ingresado ya le ha sido asignado a un país")
@@ -1250,30 +958,58 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
                 messagebox.showerror("Error", "El ranking FIFA ingresado ya le ha sido asignado a un país")
                 return
 
+
         if lista_paises == []:
+
             archivo = open("paises.txt", "a")
-            linea = codigo_fifa + ";" + nombre + ";" + continente + ";" + ranking_fifa_texto
+            linea = (f"{codigo_fifa};{nombre};{continente};{ranking_fifa}")
             archivo.write(linea)
             archivo.close()
-        else:
-            archivo = open("paises.txt", "a")
-            linea = "\n" + codigo_fifa + ";" + nombre + ";" + continente + ";" + ranking_fifa_texto
-            archivo.write(linea)
-            archivo.close()
+
+            nuevo_pais = Pais(codigo_fifa, nombre, continente, ranking_fifa)
+            lista_paises += [nuevo_pais]
+
+
+            numero = len(lista_paises)
+
+            if numero % 2 == 0:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
+            else:
+                self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("oddrow",))
+
+            
+            messagebox.showinfo(None, "País registrado correctamente")
+
+            self.entry_codigo.delete(0, "end")
+            self.entry_nombre.delete(0, "end")
+            self.combobox_continente.delete(0, "end")
+            self.spinbox_ranking.delete(0, "end")
+            
+            self.entry_codigo.insert(0, "Ej: CRC")
+            self.entry_nombre.insert(0, "Ej: Costa Rica")
+            self.combobox_continente.set("Seleccione un Continente")
+            return
+
+            
+        archivo = open("paises.txt", "a")
+        linea = (f"\n{codigo_fifa};{nombre};{continente};{ranking_fifa}")
+        archivo.write(linea)
+        archivo.close()
 
         nuevo_pais = Pais(codigo_fifa, nombre, continente, ranking_fifa)
         lista_paises += [nuevo_pais]
 
-        numero = contar(lista_paises) - 1
+
+        numero = len(lista_paises) - 1
 
         if numero % 2 == 0:
             self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
         else:
             self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("oddrow",))
 
-        self.label_numero_paises.config(text=contar(lista_paises))
         messagebox.showinfo(None, "País registrado correctamente")
         
+
         self.entry_codigo.delete(0, "end")
         self.entry_nombre.delete(0, "end")
         self.combobox_continente.delete(0, "end")
@@ -1286,12 +1022,6 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         for pais in lista_paises:
             pais.mostrar_datos()
 
-    """
-    Nombre: actualizar
-    Entrada: datos de los entry y spinbox
-    Salida: actualiza país seleccionado
-    Restricciones: primero se debe seleccionar un país
-    """
     def actualizar(self):
        
         global lista_paises
@@ -1299,7 +1029,8 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         codigo_fifa = self.entry_codigo.get().strip()
         nombre = self.entry_nombre.get().strip()
         continente = self.seleccion.get().strip()
-        ranking_fifa_texto = self.spinbox_ranking.get().strip()
+        ranking_fifa = self.spinbox_ranking.get().strip()
+
 
         if codigo_fifa == "Ej: CRC":
             messagebox.showerror("¡Error!", "Ingrese el código FIFA del país")
@@ -1310,52 +1041,41 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif continente == "Seleccione un Continente":
             messagebox.showerror("¡Error!", "Debe seleccionar un continente para el país")
             return 
-        elif ranking_fifa_texto == "":
+        elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif tiene_tres_caracteres(codigo_fifa) == False:
-            messagebox.showerror("!Error¡", "El código FIFA debe contener 3 letras")
+        elif not len(codigo_fifa) == 3:
+            messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
+
         codigo_fifa = codigo_fifa.upper()
         continente = continente.title()
         nombre = nombre.title()  
-        ranking_fifa = int(ranking_fifa_texto)
+        ranking_fifa = int(ranking_fifa)
 
         archivo_paises = open("paises.txt", "r")
         contenido_paises = archivo_paises.readlines()
         archivo_paises.close()
 
-        contenido_paises_dividido = []
-
-        for linea in contenido_paises:
-            contenido_paises_dividido += [linea.strip().split(";")]
+        contenido_paises_dividido = [linea.strip().split(";") for linea in contenido_paises]
 
         for pais in lista_paises:
-            if pais.codigo_fifa == codigo_fifa:
+            if pais.nombre == nombre and pais.codigo_fifa == codigo_fifa:
                 pais.actualizar_datos(codigo_fifa, nombre, continente, ranking_fifa)
                 break
         
+
         for pais in contenido_paises_dividido:
-            if pais[0] == codigo_fifa:
-                pais[1] = nombre
-                pais[2] = continente
-                pais[3] = ranking_fifa_texto
+            if  pais[0] == codigo_fifa:
+                pais[3] = str(ranking_fifa)
                 break
 
         archivo_paises_modificar = open("paises.txt", "w")
 
-        contador = 0
-        cantidad = contar(contenido_paises_dividido)
-
         for pais in contenido_paises_dividido:
-            linea = pais[0] + ";" + pais[1] + ";" + pais[2] + ";" + pais[3]
-
-            if contador < cantidad - 1:
-                linea = linea + "\n"
-
+            linea = f"{pais[0]};{pais[1]};{pais[2]};{pais[3]}\n"
             archivo_paises_modificar.write(linea)
-            contador = contador + 1
 
         archivo_paises_modificar.close()
 
@@ -1365,36 +1085,31 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         messagebox.showinfo(None, "País actualizado correctamente")
         self.limpiar_selecciones()
+
     
-    """
-    Nombre: limpiar_selecciones
-    Entrada: no recibe parámetros
-    Salida: limpia campos de país
-    Restricciones: los entry deben existir
-    """
+
+
+
+    
     def limpiar_selecciones(self):
             
-        self.entry_codigo.config(state="normal")
-        self.entry_nombre.config(state="normal")
-        self.boton_guardar.config(state="disabled")
-        self.boton_anadir_pais.config(state="normal")
-        self.combobox_continente.config(state="readonly")
+            self.entry_codigo.config(state="normal")
+            self.entry_nombre.config(state="normal")
+            self.boton_guardar.config(state="disabled")
+            self.boton_añadir_pais.config(state="normal")
+            self.combobox_continente.config(state="readonly")
             
-        self.entry_codigo.delete(0, "end")
-        self.entry_nombre.delete(0, "end")
-        self.combobox_continente.delete(0, "end")
-        self.spinbox_ranking.delete(0, "end")
+            self.entry_codigo.delete(0, "end")
+            self.entry_nombre.delete(0, "end")
+            self.combobox_continente.delete(0, "end")
+            self.spinbox_ranking.delete(0, "end")
             
-        self.entry_codigo.insert(0, "Ej: CRC")
-        self.entry_nombre.insert(0, "Ej: Costa Rica")
-        self.combobox_continente.set("Seleccione un Continente")
+            self.entry_codigo.insert(0, "Ej: CRC")
+            self.entry_nombre.insert(0, "Ej: Costa Rica")
+            self.combobox_continente.set("Seleccione un Continente")
 
-    """
-    Nombre: pais_seleccionado
-    Entrada: evento
-    Salida: coloca los datos seleccionados en los entry
-    Restricciones: debe seleccionarse una fila de la tabla
-    """
+
+
     def pais_seleccionado(self, e=None):  
 
         self.entry_codigo.config(state="normal")
@@ -1408,9 +1123,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         selected = self.tree_view.focus()
     
         values = self.tree_view.item(selected, "values")
-        cantidad_valores = contar(values)
-
-        if cantidad_valores < 4:
+        if not values or len(values) < 4:
             return 
     
         self.entry_codigo.insert(0, values[0])
@@ -1421,41 +1134,39 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         self.entry_codigo.config(state="disabled")
         self.entry_nombre.config(state="disabled")
         self.boton_guardar.config(state="active")
-        self.boton_anadir_pais.config(state="disabled")
+        self.boton_añadir_pais.config(state="disabled")
         self.combobox_continente.config(state="disabled")
+
+
+
+
+    
 
 
 class Administrar_Entrenadores_Jugadores(tk.Toplevel):
 
-    """
-    Nombre: Administrar_Entrenadores_Jugadores
-    Entrada: principal
-    Salida: crea ventana de entrenadores y jugadores
-    Restricciones: principal debe existir
-    """
-    def __init__(self, principal):
-        tk.Toplevel.__init__(self, principal)
-
-        self.principal = principal
-
+    def __init__(self):
+        tk.Toplevel.__init__(self)
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
         self.title("Administración de Entrenadores y Jugadores")
 
         self.frames()
 
-    """
-    Nombre: frames
-    Entrada: no recibe parámetros
-    Salida: crea marcos de la ventana
-    Restricciones: usa tkinter
-    """
+
     def frames(self):
+
+        global lista_paises
+        global lista_entrenadores
+        global lista_jugadores
 
         self.frame_grande = tk.Frame(self,
                                      bd=1,
-                                     relief="solid")
+                                     relief="solid",
+                                     bg=gris_claro)
         self.frame_grande.place(x=10, y=10, width=1515, height=830)
+
+#Frame arriba izquierda
 
         self.frame_registrar_entrenadores = tk.Frame(self, 
                                                      bd=1, 
@@ -1465,7 +1176,8 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         label_titulo_registrar = tk.Label(self, 
                                           text="📋 Registrar / Editar Entrenador",
                                           font=("arial", 12, "bold"),
-                                          anchor="w")
+                                          anchor="w",
+                                          fg=azul)
         label_titulo_registrar.place(x=35, y=40, width=400, height=30)
 
         label_personales_entrenador = tk.Label(self,
@@ -1478,124 +1190,651 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
                                            text="Nombre:",
                                            font=("arial", 10, "bold"),
                                            anchor="w")
-        label_nombre_entrenador.place(x=50, y=120, width=150, height=30)
+        label_nombre_entrenador.place(x=35, y=120, width=150, height=30)
 
         label_apellidos_entrenador = tk.Label(self, 
                                               text="Apellidos:",
                                               font=("arial", 10, "bold"),
                                               anchor="w")
-        label_apellidos_entrenador.place(x=50, y=160, width=150, height=30)
+        label_apellidos_entrenador.place(x=35, y=160, width=150, height=30)
 
         label_nacionalidad_entrenador = tk.Label(self,
                                                  text="Nacionalidad:",
                                                  font=("arial", 10, "bold"),
                                                  anchor="w")
-        label_nacionalidad_entrenador.place(x=50, y=200, width=150, height=30)
+        label_nacionalidad_entrenador.place(x=35, y=200, width=150, height=30)
 
         label_fecha_entrenador = tk.Label(self,
                                           text="Fecha de Nacimiento:",
                                           font=("arial", 10, "bold"),
                                           anchor="w")
-        label_fecha_entrenador.place(x=50, y=240, width=200, height=30)
+        label_fecha_entrenador.place(x=35, y=240, width=200, height=30)
+
+        self.entry_nombre_entrenador = tk.Entry(self, 
+                                                fg=gris,
+                                                insertwidth=1,
+                                                bd=1,
+                                                highlightcolor=azul,
+                                                highlightthickness=1)
+        self.entry_nombre_entrenador.insert(0, "Ej: Carlo")
+        self.entry_nombre_entrenador.place(x=145, y=120, width=155, height=30)
+
+        self.entry_apellidos_entrenador = tk.Entry(self,
+                                fg=gris,
+                                insertwidth=1,
+                                bd=1,
+                                highlightcolor=azul,
+                                highlightthickness=1)
+        self.entry_apellidos_entrenador.insert(0, "Ej: Ancelotti")
+        self.entry_apellidos_entrenador.place(x=145, y=160, width=155, height=30)
+
+        self.combobox_nacionalidad_entrenador = ttk.Combobox()
+                                          
+
+
+        self.seleccion_nacionalidad_entrenador = tk.StringVar()
+
+        paises = []
+
+        for pais in lista_paises:
+            paises += [pais.nombre]
+
+        self.combobox_nacionalidad_entrenador = ttk.Combobox(self,
+                                          values=paises,
+                                          state="readonly",
+                                          textvariable=self.seleccion_nacionalidad_entrenador)
+        self.combobox_nacionalidad_entrenador.set("Seleccione Nacionalidad")
+        self.combobox_nacionalidad_entrenador.place(x=145, y=200, width=155, height=30)
+
+        lista_dias = []
+
+        for i in range(1, 32):
+            lista_dias += [i]
+
+        self.dia_seleccionado = tk.StringVar()
+
+        self.combobox_dias = ttk.Combobox(self, 
+                                          values=lista_dias,
+                                          state="readonly",
+                                          textvariable=self.dia_seleccionado)
+        self.combobox_dias.set("Día")
+        self.combobox_dias.place(x=50, y=270, width=60, height=30)
+
+        meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        self.mes_seleccionado = tk.StringVar()
+        self.combobox_meses = ttk.Combobox(self,
+                                           values=meses,
+                                           state="readonly",
+                                           textvariable=self.mes_seleccionado)
+        self.combobox_meses.set("Mes")
+        self.combobox_meses.place(x=110, y=270, width=100, height=30)
+
+        años = []
+
+        for i in range(1950, 2027):
+            años += [i]
+
+        self.año_seleccionado = tk.StringVar()
+
+        self.combobox_año = ttk.Combobox(self,
+                                         values=años,
+                                         state="readonly",
+                                         textvariable=self.año_seleccionado)
+        self.combobox_año.set("Año")
+        self.combobox_año.place(x=210, y=270, width=90, height=30)
+
+        self.boton_añadir_entrenador = tk.Button(self,
+                                           text="➕ Añadir Entrenador",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_añadir_entrenador.place(x=50, y=350, width=170, height=40)
+
+        self.boton_modificar_entrenador = tk.Button(self,
+                                           text="💾 Guardar Cambios",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=azul,
+                                           anchor="w")
+        self.boton_modificar_entrenador.place(x=240, y=350, width=170, height=40)
+
+        self.boton_limpiar_seleccion_entrenador = tk.Button(self,
+                                  text="🧹Limpiar",
+                                  font=("Arial", 13),
+                                  bd=2,
+                                  relief= "groove",
+                                  fg=gris,
+                                  bg=amarillo,
+                                  anchor="w")
+        self.boton_limpiar_seleccion_entrenador.place(x=430, y=350, width=100, height=40)
+
+        label_datos_entrenador = tk.Label(self,
+                                               text="Datos del Entrenador",
+                                               font=("arial", 10, "bold"),
+                                               anchor="w")
+        label_datos_entrenador.place(x=320, y=80, width=230, height=30)
+
+        label_licencia = tk.Label(self,
+                                               text="Licencia:",
+                                               font=("arial", 10, "bold"),
+                                               anchor="w")
+        label_licencia.place(x=320, y=120, width=150, height=30)
+
+        label_experiencia = tk.Label(self,
+                                           text="Experiencia:",
+                                           font=("arial", 10, "bold"),
+                                           anchor="w")
+        label_experiencia.place(x=320, y=180, width=150, height=30)
+
+        label_sistema_juego = tk.Label(self, 
+                                              text="Sistema de Juego:",
+                                              font=("arial", 10, "bold"),
+                                              anchor="w")
+        label_sistema_juego.place(x=320, y=240, width=150, height=30)
+
+        self.seleccion_licencia = tk.StringVar()
+        licencias = ["UEFA PRO", "UEFA A", "UEFA B", "UEFA C"]
+        self.combobox_licencia = ttk.Combobox(self,
+                                              values=licencias,
+                                              state="readonly",
+                                              textvariable=self.seleccion_licencia)
+        self.combobox_licencia.set("Seleccione Licencia")
+        self.combobox_licencia.place(x=420, y=120, width=150, height=30)
+
+        self.spinbox_experiencia = tk.Spinbox(self,
+                                              from_=5,
+                                              to=20)
+        self.spinbox_experiencia.delete(0, "end")
+        self.spinbox_experiencia.place(x=420, y=180, width=150, height=30)
+
+        self.seleccion_sistema_juego = tk.StringVar()
+        sistemas_juego = ["4-3-3", "4-4-2", "4-2-3-1","3-5-2", "5-3-2", "3-4-3", "4-1-4-1", "3-2-5"]
+        self.combobox_sistema_juego = ttk.Combobox(self,
+                                                   values=sistemas_juego,
+                                                   state="readonly",
+                                                   textvariable=self.seleccion_sistema_juego)
+        self.combobox_sistema_juego.set("Seleccione Sistema")
+        self.combobox_sistema_juego.place(x=447, y=240, width=123, height=30)
+
+
+
+
+
+
+#Frame linea vertical
+
+        frame_linea_vertical = tk.Frame(self,
+                                        bd=1,
+                                        relief="solid")
+        frame_linea_vertical.place(x=310, y=90, width=2, height=210)
+
+
+#Frame arriba centro
+
 
         self.frame_asignar_seleccion = tk.Frame(self,
                                                 bd=1,
                                                 relief="solid")
         self.frame_asignar_seleccion.place(x=590, y=20, width=350, height=400)
 
+        label_asignar_pais = tk.Label(self,
+                                      text="👤 Asignar Entrenador a Selección",
+                                      fg=azul,
+                                      font=("arial", 12, "bold"),
+                                      anchor="w")
+        label_asignar_pais.place(x=620, y=60, width=290, height=30)
+
+        label_seleccion = tk.Label(self,
+                                   text="Selección:",
+                                   font=("arial", 10, "bold"),
+                                   anchor="w")
+        label_seleccion.place(x=620, y=140, width=100, height=30)
+
+        label_entrenador = tk.Label(self,
+                                   text="Entrenador:",
+                                   font=("arial", 10, "bold"),
+                                   anchor="w")
+        label_entrenador.place(x=620, y=200, width=100, height=30)
+
+        self.obtener_entrenador_para_seleccion = tk.StringVar()
+
+        self.combobox_seleccion_entrenador = ttk.Combobox(self,
+                                          values=paises,
+                                          state="readonly",
+                                          textvariable=self.obtener_entrenador_para_seleccion)
+        self.combobox_seleccion_entrenador.set("Seleccione Selección")
+        self.combobox_seleccion_entrenador.place(x=720, y=140, width=150, height=30)
+
+        self.obtener_seleccion_para_entrenador = tk.StringVar()
+        entrenadores = []
+        for entrenador in lista_entrenadores:
+            entrenadores += [entrenador.nombre]
+
+
+        self.seleccion_entrenador_seleccion = ttk.Combobox(self,
+                                          values=entrenadores,
+                                          state="readonly",
+                                          textvariable=self.obtener_seleccion_para_entrenador)
+
+        self.seleccion_entrenador_seleccion.set("Seleccione Entrenador")
+        self.seleccion_entrenador_seleccion.place(x=720, y=200, width=150, height=30)
+
+        self.boton_asignar_entrenador_seleccion = tk.Button(self,
+                                           text="➕ Asignar Entrenador a Selección",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_asignar_entrenador_seleccion.place(x=620, y=350, width=290, height=40)
+
+#Frame arriba derecha
+
+
         self.frame_entrenadores = tk.Frame(self,
                                            bd=1,
                                            relief="solid")
         self.frame_entrenadores.place(x=950, y=20, width=560, height=400)
 
+
+#Frame abajo izquierda
+
         self.frame_registrar_jugadores = tk.Frame(self,
                                                   bd=1,
                                                   relief="solid")
-        self.frame_registrar_jugadores.place(x=30, y=430, width=750, height=400)
+        self.frame_registrar_jugadores.place(x=30, y=430, width=600, height=400)
+
+        label_titulo_registrar_jugador = tk.Label(self, 
+                                          text="📋 Registrar / Editar Jugador",
+                                          font=("arial", 12, "bold"),
+                                          anchor="w",
+                                          fg=azul)
+        label_titulo_registrar_jugador.place(x=35, y=460, width=400, height=30)
+
+        label_personales_jugadores = tk.Label(self,
+                                               text="Datos Personales del Jugador",
+                                               font=("arial", 10, "bold"),
+                                               anchor="w")
+        label_personales_jugadores.place(x=40, y=500, width=300, height=30)
+
+        label_nombre_jugador = tk.Label(self,
+                                           text="Nombre:",
+                                           font=("arial", 10, "bold"),
+                                           anchor="w")
+        label_nombre_jugador.place(x=35, y=540, width=150, height=30)
+
+        label_apellidos_jugador = tk.Label(self, 
+                                              text="Apellidos:",
+                                              font=("arial", 10, "bold"),
+                                              anchor="w")
+        label_apellidos_jugador.place(x=35, y=580, width=150, height=30)
+
+        label_nacionalidad_jugador = tk.Label(self,
+                                                 text="Nacionalidad:",
+                                                 font=("arial", 10, "bold"),
+                                                 anchor="w")
+        label_nacionalidad_jugador.place(x=35, y=620, width=150, height=30)
+
+        label_fecha_jugador = tk.Label(self,
+                                          text="Fecha de Nacimiento:",
+                                          font=("arial", 10, "bold"),
+                                          anchor="w")
+        label_fecha_jugador.place(x=35, y=660, width=200, height=30)
+
+
+        self.entry_nombre_jugador = tk.Entry(self, 
+                                                fg=gris,
+                                                insertwidth=1,
+                                                bd=1,
+                                                highlightcolor=azul,
+                                                highlightthickness=1)
+        self.entry_nombre_jugador.insert(0, "Ej: Lionel")
+        self.entry_nombre_jugador.place(x=145, y=540, width=155, height=30)
+
+        self.entry_apellidos_jugador = tk.Entry(self,
+                                fg=gris,
+                                insertwidth=1,
+                                bd=1,
+                                highlightcolor=azul,
+                                highlightthickness=1)
+        self.entry_apellidos_jugador.insert(0, "Ej: Messi")
+        self.entry_apellidos_jugador.place(x=145, y=580, width=155, height=30)
+
+        self.combobox_nacionalidad_jugador= ttk.Combobox()
+                                          
+
+
+        self.seleccion_nacionalidad_jugador = tk.StringVar()
+
+        self.combobox_nacionalidad_jugador = ttk.Combobox(self,
+                                          values=paises,
+                                          state="readonly",
+                                          textvariable=self.seleccion_nacionalidad_jugador)
+        self.combobox_nacionalidad_jugador.set("Seleccione Nacionalidad")
+        self.combobox_nacionalidad_jugador.place(x=145, y=620, width=155, height=30)
+
+
+
+        self.dia_seleccionado_jugador = tk.StringVar()
+
+        self.combobox_dias_jugador = ttk.Combobox(self, 
+                                          values=lista_dias,
+                                          state="readonly",
+                                          textvariable=self.dia_seleccionado_jugador)
+        self.combobox_dias_jugador.set("Día")
+        self.combobox_dias_jugador.place(x=50, y=690, width=60, height=30)
+
+        self.mes_seleccionado_jugador = tk.StringVar()
+        self.combobox_meses_jugador = ttk.Combobox(self,
+                                           values=meses,
+                                           state="readonly",
+                                           textvariable=self.mes_seleccionado_jugador)
+        self.combobox_meses_jugador.set("Mes")
+        self.combobox_meses_jugador.place(x=110, y=690, width=100, height=30)
+
+
+        self.año_seleccionado_jugador = tk.StringVar()
+
+        self.combobox_año_jugador = ttk.Combobox(self,
+                                         values=años,
+                                         state="readonly",
+                                         textvariable=self.año_seleccionado_jugador)
+        self.combobox_año_jugador.set("Año")
+        self.combobox_año_jugador.place(x=210, y=690, width=90, height=30)
+
+#Frame linea vertical
+
+        frame_linea_vertical_jugadores = tk.Frame(self,
+                                        bd=1,
+                                        relief="solid")
+        frame_linea_vertical_jugadores.place(x=310, y=440, width=2, height=270)
+
+        label_datos_jugador = tk.Label(self,
+                                               text="Datos del Jugador",
+                                               font=("arial", 10, "bold"),
+                                               anchor="w")
+        label_datos_jugador.place(x=320, y=440, width=230, height=30)
+
+        label_dorsal = tk.Label(self,
+                                text="Dorsal:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_dorsal.place(x=320, y=470, width=150, height=30)
+
+        self.spinbox_dorsal = tk.Spinbox(self,
+                                         from_=1,
+                                         to=99)
+        self.spinbox_dorsal.delete(0, "end")
+        self.spinbox_dorsal.place(x=400, y=470, width=120, height=30)
+
+        label_posicion = tk.Label(self,
+                                text="Posicion:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_posicion.place(x=320, y=510, width=150, height=30)
+
+        posiciones = ["Portero", "Defensa Central", "Lateral Izquierdo", "Lateral Derecho", "Interior Izquierdo", "Interior Derecho", "Extremo Izquierdo", "Extremo Derecho", "Mediocentro", "Delantero Derecho", "Delantero Izquierdo", "Delantero Centro"]
+        self.obtener_posicion = tk.StringVar()
+
+        self.combobox_posiciones = ttk.Combobox(self,
+                                                values=posiciones,
+                                                state="readonly",
+                                                textvariable=self.obtener_posicion)
+        self.combobox_posiciones.set("Seleccione Posicion")
+        self.combobox_posiciones.place(x=400, y=510, width=130, height=30)
+
+#Frame linea horizontal
+
+        frame_linea_horizontal_jugadores = tk.Frame(self,
+                                        bd=1,
+                                        relief="solid")
+        frame_linea_horizontal_jugadores.place(x=320, y=550, width=250, height=2)    
+
+        label_velocidad = tk.Label(self,
+                                text="Velocidad:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_velocidad.place(x=320, y=570, width=150, height=30)
+
+        self.spinbox_velocidad = tk.Spinbox(self,
+                                         from_=1,
+                                         to=25)
+        self.spinbox_velocidad.delete(0, "end")
+        self.spinbox_velocidad.place(x=460, y=570, width=100, height=30)
+
+        label_estratega = tk.Label(self,
+                                text="Estratega:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_estratega.place(x=320, y=610, width=150, height=30)
+
+        self.spinbox_estratega = tk.Spinbox(self,
+                                         from_=1,
+                                         to=25)
+        self.spinbox_estratega.delete(0, "end")
+        self.spinbox_estratega.place(x=460, y=610, width=100, height=30)
+
+        label_dominio = tk.Label(self,
+                                text="Dominio del Balón:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_dominio.place(x=320, y=650, width=150, height=30)
+
+        self.spinbox_dominio = tk.Spinbox(self,
+                                         from_=1,
+                                         to=25)
+        self.spinbox_dominio.delete(0, "end")
+        self.spinbox_dominio.place(x=460, y=650, width=100, height=30)
+
+        label_fuerza = tk.Label(self,
+                                text="Fuerza:",
+                                font=("arial", 10, "bold"),
+                                anchor="w")
+        label_fuerza.place(x=320, y=690, width=150, height=30)
+
+        self.spinbox_fuerza = tk.Spinbox(self,
+                                         from_=1,
+                                         to=25)
+        self.spinbox_fuerza.delete(0, "end")
+        self.spinbox_fuerza.place(x=460, y=690, width=100, height=30)
+
+        self.boton_añadir_jugador = tk.Button(self,
+                                           text="➕ Añadir Jugador",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_añadir_jugador.place(x=50, y=770, width=170, height=40)
+
+        self.boton_modificar_jugador = tk.Button(self,
+                                           text="💾 Guardar Cambios",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=azul,
+                                           anchor="w")
+        self.boton_modificar_jugador.place(x=240, y=770, width=170, height=40)
+
+        self.boton_limpiar_seleccion_jugador = tk.Button(self,
+                                  text="🧹Limpiar",
+                                  font=("Arial", 13),
+                                  bd=2,
+                                  relief= "groove",
+                                  fg=gris,
+                                  bg=amarillo,
+                                  anchor="w")
+        self.boton_limpiar_seleccion_jugador.place(x=430, y=770, width=100, height=40)
+
+
+#Frame abajo centro
 
         self.frame_seleccion = tk.Frame(self,
                                         bd=1,
                                         relief="solid")
-        self.frame_seleccion.place(x=790, y=430, width=200, height=400)
+        self.frame_seleccion.place(x=640, y=430, width=300, height=400)
+
+        label_asignar_seleccion = tk.Label(self, 
+                                          text="👤 Asignar Entrenador a Selección",
+                                          font=("arial", 12, "bold"),
+                                          anchor="w",
+                                          fg=azul)
+        label_asignar_seleccion.place(x=660, y=435, width=270, height=40)
+
+        label_jugador = tk.Label(self, 
+                                          text="Jugador:",
+                                          font=("arial", 10, "bold"),
+                                          anchor="w")
+        label_jugador.place(x=660, y=490, width=270, height=40)
+
+        self.obtener_jugador = tk.StringVar()
+        jugadores = []
+        for jugador in lista_jugadores:
+            jugadores += [f"{jugador.nombre} {jugador.apellido}"]
+
+        self.combobox_jugadores = ttk.Combobox(self,
+                                               values=jugadores,
+                                               state="readonly",
+                                               textvariable=self.obtener_jugador)
+        self.combobox_jugadores.set("Seleccione Jugador")
+        self.combobox_jugadores.place(x=760, y=490, width=150, height=30)
+
+        self.obtener_pais_de_jugador = tk.StringVar()
+
+        label_pais = tk.Label(self, 
+                                          text="Selección:",
+                                          font=("arial", 10, "bold"),
+                                          anchor="w")
+        label_pais.place(x=660, y=530, width=270, height=40)
+
+        self.combobox_paises = ttk.Combobox(self,
+                                               values=paises,
+                                               state="readonly",
+                                               textvariable=self.obtener_pais_de_jugador)
+        self.combobox_paises.set("Seleccione Selección")
+        self.combobox_paises.place(x=760, y=530, width=150, height=30)
+
+        self.boton_asignar_jugador_a_seleccion = tk.Button(self,
+                                           text="➕ Asignar Jugador a Selección",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="w")
+        self.boton_asignar_jugador_a_seleccion.place(x=655, y=580, width=270, height=40)
+
+#Frame linea horizontal
+
+        frame_linea_horizontal_jugadores_selecciones = tk.Frame(self,
+                                                                bd=1,
+                                                                relief="solid")
+        frame_linea_horizontal_jugadores_selecciones.place(x=650, y=640, width=280, height=2)
+
+        label_ver_jugadores = tk.Label(self, 
+                                          text="Ver Jugadores por Selección",
+                                          font=("arial", 12, "bold"),
+                                          anchor="w",
+                                          fg=azul)
+        label_ver_jugadores.place(x=670, y=650, width=250, height=40)
+
+        self.combobox_selecciones = ttk.Combobox(self,
+                                               values=paises,
+                                               state="readonly",
+                                               textvariable=self.obtener_pais_de_jugador)
+        self.combobox_selecciones.set("Seleccione Selección")
+        self.combobox_selecciones.place(x=710, y=690, width=150, height=30)
+
+        self.boton_ver_jugadoress = tk.Button(self,
+                                           text="Ver Jugadores",
+                                           font=("Arial", 13),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=verde,
+                                           anchor="center")
+        self.boton_ver_jugadoress.place(x=655, y=760, width=270, height=40)
+
+
+
+
+
+
+
+
+
+
+
 
         self.frame_jugadores = tk.Frame(self,
                                         bd=1,
                                         relief="solid")
-        self.frame_jugadores.place(x=1000, y=430, width=510, height=400)
+        self.frame_jugadores.place(x=950, y=430, width=560, height=400)
 
-        boton_volver = tk.Button(self,
-                                 text="Regresar al menú principal",
-                                 font=("Arial", 14, "bold"),
-                                 bg=gris_claro,
-                                 fg=negro,
-                                 command=self.volver)
-        boton_volver.place(x=1200, y=860, width=300, height=45)
 
-    """
-    Nombre: volver
-    Entrada: no recibe parámetros
-    Salida: vuelve al menú principal
-    Restricciones: principal debe existir
-    """
-    def volver(self):
-        self.destroy()
-        self.principal.deiconify()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class Configuracion_Mundial(tk.Toplevel):
 
-    """
-    Nombre: Configuracion_Mundial
-    Entrada: principal
-    Salida: crea ventana de configuración
-    Restricciones: principal debe existir
-    """
-    def __init__(self, principal):
-        tk.Toplevel.__init__(self, principal)
-
-        self.principal = principal
-
+    def __init__(self):
+        tk.Toplevel.__init__(self)
         self.geometry("1535x930+-7+-0")
         self.resizable(False, False)
-
-        boton_volver = tk.Button(self,
-                                 text="Regresar al menú principal",
-                                 font=("Arial", 14, "bold"),
-                                 bg=gris_claro,
-                                 fg=negro,
-                                 command=self.volver)
-        boton_volver.place(x=1200, y=860, width=300, height=45)
-
-    """
-    Nombre: volver
-    Entrada: no recibe parámetros
-    Salida: vuelve al menú principal
-    Restricciones: principal debe existir
-    """
-    def volver(self):
-        self.destroy()
-        self.principal.deiconify()
-
 
 ###JuSTIN
 """
 Nombre: Jugar_Mundial
-Entrada: principal
-Salida: crea una ventana gráfica para jugar el mundial
-Restricciones: se debe llamar desde la pantalla principal
+Entrada: no recibe datos directamente desde el usuario en esta primera versión
+Salida: crea una ventana gráfica para la sección de jugar el mundial
+Restricciones: 
 """
 class Jugar_Mundial(tk.Toplevel):
 
     """
-    Nombre: Jugar_Mundial
-    Entrada: principal
+    Nombre: __init__
+    Entrada: no recibe parámetros adicionales
     Salida: inicializa la ventana Jugar Mundial
-    Restricciones: principal debe existir
+    Restricciones: se debe llamar desde la pantalla principal del programa
     """
-    def __init__(self, principal):
-        tk.Toplevel.__init__(self, principal)
-
-        self.principal = principal
+    def __init__(self):
+        tk.Toplevel.__init__(self)
 
         self.geometry("1535x760+-7+-0")
         self.title("Jugar Mundial")
@@ -1614,8 +1853,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: menu_lateral
     Entrada: no recibe parámetros
-    Salida: crea el menú lateral izquierdo
-    Restricciones: usa colores globales
+    Salida: crea el menú lateral izquierdo de la ventana
+    Restricciones: usa colores globales previamente definidos
     """
     def menu_lateral(self):
         frame_menu = tk.Frame(self,
@@ -1643,8 +1882,7 @@ class Jugar_Mundial(tk.Toplevel):
                                  fg=blanco,
                                  bd=1,
                                  relief="solid",
-                                 anchor="w",
-                                 command=self.volver_inicio)
+                                 anchor="w")
         boton_inicio.place(x=25, y=160, width=250, height=50)
 
         boton_paises = tk.Button(self,
@@ -1707,8 +1945,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: pantalla_titulo
     Entrada: no recibe parámetros
-    Salida: muestra el título
-    Restricciones: debe existir la ventana
+    Salida: muestra el título y subtítulo de la pantalla
+    Restricciones: debe existir la ventana Jugar Mundial
     """
     def pantalla_titulo(self):
         label_titulo = tk.Label(self,
@@ -1730,8 +1968,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: estado_torneo
     Entrada: no recibe parámetros
-    Salida: crea el panel de estado
-    Restricciones: no aplica
+    Salida: crea el panel de estado general del torneo
+    Restricciones:
     """
     def estado_torneo(self):
         frame_estado = tk.LabelFrame(self,
@@ -1806,8 +2044,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: simular_mundial
     Entrada: no recibe parámetros
-    Salida: crea botones principales
-    Restricciones: los comandos de simulación quedan pendientes
+    Salida: crea los botones principales para jugar el mundial
+    Restricciones: 
     """
     def simular_mundial(self):
         frame_acciones = tk.LabelFrame(self,
@@ -1852,15 +2090,14 @@ class Jugar_Mundial(tk.Toplevel):
                                  bg=celeste,
                                  fg=negro,
                                  bd=2,
-                                 relief="raised",
-                                 command=self.volver_inicio)
+                                 relief="raised")
         boton_volver.place(x=25, y=160, width=280, height=30)
 
     """
     Nombre: resultados_recientes
-    Entrada: no recibe parámetros
-    Salida: crea tabla de resultados
-    Restricciones: no aplica
+    Entrada: no recibe parámetros.
+    Salida: crea una tabla vacía para mostrar los resultados recientes
+    Restricciones: 
     """
     def resultados_recientes(self):
         frame_resultados = tk.LabelFrame(self,
@@ -1892,8 +2129,8 @@ class Jugar_Mundial(tk.Toplevel):
     """
     Nombre: tabla_grupo
     Entrada: no recibe parámetros
-    Salida: crea tabla de grupo
-    Restricciones: no aplica
+    Salida: crea una tabla vacía para mostrar posiciones de grupos
+    Restricciones: 
     """
     def tabla_grupo(self):
         frame_tabla = tk.LabelFrame(self,
@@ -1916,6 +2153,7 @@ class Jugar_Mundial(tk.Toplevel):
         self.tabla_posiciones.heading("gc", text="GC")
         self.tabla_posiciones.heading("dg", text="DG")
 
+
         self.tabla_posiciones.column("equipo", width=260)
         self.tabla_posiciones.column("pts", width=70)
         self.tabla_posiciones.column("gf", width=70)
@@ -1923,12 +2161,13 @@ class Jugar_Mundial(tk.Toplevel):
         self.tabla_posiciones.column("dg", width=70)
 
         self.tabla_posiciones.place(x=20, y=25, width=570, height=95)
+    
 
     """
     Nombre: campeon_actual
-    Entrada: no recibe parámetros
-    Salida: crea panel del campeón
-    Restricciones: debe existir trofeo.jpg
+    Entrada: no recibe parámetros.
+    Salida: crea el panel visual del campeón actual.
+    Restricciones: al inicio el campeón aparece sin definir
     """
     def campeon_actual(self):
         frame_campeon = tk.LabelFrame(self,
@@ -1939,7 +2178,6 @@ class Jugar_Mundial(tk.Toplevel):
                                       bd=2,
                                       relief="solid")
         frame_campeon.place(x=980, y=575, width=520, height=160)
-
         imagen_trofeo = Image.open("trofeo.jpg")
         imagen_trofeo = imagen_trofeo.resize((100, 100))
 
@@ -1952,6 +2190,7 @@ class Jugar_Mundial(tk.Toplevel):
 
         self.label_campeon = tk.Label(frame_campeon,
                                       text="Sin definir",
+                                      
                                       font=("Arial", 27, "bold"),
                                       bg="#FFF4C2",
                                       fg=azul_oscuro)
@@ -1970,9 +2209,9 @@ class Jugar_Mundial(tk.Toplevel):
     
     """
     Nombre: llave_eliminatoria
-    Entrada: no recibe parámetros
-    Salida: dibuja llave eliminatoria
-    Restricciones: no aplica
+    Entrada: no recibe parámetros.
+    Salida: dibuja una llave eliminatoria básica.
+    Restricciones: 
     """
     def llave_eliminatoria(self):
         frame_llave = tk.LabelFrame(self,
@@ -1988,7 +2227,6 @@ class Jugar_Mundial(tk.Toplevel):
                                  bg=blanco,
                                  highlightthickness=0)
         canvas_llave.place(x=10, y=10, width=370, height=385)
-
         canvas_llave.create_text(50, 20, text="Octavos", font=("Arial", 10, "bold"))
         canvas_llave.create_text(145, 20, text="Cuartos", font=("Arial", 10, "bold"))
         canvas_llave.create_text(240, 20, text="Semifinal", font=("Arial", 10, "bold"))
@@ -2032,225 +2270,30 @@ class Jugar_Mundial(tk.Toplevel):
             y = y + 152
             contador = contador + 1
 
-    """
-    Nombre: volver_inicio
-    Entrada: no recibe parámetros
-    Salida: vuelve al menú principal
-    Restricciones: principal debe existir
-    """
-    def volver_inicio(self):
-        self.destroy()
-        self.principal.deiconify()
 
 
-"""
-Nombre: Estadisticas
-Entrada: principal
-Salida: crea la ventana de estadísticas y ranking
-Restricciones: usa las listas globales del programa
-"""
+
+
+    
+
+
 class Estadisticas(tk.Toplevel):
 
-    """
-    Nombre: Estadisticas
-    Entrada: principal
-    Salida: inicializa la ventana de estadísticas
-    Restricciones: principal debe existir
-    """
-    def __init__(self, principal):
-        tk.Toplevel.__init__(self, principal)
-
-        self.principal = principal
+    def __init__(self):
+        tk.Toplevel.__init__(self)
 
         self.geometry("1535x930+-7+-0")
-        self.title("Estadísticas / Ranking")
         self.resizable(False, False)
-        self.config(bg=blanco)
 
-        self.encabezado()
-        self.tarjetas_resumen()
-        self.tabla_ranking_paises()
-        self.tabla_ranking_jugadores()
-        self.tabla_estadisticas_selecciones()
-        self.botones()
-        self.actualizar_estadisticas()
 
-    """
-    Nombre: encabezado
-    Entrada: no recibe parámetros
-    Salida: crea encabezado
-    Restricciones: usa colores globales
-    """
-    def encabezado(self):
-        frame_titulo = tk.Frame(self,
-                                bg=azul_oscuro)
-        frame_titulo.place(x=0, y=0, width=1535, height=90)
 
-        label_titulo = tk.Label(frame_titulo,
-                                text="Estadísticas / Ranking",
-                                font=("Arial", 30, "bold"),
-                                bg=azul_oscuro,
-                                fg=blanco,
-                                anchor="w")
-        label_titulo.place(x=40, y=18, width=600, height=50)
-
-        label_subtitulo = tk.Label(frame_titulo,
-                                   text="Resumen general de países, selecciones, jugadores y rendimiento",
-                                   font=("Arial", 13, "bold"),
-                                   bg=azul_oscuro,
-                                   fg=celeste,
-                                   anchor="w")
-        label_subtitulo.place(x=45, y=60, width=800, height=25)
-
-    """
-    Nombre: tarjetas_resumen
-    Entrada: no recibe parámetros
-    Salida: crea tarjetas con totales
-    Restricciones: usa listas globales
-    """
-    def tarjetas_resumen(self):
-        self.frame_total_paises = tk.LabelFrame(self,
-                                                text=" Países ",
-                                                font=("Arial", 13, "bold"),
-                                                fg=azul_oscuro,
-                                                bg=blanco,
-                                                bd=2,
-                                                relief="solid")
-        self.frame_total_paises.place(x=40, y=120, width=320, height=120)
-
-        self.label_total_paises = tk.Label(self.frame_total_paises,
-                                           text=0,
-                                           font=("Arial", 35, "bold"),
-                                           bg=blanco,
-                                           fg=azul)
-        self.label_total_paises.place(x=20, y=25, width=260, height=55)
-
-        label_paises = tk.Label(self.frame_total_paises,
-                                text="registrados",
-                                font=("Arial", 13),
-                                bg=blanco,
-                                fg=gris)
-        label_paises.place(x=20, y=78, width=260, height=25)
-
-        self.frame_total_selecciones = tk.LabelFrame(self,
-                                                     text=" Selecciones ",
-                                                     font=("Arial", 13, "bold"),
-                                                     fg=azul_oscuro,
-                                                     bg=blanco,
-                                                     bd=2,
-                                                     relief="solid")
-        self.frame_total_selecciones.place(x=400, y=120, width=320, height=120)
-
-        self.label_total_selecciones = tk.Label(self.frame_total_selecciones,
-                                                text=0,
-                                                font=("Arial", 35, "bold"),
-                                                bg=blanco,
-                                                fg=verde)
-        self.label_total_selecciones.place(x=20, y=25, width=260, height=55)
-
-        label_selecciones = tk.Label(self.frame_total_selecciones,
-                                     text="registradas",
-                                     font=("Arial", 13),
-                                     bg=blanco,
-                                     fg=gris)
-        label_selecciones.place(x=20, y=78, width=260, height=25)
-
-        self.frame_total_entrenadores = tk.LabelFrame(self,
-                                                      text=" Entrenadores ",
-                                                      font=("Arial", 13, "bold"),
-                                                      fg=azul_oscuro,
-                                                      bg=blanco,
-                                                      bd=2,
-                                                      relief="solid")
-        self.frame_total_entrenadores.place(x=760, y=120, width=320, height=120)
-
-        self.label_total_entrenadores = tk.Label(self.frame_total_entrenadores,
-                                                 text=0,
-                                                 font=("Arial", 35, "bold"),
-                                                 bg=blanco,
-                                                 fg=anaranjado)
-        self.label_total_entrenadores.place(x=20, y=25, width=260, height=55)
-
-        label_entrenadores = tk.Label(self.frame_total_entrenadores,
-                                      text="registrados",
-                                      font=("Arial", 13),
-                                      bg=blanco,
-                                      fg=gris)
-        label_entrenadores.place(x=20, y=78, width=260, height=25)
-
-        self.frame_total_jugadores = tk.LabelFrame(self,
-                                                   text=" Jugadores ",
-                                                   font=("Arial", 13, "bold"),
-                                                   fg=azul_oscuro,
-                                                   bg=blanco,
-                                                   bd=2,
-                                                   relief="solid")
-        self.frame_total_jugadores.place(x=1120, y=120, width=320, height=120)
-
-        self.label_total_jugadores = tk.Label(self.frame_total_jugadores,
-                                              text=0,
-                                              font=("Arial", 35, "bold"),
-                                              bg=blanco,
-                                              fg=rojo)
-        self.label_total_jugadores.place(x=20, y=25, width=260, height=55)
-
-        label_jugadores = tk.Label(self.frame_total_jugadores,
-                                   text="registrados",
-                                   font=("Arial", 13),
-                                   bg=blanco,
-                                   fg=gris)
-        label_jugadores.place(x=20, y=78, width=260, height=25)
-    """
-    Nombre: tabla_ranking_paises
-    Entrada: no recibe parámetros
-    Salida: crea tabla para países
-    Restricciones: usa lista_paises
-    """
-    def tabla_ranking_paises(self):
-        frame_paises = tk.LabelFrame(self,
-                                     text=" Ranking FIFA de Países ",
-                                     font=("Arial", 14, "bold"),
-                                     fg=azul_oscuro,
-                                     bg=blanco,
-                                     bd=1,
-                                     relief="solid")
-        frame_paises.place(x=40, y=270, width=700, height=280)
-
-        self.tabla_paises = ttk.Treeview(frame_paises,
-                                         columns=("posicion", "codigo", "pais", "continente", "ranking"),
-                                         show="headings",
-                                         height=8)
-
-        self.tabla_paises.heading("posicion", text="#")
-        self.tabla_paises.heading("codigo", text="Código")
-        self.tabla_paises.heading("pais", text="País")
-        self.tabla_paises.heading("continente", text="Continente")
-        self.tabla_paises.heading("ranking", text="Ranking")
-
-        self.tabla_paises.column("posicion", width=50, anchor="center")
-        self.tabla_paises.column("codigo", width=90, anchor="center")
-        self.tabla_paises.column("pais", width=220, anchor="w")
-        self.tabla_paises.column("continente", width=180, anchor="w")
-        self.tabla_paises.column("ranking", width=100, anchor="center")
-
-        self.tabla_paises.place(x=20, y=25, width=650, height=220)
-    """
-    Nombre: tabla_ranking_jugadores
-    Entrada: no recibe parámetros
-    Salida: crea tabla de jugadores
-    Restricciones: usa lista_jugadores
-    """
-    def tabla_ranking_jugadores(self):
-        frame_jugadores = tk.LabelFrame(self,
-                                        text=" Ranking de Jugadores ",
-                                        font=("Arial", 14, "bold"),
-                                        fg=azul_oscuro,
-                                        bg=blanco,
-                                        bd=1,
-                                        relief="solid")
-        frame_jugadores.place(x=780, y=270, width=700, height=280)
-    
 
 if __name__ == "__main__":
     app = Pantalla_Principal()
     app.mainloop()
+
+    
+    
+
+
+
