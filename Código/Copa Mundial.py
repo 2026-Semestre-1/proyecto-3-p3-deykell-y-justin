@@ -78,6 +78,14 @@ def numero_a_texto(numero):
     return resultado
 
 
+# Convierte números menores de 10 a dos dígitos para fechas
+def dos_digitos(numero):
+    if numero < 10:
+        return "0" + numero_a_texto(numero)
+
+    return numero_a_texto(numero)
+
+
 
 
 class Pais:
@@ -105,7 +113,7 @@ class Pais:
         print("Código FIFA del País: " + self.codigo_fifa)
         print("Nombre del País: " + self.nombre)
         print("Continente: " + self.continente)
-        print("Ranking FIFA: " + str(self.ranking_fifa))
+        print("Ranking FIFA:", self.ranking_fifa)
         print("")
 
     def actualizar_datos(self, codigo_fifa, nombre, continente, ranking_fifa):
@@ -167,7 +175,7 @@ class Entrenador(Persona):
         print("Fecha de Nacimiento: " + self.fecha_nacimiento)
         print("Nacionalidad: " + self.nacionalidad)
         print("Licencia: " + self.licencia)
-        print("Experiencia: " + str(self.experiencia_anios))
+        print("Experiencia:", self.experiencia_anios)
         print("Sistema de Juego: " + self.sistema_juego)
         print("")
 
@@ -215,13 +223,13 @@ class Futbolista(Persona):
         print("Nombre: " + self.nombre + " " + self.apellido)
         print("Fecha de Nacimiento: " + self.fecha_nacimiento)
         print("Nacionalidad: " + self.nacionalidad)
-        print("Dorsal: " + str(self.dorsal))
+        print("Dorsal:", self.dorsal)
         print("Posicion: " + self.posicion)
-        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
-        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
-        print("Goles: " + str(self.goles))
-        print("Asistencias: " + str(self.asistencias))
-        print("Puntaje Individual: " + str(self.puntaje_individual))
+        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
+        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
+        print("Goles:", self.goles)
+        print("Asistencias:", self.asistencias)
+        print("Puntaje Individual:", self.puntaje_individual)
         print("")
 
     def actualizar_datos(self, nombre, apellido, fecha_nacimiento, nacionalidad, dorsal, posicion, total_tarjetas_amarillas, total_tarjetas_rojas, goles, asistencias, puntaje_individual):
@@ -293,18 +301,18 @@ class Seleccion:
         print("Jugadores:")
         for futbolista in self.jugadores:
             print("Nombre: " + futbolista.nombre + " " + futbolista.apellido)
-            print("Dorsal: " + str(futbolista.dorsal))
+            print("Dorsal:", futbolista.dorsal)
             print("")
-        print("Goles a Favor: " + str(self.total_goles_a_favor))
-        print("Goles en Contra: " + str(self.total_goles_en_contra))
-        print("Tarjetas Amarillas: " + str(self.total_tarjetas_amarillas))
-        print("Tarjetas Rojas: " + str(self.total_tarjetas_rojas))
-        print("Fuerza de equipo: " + str(self.fuerza_equipo))
+        print("Goles a Favor:", self.total_goles_a_favor)
+        print("Goles en Contra:", self.total_goles_en_contra)
+        print("Tarjetas Amarillas:", self.total_tarjetas_amarillas)
+        print("Tarjetas Rojas:", self.total_tarjetas_rojas)
+        print("Fuerza de equipo:", self.fuerza_equipo)
         print("")
 
     def agregar_jugador(self, futbolista):
 
-        if len(self.jugadores) < 23:
+        if contar(self.jugadores) < 23:
             self.jugadores += [futbolista]
         else:
             return "Error: La plantilla ya cuenta con 23 jugadores"
@@ -756,7 +764,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_paises_registrados.place(x=270, y=460, width=560, height=400)
 
         label_total_paises = tk.Label(self,
-                                      text=f"Total: {len(lista_paises)} paises",
+                                      text="Total: " + numero_a_texto(contar(lista_paises)) + " paises",
                                       font=("Arial", 10, "bold"))
         label_total_paises.place(x=680, y=480, width=100, height=30)
 
@@ -894,7 +902,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         frame_selecciones_registradas.place(x=920, y=460, width=560, height=400)
 
         label_total_selecciones = tk.Label(self,
-                                      text=f"Total: {len(lista_selecciones)} selecciones",
+                                      text="Total: " + numero_a_texto(contar(lista_selecciones)) + " selecciones",
                                       font=("Arial", 10, "bold"))
         label_total_selecciones.place(x=1320, y=480, width=130, height=30)
 
@@ -1028,7 +1036,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif not len(codigo_fifa) == 3:
+        elif not contar(codigo_fifa) == 3:
             messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
@@ -1053,7 +1061,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         if lista_paises == []:
 
             archivo = open("paises.txt", "a")
-            linea = (f"{codigo_fifa};{nombre};{continente};{ranking_fifa}")
+            linea = codigo_fifa + ";" + nombre + ";" + continente + ";" + numero_a_texto(ranking_fifa)
             archivo.write(linea)
             archivo.close()
 
@@ -1061,7 +1069,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
             lista_paises += [nuevo_pais]
 
 
-            numero = len(lista_paises)
+            numero = contar(lista_paises)
 
             if numero % 2 == 0:
                 self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
@@ -1083,7 +1091,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
             
         archivo = open("paises.txt", "a")
-        linea = (f"\n{codigo_fifa};{nombre};{continente};{ranking_fifa}")
+        linea = "\n" + codigo_fifa + ";" + nombre + ";" + continente + ";" + numero_a_texto(ranking_fifa)
         archivo.write(linea)
         archivo.close()
 
@@ -1091,7 +1099,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         lista_paises += [nuevo_pais]
 
 
-        numero = len(lista_paises) - 1
+        numero = contar(lista_paises) - 1
 
         if numero % 2 == 0:
             self.tree_view.insert(parent= "", index="end", iid=numero, text="", values=(codigo_fifa, nombre, continente, ranking_fifa), tags=("evenrow",))
@@ -1135,7 +1143,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         elif ranking_fifa == "":
             messagebox.showerror("¡Error!", "Debe ingresar el ranking FIFA del país")
             return 
-        elif not len(codigo_fifa) == 3:
+        elif not contar(codigo_fifa) == 3:
             messagebox.showerror("!Error¡", "El códifo FIFA debe contener 3 letras")
             return 
         
@@ -1159,13 +1167,13 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
 
         for pais in contenido_paises_dividido:
             if  pais[0] == codigo_fifa:
-                pais[3] = str(ranking_fifa)
+                pais[3] = numero_a_texto(ranking_fifa)
                 break
 
         archivo_paises_modificar = open("paises.txt", "w")
 
         for pais in contenido_paises_dividido:
-            linea = f"{pais[0]};{pais[1]};{pais[2]};{pais[3]}\n"
+            linea = pais[0] + ";" + pais[1] + ";" + pais[2] + ";" + pais[3] + "\n"
             archivo_paises_modificar.write(linea)
 
         archivo_paises_modificar.close()
@@ -1214,7 +1222,7 @@ class Administrar_Paises_Selecciones(tk.Toplevel):
         selected = self.tree_view.focus()
     
         values = self.tree_view.item(selected, "values")
-        if not values or len(values) < 4:
+        if not values or contar(values) < 4:
             return 
     
         self.entry_codigo.insert(0, values[0])
@@ -1793,7 +1801,7 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         self.obtener_jugador = tk.StringVar()
         jugadores = []
         for jugador in lista_jugadores:
-            jugadores += [f"{jugador.nombre} {jugador.apellido}"]
+            jugadores += [jugador.nombre + " " + jugador.apellido]
 
         self.combobox_jugadores = ttk.Combobox(self,
                                                values=jugadores,
@@ -1916,7 +1924,7 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         año = int(año)
         experiencia = int(experiencia)
 
-        fecha = (f"{dia:02}/{mes:02}/{año}")
+        fecha = dos_digitos(dia) + "/" + dos_digitos(mes) + "/" + numero_a_texto(año)
 
 
         if not 1 <= experiencia  <= 50:
@@ -1927,7 +1935,7 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         if lista_entrenadores == []:
 
             archivo = open("entrenadores.txt", "a")
-            linea = (f"{nombre};{apellido};{nacionalidad};{fecha};{licencia};{experiencia};{sistema_juego}")
+            linea = nombre + ";" + apellido + ";" + nacionalidad + ";" + fecha + ";" + licencia + ";" + numero_a_texto(experiencia) + ";" + sistema_juego
             archivo.write(linea)
             archivo.close()
 
@@ -1957,7 +1965,7 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
             return  
         
         archivo = open("entrenadores.txt", "a")
-        linea = (f"\n{nombre};{apellido};{nacionalidad};{fecha};{licencia};{experiencia};{sistema_juego}")
+        linea = "\n" + nombre + ";" + apellido + ";" + nacionalidad + ";" + fecha + ";" + licencia + ";" + numero_a_texto(experiencia) + ";" + sistema_juego
         archivo.write(linea)
         archivo.close()
 
@@ -2027,7 +2035,18 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         self.tree_jugadores.column("posicion", width=130, anchor="center")
         self.tree_jugadores.column("puntaje", width=70, anchor="center")
 
-        self.tree_jugadores.place(x=970, y=480, width=515, height=310)
+        self.tree_jugadores.place(x=970, y=480, width=515, height=270)
+
+        boton_eliminar_jugador = tk.Button(self,
+                                           text="Eliminar Jugador",
+                                           font=("Arial", 12, "bold"),
+                                           bd=1,
+                                           relief="groove",
+                                           fg=blanco,
+                                           bg=rojo,
+                                           anchor="center",
+                                           command=self.eliminar_jugador_registrado)
+        boton_eliminar_jugador.place(x=1135, y=760, width=190, height=35)
 
         self.cargar_tabla_jugadores()
 
@@ -2236,6 +2255,81 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
 
 
 
+
+
+
+
+
+
+
+    """
+    Nombre: guardar_jugadores_archivo
+    Entrada: no recibe parámetros
+    Salida: guarda lista_jugadores actualizada en jugadores.txt
+    Restricciones: usa numero_a_texto para convertir números
+    """
+    def guardar_jugadores_archivo(self):
+
+        archivo = open("jugadores.txt", "w")
+
+        primero = True
+
+        for jugador in lista_jugadores:
+            linea = jugador.nombre + ";" + jugador.apellido + ";" + jugador.fecha_nacimiento + ";" + jugador.nacionalidad + ";" + numero_a_texto(jugador.dorsal) + ";" + jugador.posicion + ";" + numero_a_texto(jugador.total_tarjetas_amarillas) + ";" + numero_a_texto(jugador.total_tarjetas_rojas) + ";" + numero_a_texto(jugador.goles) + ";" + numero_a_texto(jugador.asistencias) + ";" + numero_a_texto(jugador.puntaje_individual)
+
+            if primero == True:
+                archivo.write(linea)
+                primero = False
+            else:
+                archivo.write("\n" + linea)
+
+        archivo.close()
+
+
+    """
+    Nombre: eliminar_jugador_registrado
+    Entrada: jugador seleccionado en la tabla
+    Salida: elimina el jugador de lista_jugadores, actualiza jugadores.txt y la tabla
+    Restricciones: debe seleccionarse un jugador en la tabla
+    """
+    def eliminar_jugador_registrado(self):
+
+        global lista_jugadores
+
+        seleccionado = self.tree_jugadores.focus()
+
+        if seleccionado == "":
+            messagebox.showerror("Error", "Seleccione un jugador de la tabla")
+            return
+
+        valores = self.tree_jugadores.item(seleccionado, "values")
+
+        nombre_completo = valores[0]
+        nacionalidad = valores[1]
+        dorsal_texto = valores[2]
+
+        nueva_lista = []
+        eliminado = False
+
+        for jugador in lista_jugadores:
+            nombre_jugador = jugador.nombre + " " + jugador.apellido
+
+            if nombre_jugador == nombre_completo and jugador.nacionalidad == nacionalidad and numero_a_texto(jugador.dorsal) == dorsal_texto and eliminado == False:
+                eliminado = True
+            else:
+                nueva_lista += [jugador]
+
+        if eliminado == False:
+            messagebox.showerror("Error", "No se encontró el jugador seleccionado")
+            return
+
+        lista_jugadores = nueva_lista
+
+        self.guardar_jugadores_archivo()
+        self.cargar_tabla_jugadores()
+        self.actualizar_combobox_jugadores()
+
+        messagebox.showinfo("Correcto", "Jugador eliminado correctamente")
 
 
 
@@ -3252,7 +3346,6 @@ if __name__ == "__main__":
 
     
     
-
 
 
 
