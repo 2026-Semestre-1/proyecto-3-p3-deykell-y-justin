@@ -38,6 +38,7 @@ Descripción: Cuenta elementos de forma manual
 Entrada: Lista o grupo de datos que se quiere contar
 Salida: Cantidad de elementos encontrados
 Restricción: El dato recibido debe poder recorrerse con for
+
 """
 def contar(elementos):
     cantidad = 0
@@ -484,6 +485,13 @@ class Seleccion:
             self.partidos_empatados += 1
         else:
             self.partidos_perdidos += 1
+    """
+    Nombre: ordenar_jugadores_por_puntaje
+    Descripción: ordena los jugadores de la selección desde el puntaje más alto hasta el más bajo
+    Entrada: usa la lista de jugadores guardada en la selección
+    Salida: lista de jugadores ordenada por puntaje individual
+    Restricción: cada jugador debe tener un puntaje individual registrado
+    """
 
     def ordenar_jugadores_por_puntaje(self):
         jugadores_ordenados = []
@@ -500,6 +508,15 @@ class Seleccion:
                 j += 1
             i += 1
         return jugadores_ordenados
+
+
+    """
+    Nombre: promedio_11_mejores
+    Descripción: calcula el promedio de puntaje de los 11 mejores jugadores de la selección
+    Entrada: usa los jugadores ordenados por puntaje individual
+    Salida: promedio entero de los mejores 11 jugadores
+    Restricción: la selección debe tener jugadores registrados
+    """
 
     def promedio_11_mejores(self):
         suma = 0
@@ -560,6 +577,16 @@ class Partido:
         self.penales_equipo2 = 0
         self.jugado = False
 
+
+
+    """
+    Nombre: buscar_jugador_indice
+    Descripción: busca un jugador dentro de una lista usando la posición indicada
+    Entrada: lista de jugadores y el índice que se quiere buscar
+    Salida: jugador encontrado o None si el índice no existe
+    Restricción: el índice debe estar dentro del rango de la lista de jugadores
+    """
+
     def buscar_jugador_indice(self, jugadores, indice_buscado):
         indice = 0
         for jugador in jugadores:
@@ -567,6 +594,16 @@ class Partido:
                 return jugador
             indice += 1
         return None
+
+
+
+    """
+    Nombre: registrar_goles_jugadores
+    Descripción: asigna los goles y asistencias a jugadores de una selección después de simular un partido
+    Entrada: selección que anotó y cantidad de goles realizados
+    Salida: jugadores actualizados con goles y asistencias
+    Restricción: la selección debe tener jugadores registrados para poder asignar estadísticas
+    """
 
     def registrar_goles_jugadores(self, seleccion, cantidad_goles):
         cantidad_jugadores = contar(seleccion.jugadores)
@@ -592,6 +629,14 @@ class Partido:
 
             contador += 1
 
+    """
+    Nombre: calcular_tarjetas_equipo
+    Descripción: calcula cuántas tarjetas puede recibir una selección según la fuerza del rival
+    Entrada: selección que se evalúa y selección rival
+    Salida: lista con cantidad de tarjetas amarillas y tarjetas rojas
+    Restricción: ambas selecciones deben tener fuerza de equipo calculada
+    """
+
     def calcular_tarjetas_equipo(self, seleccion, rival):
         diferencia = rival.fuerza_equipo - seleccion.fuerza_equipo
         maximo_amarillas = 3
@@ -614,6 +659,13 @@ class Partido:
             rojas = 1
 
         return [amarillas, rojas]
+    """
+    Nombre: registrar_tarjetas_jugadores
+    Descripción: reparte las tarjetas amarillas y rojas entre jugadores de una selección
+    Entrada: selección, cantidad de tarjetas amarillas y cantidad de tarjetas rojas
+    Salida: jugadores actualizados con sus tarjetas registradas
+    Restricción: la selección debe tener jugadores para poder asignar las tarjetas
+    """
 
     def registrar_tarjetas_jugadores(self, seleccion, amarillas, rojas):
         cantidad_jugadores = contar(seleccion.jugadores)
@@ -951,6 +1003,14 @@ class Mundial:
         self.fase_actual = "Fase de grupos finalizada"
         return "Fase de grupos simulada correctamente"
 
+    """
+    Nombre: obtener_tercero_grupo
+    Descripción: busca la selección que quedó en tercer lugar dentro de un grupo
+    Entrada: grupo del cual se quiere obtener el tercer lugar
+    Salida: selección que está en la tercera posición o None si no existe
+    Restricción: el grupo debe tener una tabla calculada con suficientes selecciones
+    """
+
     def obtener_tercero_grupo(self, grupo):
         tabla = grupo.calcular_tabla()
         contador = 0
@@ -959,6 +1019,14 @@ class Mundial:
                 return seleccion
             contador += 1
         return None
+
+    """
+    Nombre: ordenar_terceros
+    Descripción: ordena las selecciones que quedaron terceras para escoger las mejores
+    Entrada: lista de selecciones que quedaron en tercer lugar
+    Salida: lista de terceros ordenada según puntos, diferencia de goles y goles a favor
+    Restricción: las selecciones deben tener sus estadísticas de grupo actualizadas
+    """
 
     def ordenar_terceros(self, terceros):
         terceros_ordenados = []
@@ -1004,6 +1072,15 @@ class Mundial:
 
         return mejores_terceros
 
+
+    """
+    Nombre: obtener_clasificados_grupos
+    Descripción: obtiene las selecciones clasificadas después de la fase de grupos
+    Entrada: usa los grupos creados dentro del Mundial
+    Salida: lista de selecciones clasificadas a la fase eliminatoria
+    Restricción: los grupos deben estar creados y jugados antes de buscar clasificados
+    """
+
     def obtener_clasificados_grupos(self):
         clasificados = []
         for grupo in self.grupos:
@@ -1028,9 +1105,24 @@ class Mundial:
         if cantidad == 2:
             return "Final"
         return "Fase Eliminatoria"
+    """
+    Nombre: cantidad_es_valida_eliminatoria
+    Descripción: revisa si la cantidad de equipos sirve para armar una fase eliminatoria
+    Entrada: cantidad de selecciones clasificadas
+    Salida: True si la cantidad es válida o False si no sirve
+    Restricción: la cantidad debe ser 2, 4, 8, 16 o 32
+    """
 
     def cantidad_es_valida_eliminatoria(self, cantidad):
         return cantidad == 2 or cantidad == 4 or cantidad == 8 or cantidad == 16 or cantidad == 32
+
+    """
+    Nombre: armar_fase_eliminatoria
+    Descripción: crea los partidos de una fase eliminatoria usando las selecciones clasificadas
+    Entrada: nombre de la fase y lista de selecciones clasificadas
+    Salida: fase eliminatoria con sus partidos registrados
+    Restricción: la cantidad de clasificados debe ser válida para poder emparejar equipos
+    """
 
     def armar_fase_eliminatoria(self, nombre_fase, clasificados):
         fase = Fase(nombre_fase, [])
@@ -1391,6 +1483,13 @@ def crear_seleccion_desde_datos(codigo, nombre_pais, nombre_entrenador, fuerza_t
     else:
         nueva.calcular_fuerza_equipo()
     return nueva
+"""
+Nombre: cargar_selecciones_archivo
+Descripción: carga las selecciones guardadas en el archivo de texto
+Entrada: usa las líneas leídas desde selecciones.txt
+Salida: lista de selecciones actualizada con los datos del archivo
+Restricción: cada línea debe tener 3 o 4 datos separados por punto y coma
+"""
 
 def cargar_selecciones_archivo():
     global lista_selecciones
@@ -1404,6 +1503,16 @@ def cargar_selecciones_archivo():
                 nueva = crear_seleccion_desde_datos(datos[0], datos[1], datos[2], fuerza)
                 if nueva is not None:
                     lista_selecciones += [nueva]
+
+
+
+"""
+Nombre: preparar_selecciones_desde_asignaciones
+Descripción: completa las selecciones usando los países, entrenadores y jugadores ya cargados
+Entrada: usa las listas globales de países, entrenadores, jugadores y selecciones
+Salida: selecciones creadas o actualizadas con entrenador, jugadores y fuerza de equipo
+Restricción: cada país debe tener un entrenador asignado para poder crear su selección
+"""
 
 def preparar_selecciones_desde_asignaciones():
     global lista_selecciones
@@ -1422,6 +1531,13 @@ def preparar_selecciones_desde_asignaciones():
         completar_jugadores_seleccion(seleccion)
         seleccion.calcular_fuerza_equipo()
 
+"""
+Nombre: guardar_selecciones_archivo
+Descripción: guarda en selecciones.txt las selecciones que están registradas en el sistema
+Entrada: usa la lista global de selecciones
+Salida: archivo selecciones.txt actualizado
+Restricción: cada selección debe tener país, código de equipo y fuerza calculada
+"""
 def guardar_selecciones_archivo():
     archivo = open("selecciones.txt", "w", encoding="utf-8")
     primero = True
@@ -1437,6 +1553,14 @@ def guardar_selecciones_archivo():
             archivo.write("\n" + linea)
     archivo.close()
 
+
+"""
+Nombre: guardar_entrenadores_archivo_general
+Descripción: guarda en entrenadores.txt todos los entrenadores registrados
+Entrada: usa la lista global de entrenadores
+Salida: archivo entrenadores.txt actualizado con los datos de cada entrenador
+Restricción: cada entrenador debe tener sus datos completos antes de guardar
+"""
 def guardar_entrenadores_archivo_general():
     archivo = open("entrenadores.txt", "w", encoding="utf-8")
     primero = True
@@ -1449,6 +1573,14 @@ def guardar_entrenadores_archivo_general():
             archivo.write("\n" + linea)
     archivo.close()
 
+
+"""
+Nombre: guardar_jugadores_archivo_general
+Descripción: guarda en jugadores.txt todos los jugadores registrados con sus estadísticas
+Entrada: usa la lista global de jugadores
+Salida: archivo jugadores.txt actualizado con los datos de cada jugador
+Restricción: cada jugador debe tener nombre, dorsal, posición, puntaje y selección registrados
+"""
 def guardar_jugadores_archivo_general():
     archivo = open("jugadores.txt", "w", encoding="utf-8")
     primero = True
@@ -1498,7 +1630,7 @@ class Pantalla_Principal(tk.Tk):
         tk.Tk.__init__(self)
 
         self.geometry("1535x930+-7+-0")
-        self.title("Ventana")
+        self.title("Ventana Principal")
         self.resizable(False, False)
 
         self.fondo()
@@ -1506,7 +1638,7 @@ class Pantalla_Principal(tk.Tk):
 
     def fondo(self):
 
-        imagen_fondo = Image.open("pantalla_principal.png")
+        imagen_fondo = Image.open("pantalla_principal.JPEG")
         imagen_fondo = imagen_fondo.resize((1535, 930))
 
         self.fondo = ImageTk.PhotoImage(imagen_fondo)
@@ -2558,6 +2690,9 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         self.entry_nombre_entrenador.insert(0, "Ej: Carlo")
         self.entry_nombre_entrenador.place(x=145, y=120, width=155, height=30)
 
+        self.entry_nombre_entrenador.bind("<FocusIn>", self.borrar_nombre_entrenador)
+        self.entry_nombre_entrenador.bind("<FocusOut>", self.restaurar_nombre_entrenador)
+
         self.entry_apellidos_entrenador = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -2565,7 +2700,10 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
                                 highlightcolor=azul,
                                 highlightthickness=1)
         self.entry_apellidos_entrenador.insert(0, "Ej: Ancelotti")
-        self.entry_apellidos_entrenador.place(x=145, y=160, width=155, height=30)                                          
+        self.entry_apellidos_entrenador.place(x=145, y=160, width=155, height=30)    
+
+        self.entry_apellidos_entrenador.bind("<FocusIn>", self.borrar_apellidos_entrenador)
+        self.entry_apellidos_entrenador.bind("<FocusOut>", self.restaurar_apellidos_entrenador)                                          
 
         self.seleccion_nacionalidad_entrenador = tk.StringVar()
 
@@ -2829,6 +2967,9 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
         self.entry_nombre_jugador.insert(0, "Ej: Lionel")
         self.entry_nombre_jugador.place(x=145, y=540, width=155, height=30)
 
+        self.entry_nombre_jugador.bind("<FocusIn>", self.borrar_nombre_jugador)
+        self.entry_nombre_jugador.bind("<FocusOut>", self.restaurar_nombre_jugador)
+
         self.entry_apellidos_jugador = tk.Entry(self,
                                 fg=gris,
                                 insertwidth=1,
@@ -2837,6 +2978,9 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
                                 highlightthickness=1)
         self.entry_apellidos_jugador.insert(0, "Ej: Messi")
         self.entry_apellidos_jugador.place(x=145, y=580, width=155, height=30)
+
+        self.entry_apellidos_jugador.bind("<FocusIn>", self.borrar_apellidos_jugador)
+        self.entry_apellidos_jugador.bind("<FocusOut>", self.restaurar_apellidos_jugador)
 
         self.combobox_nacionalidad_jugador= ttk.Combobox()
                                           
@@ -3392,6 +3536,15 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
 
         messagebox.showinfo("Correcto", "Entrenador registrado correctamente")
 
+
+    """
+    Nombre: actualizar_entrenador
+    Descripción: modifica los datos de un entrenador seleccionado en la tabla
+    Entrada: datos escritos o seleccionados en el formulario de entrenador
+    Salida: entrenador actualizado en la lista, tabla y archivo de texto
+    Restricción: se debe seleccionar un entrenador y los datos no pueden estar vacíos ni ser inválidos
+    """
+
     def actualizar_entrenador(self):
         seleccionado = self.tree_entrenadores.focus()
 
@@ -3767,6 +3920,15 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
 
         messagebox.showinfo("Correcto", "Jugador registrado correctamente")
 
+
+    """
+    Nombre: actualizar_jugador
+    Descripción: modifica los datos de un jugador seleccionado en la tabla
+    Entrada: datos escritos o seleccionados en el formulario de jugador
+    Salida: jugador actualizado en la lista, tabla y archivo de texto
+    Restricción: se debe seleccionar un jugador y los datos deben ser válidos
+    """
+
     def actualizar_jugador(self):
         seleccionado = self.tree_jugadores.focus()
 
@@ -3919,6 +4081,38 @@ class Administrar_Entrenadores_Jugadores(tk.Toplevel):
     def volver(self):
         self.destroy()
         self.principal.deiconify()
+
+    def borrar_nombre_entrenador(self, e=None):
+        if self.entry_nombre_entrenador.get() == "Ej: Carlo":
+            self.entry_nombre_entrenador.delete(0, "end")
+
+    def restaurar_nombre_entrenador(self, e=None):
+        if self.entry_nombre_entrenador.get() == "":
+            self.entry_nombre_entrenador.insert(0, "Ej: Carlo")
+
+    def borrar_apellidos_entrenador(self, e=None):
+        if self.entry_apellidos_entrenador.get() == "Ej: Ancelotti":
+            self.entry_apellidos_entrenador.delete(0, "end")
+
+    def restaurar_apellidos_entrenador(self, e=None):
+        if self.entry_apellidos_entrenador.get() == "":
+            self.entry_apellidos_entrenador.insert(0, "Ej: Ancelotti")
+
+    def borrar_nombre_jugador(self, e=None):
+        if self.entry_nombre_jugador.get() == "Ej: Lionel":
+            self.entry_nombre_jugador.delete(0, "end")
+
+    def restaurar_nombre_jugador(self, e=None):
+        if self.entry_nombre_jugador.get() == "":
+            self.entry_nombre_jugador.insert(0, "Ej: Lionel")
+
+    def borrar_apellidos_jugador(self, e=None):
+        if self.entry_apellidos_jugador.get() == "Ej: Messi":
+            self.entry_apellidos_jugador.delete(0, "end")
+
+    def restaurar_apellidos_jugador(self, e=None):
+        if self.entry_apellidos_jugador.get() == "":
+            self.entry_apellidos_jugador.insert(0, "Ej: Messi")
 
 # Pantalla donde se crean los grupos del mundial
 """
