@@ -1,0 +1,48 @@
+CAN;Canadá;Técnico Canadá;65
+BRA;Brasil;Técnico Brasil;94
+USA;Estados Unidos;Técnico Estados Unidos;81
+GER;Alemania;Técnico Alemania;92
+NED;Países Bajos;Técnico Países Bajos;92
+BEL;Bélgica;Técnico Bélgica;91
+ESP;España;Técnico España;92
+FRA;Francia;Técnico Francia;95
+ARG;Argentina;Técnico Argentina;95
+POR;Portugal;Técnico Portugal;92
+ENG;Inglaterra;Técnico Inglaterra;94
+RSA;Sudáfrica;Técnico Sudáfrica;55
+BIH;Bosnia y Herzegovina;Técnico Bosnia y Herzegovina;58
+MAR;Marruecos;Técnico Marruecos;86
+PAR;Paraguay;Técnico Paraguay;63
+CUR;Curazao;Técnico Curazao;55
+JPN;Japón;Técnico Japón;80
+EGY;Egipto;Técnico Egipto;69
+CPV;Cabo Verde;Técnico Cabo Verde;58
+SEN;Senegal;Técnico Senegal;80
+ALG;Argelia;Técnico Argelia;68
+DRC;República Democrática del Congo;Técnico República Democrática del Congo;61
+CRO;Croacia;Técnico Croacia;89
+KOR;Corea del Sur;Técnico Corea del Sur;75
+QAT;Catar;Técnico Catar;57
+HAI;Haití;Técnico Haití;54
+AUS;Australia;Técnico Australia;63
+CIV;Costa de Marfil;Técnico Costa de Marfil;60
+SWE;Suecia;Técnico Suecia;74
+IRN;Irán;Técnico Irán;71
+KSA;Arabia Saudita;Técnico Arabia Saudita;59
+IRQ;Irak;Técnico Irak;57
+AUT;Austria;Técnico Austria;82
+UZB;Uzbekistán;Técnico Uzbekistán;66
+GHA;Ghana;Técnico Ghana;77
+CZE;Chequia;Técnico Chequia;66
+SUI;Suiza;Técnico Suiza;87
+SCO;Escocia;Técnico Escocia;70
+TUR;Turquía;Técnico Turquía;73
+ECU;Ecuador;Técnico Ecuador;72
+TUN;Túnez;Técnico Túnez;58
+NZL;Nueva Zelanda;Técnico Nueva Zelanda;55
+URU;Uruguay;Técnico Uruguay;88
+NOR;Noruega;Técnico Noruega;77
+JOR;Jordania;Técnico Jordania;56
+COL;Colombia;Técnico Colombia;84
+PAN;Panamá;Técnico Panamá;82
+CRC;Costa Rica;1 1;12

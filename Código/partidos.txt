@@ -1,0 +1,103 @@
+1;Grupo A;Mexico;South Africa;4;4;0;0;Empate
+2;Grupo A;Mexico;South Korea;1;0;0;0;Mexico
+3;Grupo A;Mexico;Czechia;3;2;0;0;Mexico
+4;Grupo A;South Africa;South Korea;2;5;0;0;South Korea
+5;Grupo A;South Africa;Czechia;3;3;0;0;Empate
+6;Grupo A;South Korea;Czechia;2;2;0;0;Empate
+7;Grupo B;Canada;Bosnia Herzegovina;2;4;0;0;Bosnia Herzegovina
+8;Grupo B;Canada;Qatar;0;0;0;0;Empate
+9;Grupo B;Canada;Switzerland;3;5;0;0;Switzerland
+10;Grupo B;Bosnia Herzegovina;Qatar;4;0;0;0;Bosnia Herzegovina
+11;Grupo B;Bosnia Herzegovina;Switzerland;0;2;0;0;Switzerland
+12;Grupo B;Qatar;Switzerland;4;5;0;0;Switzerland
+13;Grupo C;Brazil;Morocco;1;0;0;0;Brazil
+14;Grupo C;Brazil;Haiti;4;2;0;0;Brazil
+15;Grupo C;Brazil;Scotland;3;3;0;0;Empate
+16;Grupo C;Morocco;Haiti;4;3;0;0;Morocco
+17;Grupo C;Morocco;Scotland;3;1;0;0;Morocco
+18;Grupo C;Haiti;Scotland;4;5;0;0;Scotland
+19;Grupo D;United States;Paraguay;2;2;0;0;Empate
+20;Grupo D;United States;Australia;2;0;0;0;United States
+21;Grupo D;United States;Turkey;2;0;0;0;United States
+22;Grupo D;Paraguay;Australia;1;0;0;0;Paraguay
+23;Grupo D;Paraguay;Turkey;0;1;0;0;Turkey
+24;Grupo D;Australia;Turkey;3;4;0;0;Turkey
+25;Grupo E;Germany;Curacao;2;0;0;0;Germany
+26;Grupo E;Germany;Ivory Coast;7;2;0;0;Germany
+27;Grupo E;Germany;Ecuador;3;2;0;0;Germany
+28;Grupo E;Curacao;Ivory Coast;4;4;0;0;Empate
+29;Grupo E;Curacao;Ecuador;3;3;0;0;Empate
+30;Grupo E;Ivory Coast;Ecuador;2;2;0;0;Empate
+31;Grupo F;Netherlands;Japan;2;4;0;0;Japan
+32;Grupo F;Netherlands;Sweden;1;4;0;0;Sweden
+33;Grupo F;Netherlands;Tunisia;3;1;0;0;Netherlands
+34;Grupo F;Japan;Sweden;1;1;0;0;Empate
+35;Grupo F;Japan;Tunisia;4;3;0;0;Japan
+36;Grupo F;Sweden;Tunisia;1;2;0;0;Tunisia
+37;Grupo G;Belgium;Egypt;4;3;0;0;Belgium
+38;Grupo G;Belgium;Iran;1;2;0;0;Iran
+39;Grupo G;Belgium;New Zealand;2;0;0;0;Belgium
+40;Grupo G;Egypt;Iran;2;4;0;0;Iran
+41;Grupo G;Egypt;New Zealand;3;3;0;0;Empate
+42;Grupo G;Iran;New Zealand;5;3;0;0;Iran
+43;Grupo H;Spain;Cape Verde;4;2;0;0;Spain
+44;Grupo H;Spain;Saudi Arabia;4;0;0;0;Spain
+45;Grupo H;Spain;Uruguay;0;3;0;0;Uruguay
+46;Grupo H;Cape Verde;Saudi Arabia;1;3;0;0;Saudi Arabia
+47;Grupo H;Cape Verde;Uruguay;0;2;0;0;Uruguay
+48;Grupo H;Saudi Arabia;Uruguay;3;2;0;0;Saudi Arabia
+49;Grupo I;France;Senegal;1;1;0;0;Empate
+50;Grupo I;France;Iraq;4;3;0;0;France
+51;Grupo I;France;Norway;3;3;0;0;Empate
+52;Grupo I;Senegal;Iraq;1;1;0;0;Empate
+53;Grupo I;Senegal;Norway;0;0;0;0;Empate
+54;Grupo I;Iraq;Norway;0;1;0;0;Norway
+55;Grupo J;Argentina;Algeria;5;0;0;0;Argentina
+56;Grupo J;Argentina;Austria;0;4;0;0;Austria
+57;Grupo J;Argentina;Jordan;5;1;0;0;Argentina
+58;Grupo J;Algeria;Austria;2;3;0;0;Austria
+59;Grupo J;Algeria;Jordan;3;1;0;0;Algeria
+60;Grupo J;Austria;Jordan;1;4;0;0;Jordan
+61;Grupo K;Portugal;DR Congo;7;2;0;0;Portugal
+62;Grupo K;Portugal;Uzbekistan;4;2;0;0;Portugal
+63;Grupo K;Portugal;Colombia;4;1;0;0;Portugal
+64;Grupo K;DR Congo;Uzbekistan;4;3;0;0;DR Congo
+65;Grupo K;DR Congo;Colombia;4;3;0;0;DR Congo
+66;Grupo K;Uzbekistan;Colombia;1;4;0;0;Colombia
+67;Grupo L;England;Croatia;3;0;0;0;England
+68;Grupo L;England;Ghana;2;0;0;0;England
+69;Grupo L;England;Panama;3;0;0;0;England
+70;Grupo L;Croatia;Ghana;3;1;0;0;Croatia
+71;Grupo L;Croatia;Panama;0;2;0;0;Panama
+72;Grupo L;Ghana;Panama;2;3;0;0;Panama
+73;Dieciseisavos de Final;Mexico;Croatia;4;3;0;0;Mexico
+74;Dieciseisavos de Final;South Korea;Jordan;4;3;0;0;South Korea
+75;Dieciseisavos de Final;Switzerland;Tunisia;2;2;5;4;Switzerland
+76;Dieciseisavos de Final;Bosnia Herzegovina;Colombia;3;1;0;0;Bosnia Herzegovina
+77;Dieciseisavos de Final;Brazil;Senegal;4;2;0;0;Brazil
+78;Dieciseisavos de Final;Morocco;Scotland;2;1;0;0;Morocco
+79;Dieciseisavos de Final;United States;Paraguay;4;0;0;0;United States
+80;Dieciseisavos de Final;Turkey;Saudi Arabia;0;2;0;0;Saudi Arabia
+81;Dieciseisavos de Final;Germany;Panama;4;1;0;0;Germany
+82;Dieciseisavos de Final;Ecuador;England;1;5;0;0;England
+83;Dieciseisavos de Final;Japan;DR Congo;5;4;0;0;Japan
+84;Dieciseisavos de Final;Sweden;Portugal;0;4;0;0;Portugal
+85;Dieciseisavos de Final;Iran;Austria;2;0;0;0;Iran
+86;Dieciseisavos de Final;Belgium;Argentina;0;3;0;0;Argentina
+87;Dieciseisavos de Final;Uruguay;Norway;4;4;4;5;Norway
+88;Dieciseisavos de Final;Spain;France;4;4;5;3;Spain
+89;Octavos de Final;Mexico;France;3;3;3;4;France
+90;Octavos de Final;South Korea;Norway;4;2;0;0;South Korea
+91;Octavos de Final;Switzerland;Argentina;1;2;0;0;Argentina
+92;Octavos de Final;Bosnia Herzegovina;Iran;3;4;0;0;Iran
+93;Octavos de Final;Brazil;Portugal;2;0;0;0;Brazil
+94;Octavos de Final;Morocco;Japan;0;2;0;0;Japan
+95;Octavos de Final;United States;England;1;2;0;0;England
+96;Octavos de Final;Saudi Arabia;Germany;3;6;0;0;Germany
+97;Cuartos de Final;France;Germany;4;2;0;0;France
+98;Cuartos de Final;South Korea;England;1;3;0;0;England
+99;Cuartos de Final;Argentina;Japan;2;0;0;0;Argentina
+100;Cuartos de Final;Iran;Brazil;0;1;0;0;Brazil
+101;Semifinales;France;Brazil;4;1;0;0;France
+102;Semifinales;England;Argentina;2;1;0;0;England
+103;Final;France;England;0;3;0;0;England
