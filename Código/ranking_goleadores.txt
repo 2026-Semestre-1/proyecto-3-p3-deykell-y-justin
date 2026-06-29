@@ -1,0 +1,532 @@
+Alex Reyes;England;7;2;90
+Leo Silva;Argentina;5;4;95
+Leo Salazar;Iran;5;1;71
+Andres Pereira;Germany;4;2;89
+Diego Vargas;Portugal;4;1;90
+David Cruz;Switzerland;4;1;81
+Diego Silva;France;4;0;95
+Bruno Flores;Brazil;4;0;91
+Ivan Lopez;Germany;4;0;86
+Diego Santos;Switzerland;4;0;84
+Andres Castro;DR Congo;4;0;57
+Pablo Pereira;England;3;3;94
+Gabriel Reyes;Germany;3;3;85
+Tomas Castro;France;3;2;93
+Ivan Alvarez;Spain;3;2;92
+Hugo Ortega;Germany;3;2;87
+Javier Molina;Japan;3;2;81
+Daniel Campos;Japan;3;2;75
+Leo Santos;Brazil;3;1;95
+Bruno Ramirez;France;3;1;94
+Mario Morales;Portugal;3;1;94
+Daniel Rojas;Brazil;3;1;92
+Diego Morales;England;3;1;91
+Mario Vargas;Argentina;3;1;91
+Ruben Flores;Portugal;3;1;91
+Mateo Alvarez;Mexico;3;1;82
+Martin Navarro;Mexico;3;1;79
+Lucas Ramirez;South Korea;3;1;75
+Ivan Herrera;South Korea;3;1;72
+Samuel Ortega;Jordan;3;1;58
+Bruno Salazar;Saudi Arabia;3;1;55
+Hugo Rojas;France;3;0;95
+Ruben Navarro;Spain;3;0;92
+David Cruz;Bosnia Herzegovina;3;0;59
+Leo Santos;Haiti;3;0;57
+Alex Molina;France;2;4;94
+Cristian Fernandez;England;2;4;93
+Tomas Rojas;Argentina;2;4;92
+Leo Mendez;France;2;4;91
+Tomas Rivera;Germany;2;4;90
+Tomas Torres;Saudi Arabia;2;4;61
+Leo Fernandez;Germany;2;3;88
+Martin Santos;Germany;2;3;87
+Ivan Herrera;Mexico;2;3;85
+Pablo Castro;Japan;2;3;80
+Samuel Herrera;United States;2;3;78
+Diego Ramirez;Iran;2;3;68
+Samuel Molina;Brazil;2;2;95
+Tomas Herrera;England;2;2;95
+Ruben Morales;Argentina;2;2;95
+Mario Navarro;France;2;2;92
+Pablo Herrera;France;2;2;91
+Samuel Campos;Germany;2;2;87
+Adrian Gomez;Uruguay;2;2;85
+Nicolas Morales;United States;2;2;73
+Martin Navarro;South Korea;2;2;73
+Gabriel Ortega;Norway;2;2;72
+Cristian Silva;Ecuador;2;2;68
+Lucas Vargas;Curacao;2;2;61
+Daniel Ortega;DR Congo;2;2;59
+Daniel Campos;Tunisia;2;2;58
+Nicolas Ramirez;DR Congo;2;2;58
+Alex Campos;Portugal;2;1;89
+Martin Fernandez;Belgium;2;1;86
+David Vargas;Uruguay;2;1;85
+Sergio Mendez;Morocco;2;1;84
+Gabriel Rojas;Mexico;2;1;84
+Gabriel Torres;Colombia;2;1;84
+Sergio Ramirez;Switzerland;2;1;82
+Pablo Ortega;Morocco;2;1;81
+Ruben Mendez;Japan;2;1;78
+Adrian Flores;Japan;2;1;77
+Leo Cruz;Sweden;2;1;75
+Andres Molina;South Korea;2;1;75
+Samuel Rivera;Norway;2;1;75
+Javier Torres;Scotland;2;1;70
+Gabriel Lopez;Iran;2;1;69
+Gabriel Molina;Canada;2;1;64
+Hugo Ortega;Ivory Coast;2;1;62
+Javier Ortega;Czechia;2;1;62
+Adrian Salazar;DR Congo;2;1;61
+Marco Ortega;Bosnia Herzegovina;2;1;61
+Gabriel Torres;DR Congo;2;1;60
+Lucas Fernandez;Jordan;2;1;59
+Tomas Campos;South Africa;2;1;58
+Martin Cruz;Saudi Arabia;2;1;58
+Javier Alvarez;Bosnia Herzegovina;2;1;58
+Ruben Navarro;Saudi Arabia;2;1;57
+Cristian Salazar;Bosnia Herzegovina;2;1;56
+Marco Rivera;South Africa;2;1;55
+Pablo Campos;Argentina;2;0;95
+Diego Navarro;Argentina;2;0;94
+Hugo Campos;England;2;0;93
+Bruno Fernandez;Netherlands;2;0;93
+Pablo Reyes;Portugal;2;0;93
+Diego Ramirez;Belgium;2;0;91
+Samuel Torres;Croatia;2;0;88
+Cristian Morales;Uruguay;2;0;87
+Sergio Fernandez;Colombia;2;0;84
+Javier Lopez;Colombia;2;0;81
+Cristian Ramirez;Morocco;2;0;80
+Nicolas Mendez;Panama;2;0;80
+Leo Gomez;United States;2;0;78
+Diego Fernandez;United States;2;0;75
+Cristian Flores;Senegal;2;0;75
+David Gomez;Ghana;2;0;74
+Adrian Mendez;South Korea;2;0;72
+Daniel Lopez;Norway;2;0;71
+Javier Rojas;Ecuador;2;0;70
+Mario Fernandez;Scotland;2;0;70
+Lucas Flores;Egypt;2;0;68
+Bruno Cruz;Iran;2;0;67
+Cristian Santos;Algeria;2;0;66
+Sergio Mendez;Scotland;2;0;65
+Ivan Pereira;Australia;2;0;64
+Martin Santos;Ivory Coast;2;0;62
+Pablo Torres;Curacao;2;0;61
+David Fernandez;South Africa;2;0;60
+Nicolas Salazar;Jordan;2;0;60
+Marco Rojas;Tunisia;2;0;60
+David Vargas;Cape Verde;2;0;58
+Ivan Reyes;Haiti;2;0;55
+Tomas Molina;Portugal;1;4;88
+Daniel Torres;South Korea;1;4;70
+Tomas Pereira;Haiti;1;4;59
+Ivan Torres;France;1;3;95
+Andres Alvarez;France;1;3;94
+Ruben Santos;England;1;3;92
+Tomas Pereira;Brazil;1;3;90
+Nicolas Flores;Germany;1;3;90
+Andres Ortega;Spain;1;3;88
+David Santos;Portugal;1;3;88
+Mario Gomez;Switzerland;1;3;87
+Alex Castro;Iran;1;3;67
+Marco Molina;Egypt;1;3;65
+Alex Lopez;Bosnia Herzegovina;1;3;60
+Ruben Fernandez;Bosnia Herzegovina;1;3;55
+Cristian Navarro;Tunisia;1;3;55
+David Gomez;England;1;2;95
+David Flores;Argentina;1;2;92
+Ivan Rojas;Portugal;1;2;91
+Marco Lopez;England;1;2;91
+Marco Pereira;Portugal;1;2;90
+Martin Gomez;Netherlands;1;2;89
+Javier Alvarez;Switzerland;1;2;87
+Samuel Lopez;Uruguay;1;2;87
+Hugo Pereira;Switzerland;1;2;85
+Daniel Torres;Mexico;1;2;83
+Andres Molina;Mexico;1;2;81
+Cristian Navarro;Japan;1;2;79
+Nicolas Cruz;Norway;1;2;77
+Adrian Vargas;United States;1;2;76
+Mario Mendez;Iran;1;2;72
+Sergio Navarro;Ecuador;1;2;72
+Bruno Fernandez;Sweden;1;2;71
+Gabriel Rojas;South Korea;1;2;71
+Martin Fernandez;Iran;1;2;70
+Cristian Cruz;Czechia;1;2;67
+Ruben Cruz;Scotland;1;2;67
+Ruben Ramirez;Ecuador;1;2;67
+Bruno Flores;Haiti;1;2;60
+Lucas Navarro;Paraguay;1;2;59
+Andres Campos;Haiti;1;2;58
+Samuel Rojas;Qatar;1;2;58
+Diego Flores;South Africa;1;2;55
+Mario Flores;England;1;1;95
+Bruno Mendez;Argentina;1;1;94
+Gabriel Herrera;Brazil;1;1;92
+Andres Lopez;Netherlands;1;1;91
+Bruno Cruz;Belgium;1;1;90
+Martin Cruz;Spain;1;1;89
+Mario Silva;Spain;1;1;88
+Gabriel Lopez;Belgium;1;1;88
+Adrian Ramirez;Croatia;1;1;86
+Mateo Castro;Morocco;1;1;86
+Gabriel Castro;Croatia;1;1;85
+Cristian Salazar;Switzerland;1;1;85
+Ivan Ortega;Belgium;1;1;85
+Sergio Flores;Uruguay;1;1;84
+Hugo Lopez;Morocco;1;1;83
+Daniel Pereira;Uruguay;1;1;83
+Marco Ortega;Switzerland;1;1;83
+Nicolas Silva;Mexico;1;1;82
+Nicolas Ramirez;Colombia;1;1;82
+Lucas Ramirez;Mexico;1;1;81
+Tomas Rojas;Austria;1;1;80
+Lucas Salazar;Panama;1;1;79
+Adrian Salazar;Colombia;1;1;78
+Marco Rojas;Japan;1;1;77
+Hugo Molina;Austria;1;1;77
+Ruben Morales;Austria;1;1;76
+Gabriel Campos;United States;1;1;75
+David Silva;Japan;1;1;75
+Alex Ortega;Turkey;1;1;74
+Mateo Pereira;Norway;1;1;74
+Andres Rivera;Iran;1;1;72
+Pablo Alvarez;Turkey;1;1;71
+Hugo Torres;Iran;1;1;70
+Ivan Ortega;Iran;1;1;69
+Javier Herrera;Egypt;1;1;69
+Ruben Flores;Uzbekistan;1;1;67
+Sergio Gomez;Algeria;1;1;67
+Marco Pereira;Uzbekistan;1;1;66
+Diego Flores;Czechia;1;1;65
+Ivan Campos;Canada;1;1;65
+Tomas Campos;Czechia;1;1;65
+Leo Navarro;Uzbekistan;1;1;62
+Ivan Lopez;Ivory Coast;1;1;61
+Bruno Ramirez;Iraq;1;1;61
+Samuel Pereira;New Zealand;1;1;61
+Javier Lopez;DR Congo;1;1;60
+Samuel Campos;Ivory Coast;1;1;59
+Marco Molina;New Zealand;1;1;59
+Hugo Castro;Saudi Arabia;1;1;58
+Sergio Morales;New Zealand;1;1;58
+Pablo Rojas;New Zealand;1;1;58
+Lucas Cruz;DR Congo;1;1;57
+Sergio Navarro;Curacao;1;1;57
+Hugo Pereira;Bosnia Herzegovina;1;1;56
+Diego Silva;Iraq;1;1;55
+Javier Rojas;Curacao;1;1;55
+Adrian Navarro;Brazil;1;0;93
+Leo Navarro;Portugal;1;0;93
+Diego Mendez;Spain;1;0;91
+Leo Cruz;Netherlands;1;0;90
+Nicolas Vargas;Brazil;1;0;90
+Tomas Torres;Spain;1;0;89
+Lucas Salazar;Croatia;1;0;89
+Hugo Alvarez;Netherlands;1;0;89
+Leo Ramirez;Spain;1;0;87
+Mateo Ortega;Croatia;1;0;87
+Marco Alvarez;Morocco;1;0;85
+Diego Cruz;Germany;1;0;85
+Adrian Ramirez;Panama;1;0;83
+Javier Campos;Uruguay;1;0;82
+Nicolas Fernandez;Uruguay;1;0;82
+Lucas Cruz;Colombia;1;0;81
+Samuel Castro;Mexico;1;0;80
+David Flores;Austria;1;0;80
+Mario Vargas;Austria;1;0;79
+Andres Rojas;Panama;1;0;79
+Mateo Herrera;Japan;1;0;78
+Samuel Torres;Panama;1;0;78
+Leo Silva;Austria;1;0;78
+Pablo Campos;Austria;1;0;78
+Marco Lopez;Ghana;1;0;76
+Ivan Castro;Austria;1;0;76
+Lucas Gomez;Senegal;1;0;76
+Cristian Flores;Norway;1;0;75
+Samuel Rivera;Senegal;1;0;75
+Hugo Alvarez;Sweden;1;0;74
+Samuel Castro;South Korea;1;0;74
+Tomas Lopez;United States;1;0;73
+Marco Castro;Ecuador;1;0;73
+Adrian Fernandez;Norway;1;0;73
+Mateo Alvarez;South Korea;1;0;73
+Javier Castro;Turkey;1;0;72
+David Salazar;Scotland;1;0;71
+Mario Cruz;Turkey;1;0;71
+Daniel Herrera;Ecuador;1;0;71
+Cristian Mendez;Turkey;1;0;70
+David Navarro;Egypt;1;0;70
+Mateo Lopez;Algeria;1;0;69
+Mario Ramirez;Sweden;1;0;69
+Andres Lopez;Sweden;1;0;69
+Hugo Lopez;Scotland;1;0;68
+Cristian Vargas;Egypt;1;0;67
+Gabriel Alvarez;Algeria;1;0;67
+Diego Vargas;Uzbekistan;1;0;66
+Mateo Campos;Egypt;1;0;66
+Alex Rivera;Scotland;1;0;65
+Adrian Silva;Canada;1;0;65
+Cristian Mendez;Paraguay;1;0;65
+Marco Rivera;Czechia;1;0;65
+Sergio Morales;Egypt;1;0;64
+Ivan Rojas;Uzbekistan;1;0;64
+Mateo Rojas;Paraguay;1;0;64
+Lucas Mendez;Canada;1;0;63
+Mario Santos;Czechia;1;0;62
+Pablo Reyes;Uzbekistan;1;0;62
+Daniel Castro;Qatar;1;0;61
+Daniel Rivera;Jordan;1;0;61
+Alex Pereira;South Africa;1;0;61
+Daniel Pereira;Cape Verde;1;0;60
+Cristian Silva;Curacao;1;0;60
+Gabriel Reyes;Ivory Coast;1;0;60
+Mateo Campos;New Zealand;1;0;60
+Tomas Castro;Iraq;1;0;60
+Nicolas Vargas;Haiti;1;0;59
+Leo Gomez;Australia;1;0;59
+Diego Santos;Bosnia Herzegovina;1;0;58
+Mario Gomez;Bosnia Herzegovina;1;0;58
+Lucas Mendez;Qatar;1;0;58
+Leo Mendez;Iraq;1;0;58
+David Navarro;New Zealand;1;0;57
+Javier Molina;Tunisia;1;0;57
+Hugo Reyes;South Africa;1;0;57
+Andres Pereira;Ivory Coast;1;0;57
+Mateo Lopez;Jordan;1;0;57
+Pablo Castro;Tunisia;1;0;56
+Lucas Morales;Tunisia;1;0;56
+Gabriel Molina;Qatar;1;0;55
+Alex Rojas;Saudi Arabia;1;0;55
+Ivan Reyes;Brazil;0;5;93
+Hugo Herrera;Portugal;0;4;92
+Bruno Vargas;South Korea;0;4;70
+Leo Vargas;England;0;3;93
+Andres Campos;Brazil;0;3;89
+Hugo Castro;Spain;0;3;86
+Lucas Morales;Japan;0;3;80
+Cristian Ramirez;Scotland;0;3;68
+Javier Pereira;Algeria;0;3;65
+Javier Ortega;South Africa;0;3;59
+Nicolas Flores;Ivory Coast;0;3;58
+Pablo Rivera;Bosnia Herzegovina;0;3;57
+Ruben Vargas;France;0;2;95
+Alex Herrera;Argentina;0;2;93
+Alex Rojas;Spain;0;2;90
+Diego Salazar;Netherlands;0;2;87
+Ruben Cruz;Morocco;0;2;86
+Sergio Cruz;Croatia;0;2;86
+Mateo Reyes;Uruguay;0;2;86
+Marco Herrera;Uruguay;0;2;85
+Alex Rivera;Morocco;0;2;84
+Bruno Gomez;Germany;0;2;84
+Ruben Fernandez;Switzerland;0;2;84
+Bruno Vargas;Mexico;0;2;83
+Andres Castro;Colombia;0;2;81
+Alex Herrera;Austria;0;2;81
+Bruno Navarro;Panama;0;2;81
+Playito Pene;Canada;0;2;80
+Bruno Mendez;Austria;0;2;79
+Martin Mendez;Colombia;0;2;79
+Bruno Santos;United States;0;2;74
+Pablo Ortega;Scotland;0;2;69
+Pablo Rojas;Egypt;0;2;67
+Tomas Alvarez;Iran;0;2;66
+Samuel Alvarez;DR Congo;0;2;63
+Mateo Rivera;DR Congo;0;2;62
+Hugo Herrera;Uzbekistan;0;2;61
+David Silva;Tunisia;0;2;58
+David Mendez;Curacao;0;2;56
+Javier Herrera;New Zealand;0;2;56
+Gabriel Alvarez;Jordan;0;2;55
+Sergio Gomez;Jordan;0;2;55
+Ivan Castro;Argentina;0;1;95
+Hugo Molina;Argentina;0;1;95
+Andres Rojas;Croatia;0;1;89
+Andres Rivera;Belgium;0;1;88
+Ivan Rivera;Netherlands;0;1;88
+Mario Mendez;Belgium;0;1;88
+Hugo Torres;Belgium;0;1;86
+Pablo Rivera;Switzerland;0;1;86
+Adrian Mendez;Mexico;0;1;85
+Bruno Navarro;Croatia;0;1;84
+David Salazar;Morocco;0;1;83
+Diego Navarro;Austria;0;1;82
+Alex Lopez;Switzerland;0;1;82
+Daniel Alvarez;Panama;0;1;81
+Samuel Alvarez;Colombia;0;1;80
+Sergio Cruz;Panama;0;1;80
+Sergio Santos;Senegal;0;1;79
+Mateo Rivera;Colombia;0;1;79
+Daniel Lopez;Senegal;0;1;78
+Cristian Fernandez;Ghana;0;1;78
+Ruben Santos;Ghana;0;1;77
+Marco Campos;Senegal;0;1;77
+Martin Silva;Panama;0;1;77
+Javier Reyes;Norway;0;1;77
+Martin Flores;United States;0;1;77
+Javier Reyes;Senegal;0;1;77
+Nicolas Silva;South Korea;0;1;76
+Lucas Gomez;Norway;0;1;76
+Leo Vargas;Ghana;0;1;75
+Martin Gomez;Sweden;0;1;74
+Marco Campos;Norway;0;1;74
+David Ramirez;Turkey;0;1;73
+Nicolas Santos;Sweden;0;1;72
+Sergio Santos;Norway;0;1;72
+Gabriel Pereira;Sweden;0;1;72
+David Mendez;Ecuador;0;1;71
+Lucas Navarro;Turkey;0;1;71
+Alex Alvarez;Ecuador;0;1;70
+Mateo Rojas;Turkey;0;1;69
+Adrian Cruz;Algeria;0;1;68
+Samuel Pereira;Egypt;0;1;67
+Mateo Castro;Scotland;0;1;67
+Ruben Gomez;Czechia;0;1;66
+Marco Alvarez;Scotland;0;1;66
+Martin Vargas;Canada;0;1;66
+Adrian Santos;Egypt;0;1;65
+David Santos;Uzbekistan;0;1;64
+David Fernandez;Czechia;0;1;63
+Martin Mendez;DR Congo;0;1;62
+Sergio Flores;Cape Verde;0;1;61
+Bruno Morales;Qatar;0;1;61
+Diego Cruz;Ivory Coast;0;1;60
+Andres Reyes;Australia;0;1;60
+Javier Pereira;Jordan;0;1;60
+Andres Ortega;Saudi Arabia;0;1;60
+Sergio Fernandez;DR Congo;0;1;60
+Sergio Ramirez;Bosnia Herzegovina;0;1;60
+Pablo Alvarez;Paraguay;0;1;59
+Nicolas Fernandez;Cape Verde;0;1;59
+Samuel Herrera;Australia;0;1;59
+Ruben Mendez;Tunisia;0;1;58
+Andres Alvarez;Iraq;0;1;58
+Marco Castro;Curacao;0;1;58
+Pablo Lopez;South Africa;0;1;58
+Martin Flores;Australia;0;1;58
+Tomas Rivera;Ivory Coast;0;1;58
+Cristian Santos;Jordan;0;1;58
+Ivan Alvarez;Saudi Arabia;0;1;57
+Martin Ramirez;Jordan;0;1;57
+Martin Morales;Haiti;0;1;56
+Ruben Gomez;South Africa;0;1;56
+Diego Mendez;Saudi Arabia;0;1;56
+Ruben Vargas;Iraq;0;1;56
+Adrian Silva;Qatar;0;1;56
+Adrian Gomez;Cape Verde;0;1;55
+Martin Morales;Brazil;0;0;94
+Tomas Ortega;Netherlands;0;0;92
+Mario Ramirez;Netherlands;0;0;91
+Nicolas Santos;Netherlands;0;0;90
+Alex Castro;Belgium;0;0;90
+Bruno Salazar;Spain;0;0;90
+Tomas Alvarez;Belgium;0;0;89
+Lucas Santos;Uruguay;0;0;88
+Gabriel Pereira;Netherlands;0;0;87
+Martin Silva;Croatia;0;0;87
+Leo Salazar;Belgium;0;0;87
+Daniel Alvarez;Croatia;0;0;84
+Nicolas Mendez;Croatia;0;0;83
+Daniel Ortega;Colombia;0;0;83
+Mario Fernandez;Morocco;0;0;82
+Gabriel Castro;Panama;0;0;82
+Javier Torres;Morocco;0;0;82
+Adrian Fernandez;Senegal;0;0;80
+Gabriel Ortega;Senegal;0;0;79
+Andres Reyes;United States;0;0;79
+Hugo Campos;Ghana;0;0;78
+Nicolas Cruz;Senegal;0;0;77
+Mateo Ortega;Panama;0;0;77
+Ivan Pereira;United States;0;0;76
+Diego Morales;Ghana;0;0;76
+Sergio Vargas;Japan;0;0;76
+Alex Reyes;Ghana;0;0;75
+Sergio Silva;Turkey;0;0;74
+Tomas Herrera;Ghana;0;0;74
+Mateo Pereira;Senegal;0;0;74
+Ivan Rivera;Sweden;0;0;73
+Mario Flores;Ghana;0;0;73
+Diego Salazar;Sweden;0;0;72
+Pablo Pereira;Ghana;0;0;72
+Daniel Reyes;Egypt;0;0;70
+Tomas Ortega;Sweden;0;0;70
+Lucas Vargas;Ecuador;0;0;69
+Pablo Torres;Ecuador;0;0;69
+Ruben Salazar;Turkey;0;0;69
+Martin Ramirez;Algeria;0;0;69
+Marco Torres;Turkey;0;0;68
+Pablo Lopez;Czechia;0;0;68
+Hugo Reyes;Czechia;0;0;67
+Mateo Molina;Ecuador;0;0;67
+Daniel Rivera;Algeria;0;0;66
+Alex Campos;Uzbekistan;0;0;65
+Nicolas Salazar;Algeria;0;0;65
+Ruben Salazar;Paraguay;0;0;64
+Tomas Molina;Uzbekistan;0;0;64
+Lucas Fernandez;Algeria;0;0;64
+Alex Pereira;Czechia;0;0;64
+Bruno Morales;Canada;0;0;63
+Marco Torres;Paraguay;0;0;63
+Diego Fernandez;Australia;0;0;63
+Gabriel Campos;Australia;0;0;63
+Daniel Castro;Canada;0;0;63
+Mario Morales;Uzbekistan;0;0;63
+Samuel Ortega;Algeria;0;0;63
+Nicolas Navarro;Canada;0;0;62
+Sergio Silva;Paraguay;0;0;62
+Bruno Santos;Australia;0;0;62
+Mario Cruz;Paraguay;0;0;62
+Alex Ortega;Paraguay;0;0;62
+Alex Molina;Iraq;0;0;61
+Andres Herrera;Canada;0;0;61
+Tomas Lopez;Australia;0;0;61
+Cristian Vargas;New Zealand;0;0;61
+Gabriel Herrera;Haiti;0;0;61
+Adrian Vargas;Australia;0;0;61
+Mateo Herrera;Tunisia;0;0;61
+David Ramirez;Paraguay;0;0;61
+Nicolas Morales;Australia;0;0;61
+Mario Silva;Saudi Arabia;0;0;60
+Nicolas Navarro;Qatar;0;0;60
+Adrian Flores;Tunisia;0;0;60
+Samuel Rojas;Canada;0;0;60
+Leo Flores;Canada;0;0;60
+Javier Castro;Paraguay;0;0;60
+Sergio Vargas;Tunisia;0;0;59
+Andres Herrera;Qatar;0;0;59
+Bruno Gomez;Ivory Coast;0;0;59
+Adrian Santos;New Zealand;0;0;59
+Leo Ramirez;Saudi Arabia;0;0;59
+Ruben Ramirez;Curacao;0;0;59
+Mateo Molina;Curacao;0;0;59
+Javier Campos;Cape Verde;0;0;59
+Mario Santos;South Africa;0;0;59
+Mario Navarro;Iraq;0;0;59
+Lucas Santos;Cape Verde;0;0;58
+Pablo Herrera;Iraq;0;0;58
+Leo Flores;Qatar;0;0;58
+Daniel Rojas;Haiti;0;0;58
+Alex Alvarez;Curacao;0;0;58
+Samuel Lopez;Cape Verde;0;0;57
+Cristian Morales;Cape Verde;0;0;57
+Hugo Rojas;Iraq;0;0;57
+Cristian Cruz;South Africa;0;0;57
+Martin Vargas;Qatar;0;0;57
+Daniel Reyes;New Zealand;0;0;57
+Samuel Molina;Haiti;0;0;57
+Mateo Reyes;Cape Verde;0;0;56
+Ivan Torres;Iraq;0;0;56
+Adrian Cruz;Jordan;0;0;56
+Daniel Herrera;Curacao;0;0;56
+Leo Fernandez;Ivory Coast;0;0;56
+Ivan Campos;Qatar;0;0;56
+Lucas Flores;New Zealand;0;0;55
+Adrian Navarro;Haiti;0;0;55
+Marco Herrera;Cape Verde;0;0;55
+1 1;;0;0;36
+A A;;0;0;8
+A D;;0;0;4

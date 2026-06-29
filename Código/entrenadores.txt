@@ -1,0 +1,48 @@
+Técnico;Canadá;Canadá;01/01/1970;UEFA PRO;15;4-3-3;Canadá
+Técnico;Brasil;Brasil;01/01/1970;UEFA PRO;22;4-3-3;Brasil
+Técnico;Estados Unidos;Estados Unidos;01/01/1970;UEFA PRO;18;4-2-3-1;Estados Unidos
+Técnico;Alemania;Alemania;01/01/1970;UEFA PRO;21;4-2-3-1;Alemania
+Técnico;Países Bajos;Países Bajos;01/01/1970;UEFA PRO;20;3-4-3;Países Bajos
+Técnico;Bélgica;Bélgica;01/01/1970;UEFA PRO;19;4-3-3;Bélgica
+Técnico;España;España;01/01/1970;UEFA PRO;21;4-3-3;España
+Técnico;Francia;Francia;01/01/1970;UEFA PRO;22;4-2-3-1;Francia
+Técnico;Argentina;Argentina;01/01/1970;UEFA PRO;22;4-3-3;Argentina
+Técnico;Portugal;Portugal;01/01/1970;UEFA PRO;20;4-3-3;Portugal
+Técnico;Inglaterra;Inglaterra;01/01/1970;UEFA PRO;21;4-2-3-1;Inglaterra
+Técnico;Sudáfrica;Sudáfrica;01/01/1970;UEFA A;9;4-4-2;Sudáfrica
+Técnico;Bosnia y Herzegovina;Bosnia y Herzegovina;01/01/1970;UEFA A;10;4-4-2;Bosnia y Herzegovina
+Técnico;Marruecos;Marruecos;01/01/1970;UEFA PRO;16;4-3-3;Marruecos
+Técnico;Paraguay;Paraguay;01/01/1970;UEFA A;12;4-4-2;Paraguay
+Técnico;Curazao;Curazao;01/01/1970;UEFA A;8;4-2-3-1;Curazao
+Técnico;Japón;Japón;01/01/1970;UEFA PRO;15;4-2-3-1;Japón
+Técnico;Egipto;Egipto;01/01/1970;UEFA A;13;4-3-3;Egipto
+Técnico;Cabo Verde;Cabo Verde;01/01/1970;UEFA A;9;4-4-2;Cabo Verde
+Técnico;Senegal;Senegal;01/01/1970;UEFA PRO;15;4-3-3;Senegal
+Técnico;Argelia;Argelia;01/01/1970;UEFA A;13;4-2-3-1;Argelia
+Técnico;República Democrática del Congo;República Democrática del Congo;01/01/1970;UEFA A;11;4-4-2;República Democrática del Congo
+Técnico;Croacia;Croacia;01/01/1970;UEFA PRO;18;4-3-3;Croacia
+Técnico;Corea del Sur;Corea del Sur;01/01/1970;UEFA PRO;14;4-2-3-1;Corea del Sur
+Técnico;Catar;Catar;01/01/1970;UEFA A;9;4-4-2;Catar
+Técnico;Haití;Haití;01/01/1970;UEFA A;8;4-4-2;Haití
+Técnico;Australia;Australia;01/01/1970;UEFA A;12;4-2-3-1;Australia
+Técnico;Costa de Marfil;Costa de Marfil;01/01/1970;UEFA A;11;4-3-3;Costa de Marfil
+Técnico;Suecia;Suecia;01/01/1970;UEFA PRO;14;4-4-2;Suecia
+Técnico;Irán;Irán;01/01/1970;UEFA A;13;4-2-3-1;Irán
+Técnico;Arabia Saudita;Arabia Saudita;01/01/1970;UEFA A;10;4-4-2;Arabia Saudita
+Técnico;Irak;Irak;01/01/1970;UEFA A;9;4-4-2;Irak
+Técnico;Austria;Austria;01/01/1970;UEFA PRO;16;4-2-3-1;Austria
+Técnico;Uzbekistán;Uzbekistán;01/01/1970;UEFA A;12;4-4-2;Uzbekistán
+Técnico;Ghana;Ghana;01/01/1970;UEFA PRO;14;4-3-3;Ghana
+Técnico;Chequia;Chequia;01/01/1970;UEFA A;12;4-2-3-1;Chequia
+Técnico;Suiza;Suiza;01/01/1970;UEFA PRO;17;4-3-3;Suiza
+Técnico;Escocia;Escocia;01/01/1970;UEFA A;13;4-4-2;Escocia
+Técnico;Turquía;Turquía;01/01/1970;UEFA PRO;14;4-2-3-1;Turquía
+Técnico;Ecuador;Ecuador;01/01/1970;UEFA A;13;4-3-3;Ecuador
+Técnico;Túnez;Túnez;01/01/1970;UEFA A;10;4-4-2;Túnez
+Técnico;Nueva Zelanda;Nueva Zelanda;01/01/1970;UEFA A;8;4-4-2;Nueva Zelanda
+Técnico;Uruguay;Uruguay;01/01/1970;UEFA PRO;18;4-3-3;Uruguay
+Técnico;Noruega;Noruega;01/01/1970;UEFA PRO;14;4-2-3-1;Noruega
+Técnico;Jordania;Jordania;01/01/1970;UEFA A;8;4-4-2;Jordania
+Técnico;Colombia;Colombia;01/01/1970;UEFA PRO;16;4-3-3;Colombia
+Técnico;Panamá;Panamá;01/01/1970;UEFA A;13;4-4-2;Panamá
+Técnico;Costa Rica;Costa Rica;01/01/1970;UEFA A;10;4-4-2;Costa Rica

@@ -1,0 +1,532 @@
+Mateo;Alvarez;01/01/1990;México;1;Portero;1;0;3;1;82;México
+Lucas;Ramirez;01/01/1991;México;2;Defensa Central;3;0;1;1;81;México
+Daniel;Torres;01/01/1992;México;3;Defensa Central;1;0;1;2;83;México
+Adrian;Mendez;01/01/1993;México;4;Lateral Izquierdo;2;0;0;1;85;México
+Samuel;Castro;01/01/1994;México;5;Lateral Derecho;1;0;1;0;80;México
+Nicolas;Silva;01/01/1995;México;6;Mediocentro;0;0;1;1;82;México
+Gabriel;Rojas;01/01/1996;México;7;Interior Derecho;1;1;2;1;84;México
+Martin;Navarro;01/01/1997;México;8;Interior Izquierdo;0;0;3;1;79;México
+Andres;Molina;01/01/1998;México;9;Extremo Derecho;2;0;1;2;81;México
+Bruno;Vargas;01/01/1999;México;10;Delantero Centro;2;0;0;2;83;México
+Ivan;Herrera;01/01/2000;México;11;Extremo Izquierdo;0;0;2;3;85;México
+Lucas;Mendez;01/01/1991;Canadá;1;Portero;0;0;1;0;63;Canadá
+Daniel;Castro;01/01/1992;Canadá;2;Defensa Central;0;1;0;0;63;Canadá
+Adrian;Silva;01/01/1993;Canadá;3;Defensa Central;0;0;1;0;65;Canadá
+Samuel;Rojas;01/01/1994;Canadá;4;Lateral Izquierdo;0;0;0;0;60;Canadá
+Nicolas;Navarro;01/01/1995;Canadá;5;Lateral Derecho;0;0;0;0;62;Canadá
+Gabriel;Molina;01/01/1996;Canadá;6;Mediocentro;0;0;2;1;64;Canadá
+Martin;Vargas;01/01/1997;Canadá;7;Interior Derecho;0;0;0;1;66;Canadá
+Andres;Herrera;01/01/1998;Canadá;8;Interior Izquierdo;0;0;0;0;61;Canadá
+Bruno;Morales;01/01/1999;Canadá;9;Extremo Derecho;1;0;0;0;63;Canadá
+Ivan;Campos;01/01/2000;Canadá;10;Delantero Centro;0;0;1;1;65;Canadá
+Leo;Flores;01/01/2001;Canadá;11;Extremo Izquierdo;1;0;0;0;60;Canadá
+Daniel;Rojas;01/01/1992;Brasil;1;Portero;1;0;3;1;92;Brasil
+Adrian;Navarro;01/01/1993;Brasil;2;Defensa Central;0;0;1;0;93;Brasil
+Samuel;Molina;01/01/1994;Brasil;3;Defensa Central;1;0;2;2;95;Brasil
+Nicolas;Vargas;01/01/1995;Brasil;4;Lateral Izquierdo;1;0;1;0;90;Brasil
+Gabriel;Herrera;01/01/1996;Brasil;5;Lateral Derecho;2;0;1;1;92;Brasil
+Martin;Morales;01/01/1997;Brasil;6;Mediocentro;1;0;0;0;94;Brasil
+Andres;Campos;01/01/1998;Brasil;7;Interior Derecho;1;0;0;3;89;Brasil
+Bruno;Flores;01/01/1999;Brasil;8;Interior Izquierdo;1;0;4;0;91;Brasil
+Ivan;Reyes;01/01/2000;Brasil;9;Extremo Derecho;1;0;0;5;93;Brasil
+Leo;Santos;01/01/2001;Brasil;10;Delantero Centro;0;0;3;1;95;Brasil
+Tomas;Pereira;01/01/2002;Brasil;11;Extremo Izquierdo;1;0;1;3;90;Brasil
+Adrian;Vargas;01/01/1993;Estados Unidos;1;Portero;0;0;1;2;76;Estados Unidos
+Samuel;Herrera;01/01/1994;Estados Unidos;2;Defensa Central;0;0;2;3;78;Estados Unidos
+Nicolas;Morales;01/01/1995;Estados Unidos;3;Defensa Central;0;0;2;2;73;Estados Unidos
+Gabriel;Campos;01/01/1996;Estados Unidos;4;Lateral Izquierdo;2;0;1;1;75;Estados Unidos
+Martin;Flores;01/01/1997;Estados Unidos;5;Lateral Derecho;1;1;0;1;77;Estados Unidos
+Andres;Reyes;01/01/1998;Estados Unidos;6;Mediocentro;1;0;0;0;79;Estados Unidos
+Bruno;Santos;01/01/1999;Estados Unidos;7;Interior Derecho;1;0;0;2;74;Estados Unidos
+Ivan;Pereira;01/01/2000;Estados Unidos;8;Interior Izquierdo;1;0;0;0;76;Estados Unidos
+Leo;Gomez;01/01/2001;Estados Unidos;9;Extremo Derecho;1;0;2;0;78;Estados Unidos
+Tomas;Lopez;01/01/2002;Estados Unidos;10;Delantero Centro;2;0;1;0;73;Estados Unidos
+Diego;Fernandez;01/01/2003;Estados Unidos;11;Extremo Izquierdo;1;0;2;0;75;Estados Unidos
+Samuel;Campos;01/01/1994;Alemania;1;Portero;0;0;2;2;87;Alemania
+Nicolas;Flores;01/01/1995;Alemania;2;Defensa Central;0;0;1;3;90;Alemania
+Gabriel;Reyes;01/01/1996;Alemania;3;Defensa Central;1;0;3;3;85;Alemania
+Martin;Santos;01/01/1997;Alemania;4;Lateral Izquierdo;0;0;2;3;87;Alemania
+Andres;Pereira;01/01/1998;Alemania;5;Lateral Derecho;2;0;4;2;89;Alemania
+Bruno;Gomez;01/01/1999;Alemania;6;Mediocentro;1;0;0;2;84;Alemania
+Ivan;Lopez;01/01/2000;Alemania;7;Interior Derecho;1;0;4;0;86;Alemania
+Leo;Fernandez;01/01/2001;Alemania;8;Interior Izquierdo;0;0;2;3;88;Alemania
+Tomas;Rivera;01/01/2002;Alemania;9;Extremo Derecho;0;0;2;4;90;Alemania
+Diego;Cruz;01/01/2003;Alemania;10;Delantero Centro;2;0;1;0;85;Alemania
+Hugo;Ortega;01/01/1990;Alemania;11;Extremo Izquierdo;0;0;3;2;87;Alemania
+Nicolas;Santos;01/01/1995;Países Bajos;1;Portero;0;0;0;0;90;Países Bajos
+Gabriel;Pereira;01/01/1996;Países Bajos;2;Defensa Central;0;0;0;0;87;Países Bajos
+Martin;Gomez;01/01/1997;Países Bajos;3;Defensa Central;1;0;1;2;89;Países Bajos
+Andres;Lopez;01/01/1998;Países Bajos;4;Lateral Izquierdo;0;0;1;1;91;Países Bajos
+Bruno;Fernandez;01/01/1999;Países Bajos;5;Lateral Derecho;0;0;2;0;93;Países Bajos
+Ivan;Rivera;01/01/2000;Países Bajos;6;Mediocentro;0;0;0;1;88;Países Bajos
+Leo;Cruz;01/01/2001;Países Bajos;7;Interior Derecho;1;0;1;0;90;Países Bajos
+Tomas;Ortega;01/01/2002;Países Bajos;8;Interior Izquierdo;0;0;0;0;92;Países Bajos
+Diego;Salazar;01/01/2003;Países Bajos;9;Extremo Derecho;1;0;0;2;87;Países Bajos
+Hugo;Alvarez;01/01/1990;Países Bajos;10;Delantero Centro;1;0;1;0;89;Países Bajos
+Mario;Ramirez;01/01/1991;Países Bajos;11;Extremo Izquierdo;0;0;0;0;91;Países Bajos
+Gabriel;Lopez;01/01/1996;Bélgica;1;Portero;0;0;1;1;88;Bélgica
+Martin;Fernandez;01/01/1997;Bélgica;2;Defensa Central;1;0;2;1;86;Bélgica
+Andres;Rivera;01/01/1998;Bélgica;3;Defensa Central;0;0;0;1;88;Bélgica
+Bruno;Cruz;01/01/1999;Bélgica;4;Lateral Izquierdo;0;0;1;1;90;Bélgica
+Ivan;Ortega;01/01/2000;Bélgica;5;Lateral Derecho;0;0;1;1;85;Bélgica
+Leo;Salazar;01/01/2001;Bélgica;6;Mediocentro;1;0;0;0;87;Bélgica
+Tomas;Alvarez;01/01/2002;Bélgica;7;Interior Derecho;1;0;0;0;89;Bélgica
+Diego;Ramirez;01/01/2003;Bélgica;8;Interior Izquierdo;0;0;2;0;91;Bélgica
+Hugo;Torres;01/01/1990;Bélgica;9;Extremo Derecho;2;0;0;1;86;Bélgica
+Mario;Mendez;01/01/1991;Bélgica;10;Delantero Centro;0;0;0;1;88;Bélgica
+Alex;Castro;01/01/1992;Bélgica;11;Extremo Izquierdo;1;0;0;0;90;Bélgica
+Martin;Cruz;01/01/1997;España;1;Portero;2;0;1;1;89;España
+Andres;Ortega;01/01/1998;España;2;Defensa Central;1;0;1;3;88;España
+Bruno;Salazar;01/01/1999;España;3;Defensa Central;0;0;0;0;90;España
+Ivan;Alvarez;01/01/2000;España;4;Lateral Izquierdo;0;0;3;2;92;España
+Leo;Ramirez;01/01/2001;España;5;Lateral Derecho;0;0;1;0;87;España
+Tomas;Torres;01/01/2002;España;6;Mediocentro;1;0;1;0;89;España
+Diego;Mendez;01/01/2003;España;7;Interior Derecho;1;0;1;0;91;España
+Hugo;Castro;01/01/1990;España;8;Interior Izquierdo;0;0;0;3;86;España
+Mario;Silva;01/01/1991;España;9;Extremo Derecho;1;0;1;1;88;España
+Alex;Rojas;01/01/1992;España;10;Delantero Centro;0;0;0;2;90;España
+Ruben;Navarro;01/01/1993;España;11;Extremo Izquierdo;0;0;3;0;92;España
+Andres;Alvarez;01/01/1998;Francia;1;Portero;0;0;1;3;94;Francia
+Bruno;Ramirez;01/01/1999;Francia;2;Defensa Central;1;0;3;1;94;Francia
+Ivan;Torres;01/01/2000;Francia;3;Defensa Central;1;0;1;3;95;Francia
+Leo;Mendez;01/01/2001;Francia;4;Lateral Izquierdo;1;0;2;4;91;Francia
+Tomas;Castro;01/01/2002;Francia;5;Lateral Derecho;1;0;3;2;93;Francia
+Diego;Silva;01/01/2003;Francia;6;Mediocentro;0;1;4;0;95;Francia
+Hugo;Rojas;01/01/1990;Francia;7;Interior Derecho;0;0;3;0;95;Francia
+Mario;Navarro;01/01/1991;Francia;8;Interior Izquierdo;1;0;2;2;92;Francia
+Alex;Molina;01/01/1992;Francia;9;Extremo Derecho;0;0;2;4;94;Francia
+Ruben;Vargas;01/01/1993;Francia;10;Delantero Centro;1;0;0;2;95;Francia
+Pablo;Herrera;01/01/1994;Francia;11;Extremo Izquierdo;1;0;2;2;91;Francia
+Bruno;Mendez;01/01/1999;Argentina;1;Portero;0;0;1;1;94;Argentina
+Ivan;Castro;01/01/2000;Argentina;2;Defensa Central;1;0;0;1;95;Argentina
+Leo;Silva;01/01/2001;Argentina;3;Defensa Central;0;0;5;4;95;Argentina
+Tomas;Rojas;01/01/2002;Argentina;4;Lateral Izquierdo;2;0;2;4;92;Argentina
+Diego;Navarro;01/01/2003;Argentina;5;Lateral Derecho;2;0;2;0;94;Argentina
+Hugo;Molina;01/01/1990;Argentina;6;Mediocentro;0;0;0;1;95;Argentina
+Mario;Vargas;01/01/1991;Argentina;7;Interior Derecho;1;0;3;1;91;Argentina
+Alex;Herrera;01/01/1992;Argentina;8;Interior Izquierdo;0;0;0;2;93;Argentina
+Ruben;Morales;01/01/1993;Argentina;9;Extremo Derecho;0;0;2;2;95;Argentina
+Pablo;Campos;01/01/1994;Argentina;10;Delantero Centro;1;0;2;0;95;Argentina
+David;Flores;01/01/1995;Argentina;11;Extremo Izquierdo;2;0;1;2;92;Argentina
+Ivan;Rojas;01/01/2000;Portugal;1;Portero;0;0;1;2;91;Portugal
+Leo;Navarro;01/01/2001;Portugal;2;Defensa Central;3;0;1;0;93;Portugal
+Tomas;Molina;01/01/2002;Portugal;3;Defensa Central;0;0;1;4;88;Portugal
+Diego;Vargas;01/01/2003;Portugal;4;Lateral Izquierdo;1;0;4;1;90;Portugal
+Hugo;Herrera;01/01/1990;Portugal;5;Lateral Derecho;1;0;0;4;92;Portugal
+Mario;Morales;01/01/1991;Portugal;6;Mediocentro;0;0;3;1;94;Portugal
+Alex;Campos;01/01/1992;Portugal;7;Interior Derecho;0;0;2;1;89;Portugal
+Ruben;Flores;01/01/1993;Portugal;8;Interior Izquierdo;0;0;3;1;91;Portugal
+Pablo;Reyes;01/01/1994;Portugal;9;Extremo Derecho;0;0;2;0;93;Portugal
+David;Santos;01/01/1995;Portugal;10;Delantero Centro;0;0;1;3;88;Portugal
+Marco;Pereira;01/01/1996;Portugal;11;Extremo Izquierdo;0;0;1;2;90;Portugal
+Leo;Vargas;01/01/2001;Inglaterra;1;Portero;1;0;0;3;93;Inglaterra
+Tomas;Herrera;01/01/2002;Inglaterra;2;Defensa Central;3;0;2;2;95;Inglaterra
+Diego;Morales;01/01/2003;Inglaterra;3;Defensa Central;1;0;3;1;91;Inglaterra
+Hugo;Campos;01/01/1990;Inglaterra;4;Lateral Izquierdo;0;0;2;0;93;Inglaterra
+Mario;Flores;01/01/1991;Inglaterra;5;Lateral Derecho;2;0;1;1;95;Inglaterra
+Alex;Reyes;01/01/1992;Inglaterra;6;Mediocentro;1;0;7;2;90;Inglaterra
+Ruben;Santos;01/01/1993;Inglaterra;7;Interior Derecho;0;0;1;3;92;Inglaterra
+Pablo;Pereira;01/01/1994;Inglaterra;8;Interior Izquierdo;0;0;3;3;94;Inglaterra
+David;Gomez;01/01/1995;Inglaterra;9;Extremo Derecho;2;0;1;2;95;Inglaterra
+Marco;Lopez;01/01/1996;Inglaterra;10;Delantero Centro;1;0;1;2;91;Inglaterra
+Cristian;Fernandez;01/01/1997;Inglaterra;11;Extremo Izquierdo;1;1;2;4;93;Inglaterra
+Tomas;Campos;01/01/2002;Sudáfrica;1;Portero;1;0;2;1;58;Sudáfrica
+Diego;Flores;01/01/2003;Sudáfrica;2;Defensa Central;0;0;1;2;55;Sudáfrica
+Hugo;Reyes;01/01/1990;Sudáfrica;3;Defensa Central;0;0;1;0;57;Sudáfrica
+Mario;Santos;01/01/1991;Sudáfrica;4;Lateral Izquierdo;0;0;0;0;59;Sudáfrica
+Alex;Pereira;01/01/1992;Sudáfrica;5;Lateral Derecho;0;0;1;0;61;Sudáfrica
+Ruben;Gomez;01/01/1993;Sudáfrica;6;Mediocentro;0;0;0;1;56;Sudáfrica
+Pablo;Lopez;01/01/1994;Sudáfrica;7;Interior Derecho;0;0;0;1;58;Sudáfrica
+David;Fernandez;01/01/1995;Sudáfrica;8;Interior Izquierdo;0;0;2;0;60;Sudáfrica
+Marco;Rivera;01/01/1996;Sudáfrica;9;Extremo Derecho;0;0;2;1;55;Sudáfrica
+Cristian;Cruz;01/01/1997;Sudáfrica;10;Delantero Centro;0;0;0;0;57;Sudáfrica
+Javier;Ortega;01/01/1998;Sudáfrica;11;Extremo Izquierdo;0;0;0;3;59;Sudáfrica
+Diego;Santos;01/01/2003;Bosnia y Herzegovina;1;Portero;2;0;1;0;58;Bosnia y Herzegovina
+Hugo;Pereira;01/01/1990;Bosnia y Herzegovina;2;Defensa Central;1;0;1;1;56;Bosnia y Herzegovina
+Mario;Gomez;01/01/1991;Bosnia y Herzegovina;3;Defensa Central;2;0;1;0;58;Bosnia y Herzegovina
+Alex;Lopez;01/01/1992;Bosnia y Herzegovina;4;Lateral Izquierdo;1;0;1;3;60;Bosnia y Herzegovina
+Ruben;Fernandez;01/01/1993;Bosnia y Herzegovina;5;Lateral Derecho;2;0;1;3;55;Bosnia y Herzegovina
+Pablo;Rivera;01/01/1994;Bosnia y Herzegovina;6;Mediocentro;0;0;0;3;57;Bosnia y Herzegovina
+David;Cruz;01/01/1995;Bosnia y Herzegovina;7;Interior Derecho;1;0;3;0;59;Bosnia y Herzegovina
+Marco;Ortega;01/01/1996;Bosnia y Herzegovina;8;Interior Izquierdo;0;0;2;1;61;Bosnia y Herzegovina
+Cristian;Salazar;01/01/1997;Bosnia y Herzegovina;9;Extremo Derecho;0;0;2;1;56;Bosnia y Herzegovina
+Javier;Alvarez;01/01/1998;Bosnia y Herzegovina;10;Delantero Centro;1;0;2;1;58;Bosnia y Herzegovina
+Sergio;Ramirez;01/01/1999;Bosnia y Herzegovina;11;Extremo Izquierdo;1;0;0;1;60;Bosnia y Herzegovina
+Hugo;Lopez;01/01/1990;Marruecos;1;Portero;0;0;1;1;83;Marruecos
+Mario;Fernandez;01/01/1991;Marruecos;2;Defensa Central;1;0;0;0;82;Marruecos
+Alex;Rivera;01/01/1992;Marruecos;3;Defensa Central;0;1;0;2;84;Marruecos
+Ruben;Cruz;01/01/1993;Marruecos;4;Lateral Izquierdo;1;0;0;2;86;Marruecos
+Pablo;Ortega;01/01/1994;Marruecos;5;Lateral Derecho;2;0;2;1;81;Marruecos
+David;Salazar;01/01/1995;Marruecos;6;Mediocentro;0;0;0;1;83;Marruecos
+Marco;Alvarez;01/01/1996;Marruecos;7;Interior Derecho;3;0;1;0;85;Marruecos
+Cristian;Ramirez;01/01/1997;Marruecos;8;Interior Izquierdo;0;0;2;0;80;Marruecos
+Javier;Torres;01/01/1998;Marruecos;9;Extremo Derecho;0;0;0;0;82;Marruecos
+Sergio;Mendez;01/01/1999;Marruecos;10;Delantero Centro;1;0;2;1;84;Marruecos
+Mateo;Castro;01/01/2000;Marruecos;11;Extremo Izquierdo;0;0;1;1;86;Marruecos
+Mario;Cruz;01/01/1991;Paraguay;1;Portero;1;0;0;0;62;Paraguay
+Alex;Ortega;01/01/1992;Paraguay;2;Defensa Central;0;0;0;0;62;Paraguay
+Ruben;Salazar;01/01/1993;Paraguay;3;Defensa Central;1;0;0;0;64;Paraguay
+Pablo;Alvarez;01/01/1994;Paraguay;4;Lateral Izquierdo;1;0;0;1;59;Paraguay
+David;Ramirez;01/01/1995;Paraguay;5;Lateral Derecho;0;0;0;0;61;Paraguay
+Marco;Torres;01/01/1996;Paraguay;6;Mediocentro;0;0;0;0;63;Paraguay
+Cristian;Mendez;01/01/1997;Paraguay;7;Interior Derecho;1;0;1;0;65;Paraguay
+Javier;Castro;01/01/1998;Paraguay;8;Interior Izquierdo;0;0;0;0;60;Paraguay
+Sergio;Silva;01/01/1999;Paraguay;9;Extremo Derecho;2;0;0;0;62;Paraguay
+Mateo;Rojas;01/01/2000;Paraguay;10;Delantero Centro;2;0;1;0;64;Paraguay
+Lucas;Navarro;01/01/2001;Paraguay;11;Extremo Izquierdo;1;0;1;2;59;Paraguay
+Alex;Alvarez;01/01/1992;Curazao;1;Portero;0;0;0;0;58;Curazao
+Ruben;Ramirez;01/01/1993;Curazao;2;Defensa Central;0;0;0;0;59;Curazao
+Pablo;Torres;01/01/1994;Curazao;3;Defensa Central;0;0;2;0;61;Curazao
+David;Mendez;01/01/1995;Curazao;4;Lateral Izquierdo;1;0;0;2;56;Curazao
+Marco;Castro;01/01/1996;Curazao;5;Lateral Derecho;0;0;0;1;58;Curazao
+Cristian;Silva;01/01/1997;Curazao;6;Mediocentro;0;0;1;0;60;Curazao
+Javier;Rojas;01/01/1998;Curazao;7;Interior Derecho;0;0;1;1;55;Curazao
+Sergio;Navarro;01/01/1999;Curazao;8;Interior Izquierdo;0;0;1;1;57;Curazao
+Mateo;Molina;01/01/2000;Curazao;9;Extremo Derecho;1;0;0;0;59;Curazao
+Lucas;Vargas;01/01/2001;Curazao;10;Delantero Centro;1;0;2;2;61;Curazao
+Daniel;Herrera;01/01/2002;Curazao;11;Extremo Izquierdo;0;0;0;0;56;Curazao
+Ruben;Mendez;01/01/1993;Japón;1;Portero;0;0;2;1;78;Japón
+Pablo;Castro;01/01/1994;Japón;2;Defensa Central;0;0;2;3;80;Japón
+David;Silva;01/01/1995;Japón;3;Defensa Central;2;1;1;1;75;Japón
+Marco;Rojas;01/01/1996;Japón;4;Lateral Izquierdo;1;1;1;1;77;Japón
+Cristian;Navarro;01/01/1997;Japón;5;Lateral Derecho;2;0;1;2;79;Japón
+Javier;Molina;01/01/1998;Japón;6;Mediocentro;1;0;3;2;81;Japón
+Sergio;Vargas;01/01/1999;Japón;7;Interior Derecho;0;0;0;0;76;Japón
+Mateo;Herrera;01/01/2000;Japón;8;Interior Izquierdo;1;0;1;0;78;Japón
+Lucas;Morales;01/01/2001;Japón;9;Extremo Derecho;2;0;0;3;80;Japón
+Daniel;Campos;01/01/2002;Japón;10;Delantero Centro;2;0;3;2;75;Japón
+Adrian;Flores;01/01/2003;Japón;11;Extremo Izquierdo;0;0;2;1;77;Japón
+Pablo;Rojas;01/01/1994;Egipto;1;Portero;0;0;0;2;67;Egipto
+David;Navarro;01/01/1995;Egipto;2;Defensa Central;1;0;1;0;70;Egipto
+Marco;Molina;01/01/1996;Egipto;3;Defensa Central;0;0;1;3;65;Egipto
+Cristian;Vargas;01/01/1997;Egipto;4;Lateral Izquierdo;0;0;1;0;67;Egipto
+Javier;Herrera;01/01/1998;Egipto;5;Lateral Derecho;2;0;1;1;69;Egipto
+Sergio;Morales;01/01/1999;Egipto;6;Mediocentro;0;0;1;0;64;Egipto
+Mateo;Campos;01/01/2000;Egipto;7;Interior Derecho;1;0;1;0;66;Egipto
+Lucas;Flores;01/01/2001;Egipto;8;Interior Izquierdo;0;0;2;0;68;Egipto
+Daniel;Reyes;01/01/2002;Egipto;9;Extremo Derecho;1;0;0;0;70;Egipto
+Adrian;Santos;01/01/2003;Egipto;10;Delantero Centro;0;0;0;1;65;Egipto
+Samuel;Pereira;01/01/1990;Egipto;11;Extremo Izquierdo;1;0;0;1;67;Egipto
+David;Vargas;01/01/1995;Cabo Verde;1;Portero;1;0;2;0;58;Cabo Verde
+Marco;Herrera;01/01/1996;Cabo Verde;2;Defensa Central;0;0;0;0;55;Cabo Verde
+Cristian;Morales;01/01/1997;Cabo Verde;3;Defensa Central;0;0;0;0;57;Cabo Verde
+Javier;Campos;01/01/1998;Cabo Verde;4;Lateral Izquierdo;1;0;0;0;59;Cabo Verde
+Sergio;Flores;01/01/1999;Cabo Verde;5;Lateral Derecho;0;0;0;1;61;Cabo Verde
+Mateo;Reyes;01/01/2000;Cabo Verde;6;Mediocentro;0;0;0;0;56;Cabo Verde
+Lucas;Santos;01/01/2001;Cabo Verde;7;Interior Derecho;1;0;0;0;58;Cabo Verde
+Daniel;Pereira;01/01/2002;Cabo Verde;8;Interior Izquierdo;0;0;1;0;60;Cabo Verde
+Adrian;Gomez;01/01/2003;Cabo Verde;9;Extremo Derecho;0;0;0;1;55;Cabo Verde
+Samuel;Lopez;01/01/1990;Cabo Verde;10;Delantero Centro;5;0;0;0;57;Cabo Verde
+Nicolas;Fernandez;01/01/1991;Cabo Verde;11;Extremo Izquierdo;1;0;0;1;59;Cabo Verde
+Marco;Campos;01/01/1996;Senegal;1;Portero;0;0;0;1;77;Senegal
+Cristian;Flores;01/01/1997;Senegal;2;Defensa Central;0;0;2;0;75;Senegal
+Javier;Reyes;01/01/1998;Senegal;3;Defensa Central;2;0;0;1;77;Senegal
+Sergio;Santos;01/01/1999;Senegal;4;Lateral Izquierdo;0;0;0;1;79;Senegal
+Mateo;Pereira;01/01/2000;Senegal;5;Lateral Derecho;0;0;0;0;74;Senegal
+Lucas;Gomez;01/01/2001;Senegal;6;Mediocentro;0;0;1;0;76;Senegal
+Daniel;Lopez;01/01/2002;Senegal;7;Interior Derecho;2;0;0;1;78;Senegal
+Adrian;Fernandez;01/01/2003;Senegal;8;Interior Izquierdo;0;0;0;0;80;Senegal
+Samuel;Rivera;01/01/1990;Senegal;9;Extremo Derecho;1;0;1;0;75;Senegal
+Nicolas;Cruz;01/01/1991;Senegal;10;Delantero Centro;0;0;0;0;77;Senegal
+Gabriel;Ortega;01/01/1992;Senegal;11;Extremo Izquierdo;0;0;0;0;79;Senegal
+Cristian;Santos;01/01/1997;Argelia;1;Portero;0;0;2;0;66;Argelia
+Javier;Pereira;01/01/1998;Argelia;2;Defensa Central;0;0;0;3;65;Argelia
+Sergio;Gomez;01/01/1999;Argelia;3;Defensa Central;1;0;1;1;67;Argelia
+Mateo;Lopez;01/01/2000;Argelia;4;Lateral Izquierdo;3;0;1;0;69;Argelia
+Lucas;Fernandez;01/01/2001;Argelia;5;Lateral Derecho;0;0;0;0;64;Argelia
+Daniel;Rivera;01/01/2002;Argelia;6;Mediocentro;1;0;0;0;66;Argelia
+Adrian;Cruz;01/01/2003;Argelia;7;Interior Derecho;1;0;0;1;68;Argelia
+Samuel;Ortega;01/01/1990;Argelia;8;Interior Izquierdo;1;0;0;0;63;Argelia
+Nicolas;Salazar;01/01/1991;Argelia;9;Extremo Derecho;1;0;0;0;65;Argelia
+Gabriel;Alvarez;01/01/1992;Argelia;10;Delantero Centro;1;0;1;0;67;Argelia
+Martin;Ramirez;01/01/1993;Argelia;11;Extremo Izquierdo;0;0;0;0;69;Argelia
+Javier;Lopez;01/01/1998;República Democrática del Congo;1;Portero;0;0;1;1;60;República Democrática del Congo
+Sergio;Fernandez;01/01/1999;República Democrática del Congo;2;Defensa Central;1;0;0;1;60;República Democrática del Congo
+Mateo;Rivera;01/01/2000;República Democrática del Congo;3;Defensa Central;2;0;0;2;62;República Democrática del Congo
+Lucas;Cruz;01/01/2001;República Democrática del Congo;4;Lateral Izquierdo;0;0;1;1;57;República Democrática del Congo
+Daniel;Ortega;01/01/2002;República Democrática del Congo;5;Lateral Derecho;1;0;2;2;59;República Democrática del Congo
+Adrian;Salazar;01/01/2003;República Democrática del Congo;6;Mediocentro;1;0;2;1;61;República Democrática del Congo
+Samuel;Alvarez;01/01/1990;República Democrática del Congo;7;Interior Derecho;1;0;0;2;63;República Democrática del Congo
+Nicolas;Ramirez;01/01/1991;República Democrática del Congo;8;Interior Izquierdo;0;0;2;2;58;República Democrática del Congo
+Gabriel;Torres;01/01/1992;República Democrática del Congo;9;Extremo Derecho;1;0;2;1;60;República Democrática del Congo
+Martin;Mendez;01/01/1993;República Democrática del Congo;10;Delantero Centro;1;0;0;1;62;República Democrática del Congo
+Andres;Castro;01/01/1994;República Democrática del Congo;11;Extremo Izquierdo;0;0;4;0;57;República Democrática del Congo
+Sergio;Cruz;01/01/1999;Croacia;1;Portero;1;0;0;2;86;Croacia
+Mateo;Ortega;01/01/2000;Croacia;2;Defensa Central;0;0;1;0;87;Croacia
+Lucas;Salazar;01/01/2001;Croacia;3;Defensa Central;0;0;1;0;89;Croacia
+Daniel;Alvarez;01/01/2002;Croacia;4;Lateral Izquierdo;1;0;0;0;84;Croacia
+Adrian;Ramirez;01/01/2003;Croacia;5;Lateral Derecho;1;0;1;1;86;Croacia
+Samuel;Torres;01/01/1990;Croacia;6;Mediocentro;2;0;2;0;88;Croacia
+Nicolas;Mendez;01/01/1991;Croacia;7;Interior Derecho;1;0;0;0;83;Croacia
+Gabriel;Castro;01/01/1992;Croacia;8;Interior Izquierdo;1;0;1;1;85;Croacia
+Martin;Silva;01/01/1993;Croacia;9;Extremo Derecho;1;0;0;0;87;Croacia
+Andres;Rojas;01/01/1994;Croacia;10;Delantero Centro;0;0;0;1;89;Croacia
+Bruno;Navarro;01/01/1995;Croacia;11;Extremo Izquierdo;0;0;0;1;84;Croacia
+Mateo;Alvarez;01/01/2000;Corea del Sur;1;Portero;2;0;1;0;73;Corea del Sur
+Lucas;Ramirez;01/01/2001;Corea del Sur;2;Defensa Central;0;0;3;1;75;Corea del Sur
+Daniel;Torres;01/01/2002;Corea del Sur;3;Defensa Central;0;1;1;4;70;Corea del Sur
+Adrian;Mendez;01/01/2003;Corea del Sur;4;Lateral Izquierdo;0;0;2;0;72;Corea del Sur
+Samuel;Castro;01/01/1990;Corea del Sur;5;Lateral Derecho;3;0;1;0;74;Corea del Sur
+Nicolas;Silva;01/01/1991;Corea del Sur;6;Mediocentro;0;0;0;1;76;Corea del Sur
+Gabriel;Rojas;01/01/1992;Corea del Sur;7;Interior Derecho;1;0;1;2;71;Corea del Sur
+Martin;Navarro;01/01/1993;Corea del Sur;8;Interior Izquierdo;0;0;2;2;73;Corea del Sur
+Andres;Molina;01/01/1994;Corea del Sur;9;Extremo Derecho;3;0;2;1;75;Corea del Sur
+Bruno;Vargas;01/01/1995;Corea del Sur;10;Delantero Centro;2;0;0;4;70;Corea del Sur
+Ivan;Herrera;01/01/1996;Corea del Sur;11;Extremo Izquierdo;1;0;3;1;72;Corea del Sur
+Lucas;Mendez;01/01/2001;Catar;1;Portero;0;0;1;0;58;Catar
+Daniel;Castro;01/01/2002;Catar;2;Defensa Central;0;0;1;0;61;Catar
+Adrian;Silva;01/01/2003;Catar;3;Defensa Central;0;0;0;1;56;Catar
+Samuel;Rojas;01/01/1990;Catar;4;Lateral Izquierdo;0;0;1;2;58;Catar
+Nicolas;Navarro;01/01/1991;Catar;5;Lateral Derecho;0;0;0;0;60;Catar
+Gabriel;Molina;01/01/1992;Catar;6;Mediocentro;1;0;1;0;55;Catar
+Martin;Vargas;01/01/1993;Catar;7;Interior Derecho;1;0;0;0;57;Catar
+Andres;Herrera;01/01/1994;Catar;8;Interior Izquierdo;0;0;0;0;59;Catar
+Bruno;Morales;01/01/1995;Catar;9;Extremo Derecho;0;0;0;1;61;Catar
+Ivan;Campos;01/01/1996;Catar;10;Delantero Centro;0;0;0;0;56;Catar
+Leo;Flores;01/01/1997;Catar;11;Extremo Izquierdo;0;0;0;0;58;Catar
+Daniel;Rojas;01/01/2002;Haití;1;Portero;1;0;0;0;58;Haití
+Adrian;Navarro;01/01/2003;Haití;2;Defensa Central;0;0;0;0;55;Haití
+Samuel;Molina;01/01/1990;Haití;3;Defensa Central;0;0;0;0;57;Haití
+Nicolas;Vargas;01/01/1991;Haití;4;Lateral Izquierdo;1;0;1;0;59;Haití
+Gabriel;Herrera;01/01/1992;Haití;5;Lateral Derecho;2;1;0;0;61;Haití
+Martin;Morales;01/01/1993;Haití;6;Mediocentro;0;0;0;1;56;Haití
+Andres;Campos;01/01/1994;Haití;7;Interior Derecho;0;0;1;2;58;Haití
+Bruno;Flores;01/01/1995;Haití;8;Interior Izquierdo;0;0;1;2;60;Haití
+Ivan;Reyes;01/01/1996;Haití;9;Extremo Derecho;0;0;2;0;55;Haití
+Leo;Santos;01/01/1997;Haití;10;Delantero Centro;0;0;3;0;57;Haití
+Tomas;Pereira;01/01/1998;Haití;11;Extremo Izquierdo;0;0;1;4;59;Haití
+Adrian;Vargas;01/01/2003;Australia;1;Portero;0;0;0;0;61;Australia
+Samuel;Herrera;01/01/1990;Australia;2;Defensa Central;0;0;0;1;59;Australia
+Nicolas;Morales;01/01/1991;Australia;3;Defensa Central;1;0;0;0;61;Australia
+Gabriel;Campos;01/01/1992;Australia;4;Lateral Izquierdo;0;0;0;0;63;Australia
+Martin;Flores;01/01/1993;Australia;5;Lateral Derecho;0;0;0;1;58;Australia
+Andres;Reyes;01/01/1994;Australia;6;Mediocentro;0;0;0;1;60;Australia
+Bruno;Santos;01/01/1995;Australia;7;Interior Derecho;1;1;0;0;62;Australia
+Ivan;Pereira;01/01/1996;Australia;8;Interior Izquierdo;0;0;2;0;64;Australia
+Leo;Gomez;01/01/1997;Australia;9;Extremo Derecho;2;0;1;0;59;Australia
+Tomas;Lopez;01/01/1998;Australia;10;Delantero Centro;0;0;0;0;61;Australia
+Diego;Fernandez;01/01/1999;Australia;11;Extremo Izquierdo;0;0;0;0;63;Australia
+Samuel;Campos;01/01/1990;Costa de Marfil;1;Portero;1;2;1;1;59;Costa de Marfil
+Nicolas;Flores;01/01/1991;Costa de Marfil;2;Defensa Central;1;0;0;3;58;Costa de Marfil
+Gabriel;Reyes;01/01/1992;Costa de Marfil;3;Defensa Central;0;0;1;0;60;Costa de Marfil
+Martin;Santos;01/01/1993;Costa de Marfil;4;Lateral Izquierdo;1;0;2;0;62;Costa de Marfil
+Andres;Pereira;01/01/1994;Costa de Marfil;5;Lateral Derecho;1;0;1;0;57;Costa de Marfil
+Bruno;Gomez;01/01/1995;Costa de Marfil;6;Mediocentro;0;0;0;0;59;Costa de Marfil
+Ivan;Lopez;01/01/1996;Costa de Marfil;7;Interior Derecho;1;0;1;1;61;Costa de Marfil
+Leo;Fernandez;01/01/1997;Costa de Marfil;8;Interior Izquierdo;0;0;0;0;56;Costa de Marfil
+Tomas;Rivera;01/01/1998;Costa de Marfil;9;Extremo Derecho;0;0;0;1;58;Costa de Marfil
+Diego;Cruz;01/01/1999;Costa de Marfil;10;Delantero Centro;0;0;0;1;60;Costa de Marfil
+Hugo;Ortega;01/01/2000;Costa de Marfil;11;Extremo Izquierdo;1;0;2;1;62;Costa de Marfil
+Nicolas;Santos;01/01/1991;Suecia;1;Portero;1;0;0;1;72;Suecia
+Gabriel;Pereira;01/01/1992;Suecia;2;Defensa Central;0;0;0;1;72;Suecia
+Martin;Gomez;01/01/1993;Suecia;3;Defensa Central;1;0;0;1;74;Suecia
+Andres;Lopez;01/01/1994;Suecia;4;Lateral Izquierdo;0;0;1;0;69;Suecia
+Bruno;Fernandez;01/01/1995;Suecia;5;Lateral Derecho;0;0;1;2;71;Suecia
+Ivan;Rivera;01/01/1996;Suecia;6;Mediocentro;1;0;0;0;73;Suecia
+Leo;Cruz;01/01/1997;Suecia;7;Interior Derecho;0;0;2;1;75;Suecia
+Tomas;Ortega;01/01/1998;Suecia;8;Interior Izquierdo;1;0;0;0;70;Suecia
+Diego;Salazar;01/01/1999;Suecia;9;Extremo Derecho;0;1;0;0;72;Suecia
+Hugo;Alvarez;01/01/2000;Suecia;10;Delantero Centro;3;0;1;0;74;Suecia
+Mario;Ramirez;01/01/2001;Suecia;11;Extremo Izquierdo;0;0;1;0;69;Suecia
+Gabriel;Lopez;01/01/1992;Irán;1;Portero;1;0;2;1;69;Irán
+Martin;Fernandez;01/01/1993;Irán;2;Defensa Central;2;0;1;2;70;Irán
+Andres;Rivera;01/01/1994;Irán;3;Defensa Central;0;0;1;1;72;Irán
+Bruno;Cruz;01/01/1995;Irán;4;Lateral Izquierdo;0;0;2;0;67;Irán
+Ivan;Ortega;01/01/1996;Irán;5;Lateral Derecho;2;0;1;1;69;Irán
+Leo;Salazar;01/01/1997;Irán;6;Mediocentro;0;0;5;1;71;Irán
+Tomas;Alvarez;01/01/1998;Irán;7;Interior Derecho;2;0;0;2;66;Irán
+Diego;Ramirez;01/01/1999;Irán;8;Interior Izquierdo;1;0;2;3;68;Irán
+Hugo;Torres;01/01/2000;Irán;9;Extremo Derecho;1;0;1;1;70;Irán
+Mario;Mendez;01/01/2001;Irán;10;Delantero Centro;2;0;1;2;72;Irán
+Alex;Castro;01/01/2002;Irán;11;Extremo Izquierdo;2;0;1;3;67;Irán
+Martin;Cruz;01/01/1993;Arabia Saudita;1;Portero;0;1;2;1;58;Arabia Saudita
+Andres;Ortega;01/01/1994;Arabia Saudita;2;Defensa Central;2;0;0;1;60;Arabia Saudita
+Bruno;Salazar;01/01/1995;Arabia Saudita;3;Defensa Central;0;0;3;1;55;Arabia Saudita
+Ivan;Alvarez;01/01/1996;Arabia Saudita;4;Lateral Izquierdo;0;0;0;1;57;Arabia Saudita
+Leo;Ramirez;01/01/1997;Arabia Saudita;5;Lateral Derecho;1;0;0;0;59;Arabia Saudita
+Tomas;Torres;01/01/1998;Arabia Saudita;6;Mediocentro;2;0;2;4;61;Arabia Saudita
+Diego;Mendez;01/01/1999;Arabia Saudita;7;Interior Derecho;0;0;0;1;56;Arabia Saudita
+Hugo;Castro;01/01/2000;Arabia Saudita;8;Interior Izquierdo;1;1;1;1;58;Arabia Saudita
+Mario;Silva;01/01/2001;Arabia Saudita;9;Extremo Derecho;1;0;0;0;60;Arabia Saudita
+Alex;Rojas;01/01/2002;Arabia Saudita;10;Delantero Centro;1;0;1;0;55;Arabia Saudita
+Ruben;Navarro;01/01/2003;Arabia Saudita;11;Extremo Izquierdo;1;0;2;1;57;Arabia Saudita
+Andres;Alvarez;01/01/1994;Irak;1;Portero;0;0;0;1;58;Irak
+Bruno;Ramirez;01/01/1995;Irak;2;Defensa Central;0;0;1;1;61;Irak
+Ivan;Torres;01/01/1996;Irak;3;Defensa Central;0;0;0;0;56;Irak
+Leo;Mendez;01/01/1997;Irak;4;Lateral Izquierdo;0;0;1;0;58;Irak
+Tomas;Castro;01/01/1998;Irak;5;Lateral Derecho;0;0;1;0;60;Irak
+Diego;Silva;01/01/1999;Irak;6;Mediocentro;0;0;1;1;55;Irak
+Hugo;Rojas;01/01/2000;Irak;7;Interior Derecho;0;0;0;0;57;Irak
+Mario;Navarro;01/01/2001;Irak;8;Interior Izquierdo;1;0;0;0;59;Irak
+Alex;Molina;01/01/2002;Irak;9;Extremo Derecho;1;0;0;0;61;Irak
+Ruben;Vargas;01/01/2003;Irak;10;Delantero Centro;0;0;0;1;56;Irak
+Pablo;Herrera;01/01/1990;Irak;11;Extremo Izquierdo;0;0;0;0;58;Irak
+Bruno;Mendez;01/01/1995;Austria;1;Portero;1;0;0;2;79;Austria
+Ivan;Castro;01/01/1996;Austria;2;Defensa Central;0;0;1;0;76;Austria
+Leo;Silva;01/01/1997;Austria;3;Defensa Central;1;0;1;0;78;Austria
+Tomas;Rojas;01/01/1998;Austria;4;Lateral Izquierdo;0;1;1;1;80;Austria
+Diego;Navarro;01/01/1999;Austria;5;Lateral Derecho;0;0;0;1;82;Austria
+Hugo;Molina;01/01/2000;Austria;6;Mediocentro;0;0;1;1;77;Austria
+Mario;Vargas;01/01/2001;Austria;7;Interior Derecho;0;0;1;0;79;Austria
+Alex;Herrera;01/01/2002;Austria;8;Interior Izquierdo;1;0;0;2;81;Austria
+Ruben;Morales;01/01/2003;Austria;9;Extremo Derecho;0;0;1;1;76;Austria
+Pablo;Campos;01/01/1990;Austria;10;Delantero Centro;0;0;1;0;78;Austria
+David;Flores;01/01/1991;Austria;11;Extremo Izquierdo;1;0;1;0;80;Austria
+Ivan;Rojas;01/01/1996;Uzbekistán;1;Portero;0;0;1;0;64;Uzbekistán
+Leo;Navarro;01/01/1997;Uzbekistán;2;Defensa Central;0;0;1;1;62;Uzbekistán
+Tomas;Molina;01/01/1998;Uzbekistán;3;Defensa Central;0;0;0;0;64;Uzbekistán
+Diego;Vargas;01/01/1999;Uzbekistán;4;Lateral Izquierdo;0;0;1;0;66;Uzbekistán
+Hugo;Herrera;01/01/2000;Uzbekistán;5;Lateral Derecho;0;0;0;2;61;Uzbekistán
+Mario;Morales;01/01/2001;Uzbekistán;6;Mediocentro;1;0;0;0;63;Uzbekistán
+Alex;Campos;01/01/2002;Uzbekistán;7;Interior Derecho;1;0;0;0;65;Uzbekistán
+Ruben;Flores;01/01/2003;Uzbekistán;8;Interior Izquierdo;0;0;1;1;67;Uzbekistán
+Pablo;Reyes;01/01/1990;Uzbekistán;9;Extremo Derecho;0;0;1;0;62;Uzbekistán
+David;Santos;01/01/1991;Uzbekistán;10;Delantero Centro;0;0;0;1;64;Uzbekistán
+Marco;Pereira;01/01/1992;Uzbekistán;11;Extremo Izquierdo;1;0;1;1;66;Uzbekistán
+Leo;Vargas;01/01/1997;Ghana;1;Portero;2;0;0;1;75;Ghana
+Tomas;Herrera;01/01/1998;Ghana;2;Defensa Central;1;0;0;0;74;Ghana
+Diego;Morales;01/01/1999;Ghana;3;Defensa Central;2;0;0;0;76;Ghana
+Hugo;Campos;01/01/2000;Ghana;4;Lateral Izquierdo;0;0;0;0;78;Ghana
+Mario;Flores;01/01/2001;Ghana;5;Lateral Derecho;0;0;0;0;73;Ghana
+Alex;Reyes;01/01/2002;Ghana;6;Mediocentro;0;0;0;0;75;Ghana
+Ruben;Santos;01/01/2003;Ghana;7;Interior Derecho;1;0;0;1;77;Ghana
+Pablo;Pereira;01/01/1990;Ghana;8;Interior Izquierdo;0;0;0;0;72;Ghana
+David;Gomez;01/01/1991;Ghana;9;Extremo Derecho;0;0;2;0;74;Ghana
+Marco;Lopez;01/01/1992;Ghana;10;Delantero Centro;1;0;1;0;76;Ghana
+Cristian;Fernandez;01/01/1993;Ghana;11;Extremo Izquierdo;0;1;0;1;78;Ghana
+Tomas;Campos;01/01/1998;Chequia;1;Portero;1;0;1;1;65;Chequia
+Diego;Flores;01/01/1999;Chequia;2;Defensa Central;0;0;1;1;65;Chequia
+Hugo;Reyes;01/01/2000;Chequia;3;Defensa Central;0;0;0;0;67;Chequia
+Mario;Santos;01/01/2001;Chequia;4;Lateral Izquierdo;0;0;1;0;62;Chequia
+Alex;Pereira;01/01/2002;Chequia;5;Lateral Derecho;1;0;0;0;64;Chequia
+Ruben;Gomez;01/01/2003;Chequia;6;Mediocentro;0;0;0;1;66;Chequia
+Pablo;Lopez;01/01/1990;Chequia;7;Interior Derecho;1;0;0;0;68;Chequia
+David;Fernandez;01/01/1991;Chequia;8;Interior Izquierdo;2;0;0;1;63;Chequia
+Marco;Rivera;01/01/1992;Chequia;9;Extremo Derecho;0;0;1;0;65;Chequia
+Cristian;Cruz;01/01/1993;Chequia;10;Delantero Centro;0;0;1;2;67;Chequia
+Javier;Ortega;01/01/1994;Chequia;11;Extremo Izquierdo;0;0;2;1;62;Chequia
+Diego;Santos;01/01/1999;Suiza;1;Portero;0;0;4;0;84;Suiza
+Hugo;Pereira;01/01/2000;Suiza;2;Defensa Central;0;0;1;2;85;Suiza
+Mario;Gomez;01/01/2001;Suiza;3;Defensa Central;0;0;1;3;87;Suiza
+Alex;Lopez;01/01/2002;Suiza;4;Lateral Izquierdo;3;0;0;1;82;Suiza
+Ruben;Fernandez;01/01/2003;Suiza;5;Lateral Derecho;0;0;0;2;84;Suiza
+Pablo;Rivera;01/01/1990;Suiza;6;Mediocentro;3;0;0;1;86;Suiza
+David;Cruz;01/01/1991;Suiza;7;Interior Derecho;0;0;4;1;81;Suiza
+Marco;Ortega;01/01/1992;Suiza;8;Interior Izquierdo;0;0;1;1;83;Suiza
+Cristian;Salazar;01/01/1993;Suiza;9;Extremo Derecho;0;0;1;1;85;Suiza
+Javier;Alvarez;01/01/1994;Suiza;10;Delantero Centro;1;0;1;2;87;Suiza
+Sergio;Ramirez;01/01/1995;Suiza;11;Extremo Izquierdo;1;0;2;1;82;Suiza
+Hugo;Lopez;01/01/2000;Escocia;1;Portero;1;0;1;0;68;Escocia
+Mario;Fernandez;01/01/2001;Escocia;2;Defensa Central;1;0;2;0;70;Escocia
+Alex;Rivera;01/01/2002;Escocia;3;Defensa Central;1;0;1;0;65;Escocia
+Ruben;Cruz;01/01/2003;Escocia;4;Lateral Izquierdo;2;0;1;2;67;Escocia
+Pablo;Ortega;01/01/1990;Escocia;5;Lateral Derecho;0;0;0;2;69;Escocia
+David;Salazar;01/01/1991;Escocia;6;Mediocentro;0;0;1;0;71;Escocia
+Marco;Alvarez;01/01/1992;Escocia;7;Interior Derecho;1;0;0;1;66;Escocia
+Cristian;Ramirez;01/01/1993;Escocia;8;Interior Izquierdo;2;0;0;3;68;Escocia
+Javier;Torres;01/01/1994;Escocia;9;Extremo Derecho;1;0;2;1;70;Escocia
+Sergio;Mendez;01/01/1995;Escocia;10;Delantero Centro;0;0;2;0;65;Escocia
+Mateo;Castro;01/01/1996;Escocia;11;Extremo Izquierdo;3;0;0;1;67;Escocia
+Mario;Cruz;01/01/2001;Turquía;1;Portero;0;0;1;0;71;Turquía
+Alex;Ortega;01/01/2002;Turquía;2;Defensa Central;0;0;1;1;74;Turquía
+Ruben;Salazar;01/01/2003;Turquía;3;Defensa Central;0;0;0;0;69;Turquía
+Pablo;Alvarez;01/01/1990;Turquía;4;Lateral Izquierdo;0;0;1;1;71;Turquía
+David;Ramirez;01/01/1991;Turquía;5;Lateral Derecho;0;0;0;1;73;Turquía
+Marco;Torres;01/01/1992;Turquía;6;Mediocentro;0;0;0;0;68;Turquía
+Cristian;Mendez;01/01/1993;Turquía;7;Interior Derecho;3;0;1;0;70;Turquía
+Javier;Castro;01/01/1994;Turquía;8;Interior Izquierdo;1;0;1;0;72;Turquía
+Sergio;Silva;01/01/1995;Turquía;9;Extremo Derecho;0;0;0;0;74;Turquía
+Mateo;Rojas;01/01/1996;Turquía;10;Delantero Centro;0;0;0;1;69;Turquía
+Lucas;Navarro;01/01/1997;Turquía;11;Extremo Izquierdo;1;0;0;1;71;Turquía
+Alex;Alvarez;01/01/2002;Ecuador;1;Portero;1;0;0;1;70;Ecuador
+Ruben;Ramirez;01/01/2003;Ecuador;2;Defensa Central;0;0;1;2;67;Ecuador
+Pablo;Torres;01/01/1990;Ecuador;3;Defensa Central;0;0;0;0;69;Ecuador
+David;Mendez;01/01/1991;Ecuador;4;Lateral Izquierdo;2;0;0;1;71;Ecuador
+Marco;Castro;01/01/1992;Ecuador;5;Lateral Derecho;0;0;1;0;73;Ecuador
+Cristian;Silva;01/01/1993;Ecuador;6;Mediocentro;1;0;2;2;68;Ecuador
+Javier;Rojas;01/01/1994;Ecuador;7;Interior Derecho;1;0;2;0;70;Ecuador
+Sergio;Navarro;01/01/1995;Ecuador;8;Interior Izquierdo;0;0;1;2;72;Ecuador
+Mateo;Molina;01/01/1996;Ecuador;9;Extremo Derecho;1;0;0;0;67;Ecuador
+Lucas;Vargas;01/01/1997;Ecuador;10;Delantero Centro;0;0;0;0;69;Ecuador
+Daniel;Herrera;01/01/1998;Ecuador;11;Extremo Izquierdo;1;0;1;0;71;Ecuador
+Ruben;Mendez;01/01/2003;Túnez;1;Portero;0;0;0;1;58;Túnez
+Pablo;Castro;01/01/1990;Túnez;2;Defensa Central;0;1;1;0;56;Túnez
+David;Silva;01/01/1991;Túnez;3;Defensa Central;0;0;0;2;58;Túnez
+Marco;Rojas;01/01/1992;Túnez;4;Lateral Izquierdo;0;0;2;0;60;Túnez
+Cristian;Navarro;01/01/1993;Túnez;5;Lateral Derecho;0;0;1;3;55;Túnez
+Javier;Molina;01/01/1994;Túnez;6;Mediocentro;0;0;1;0;57;Túnez
+Sergio;Vargas;01/01/1995;Túnez;7;Interior Derecho;1;0;0;0;59;Túnez
+Mateo;Herrera;01/01/1996;Túnez;8;Interior Izquierdo;0;0;0;0;61;Túnez
+Lucas;Morales;01/01/1997;Túnez;9;Extremo Derecho;0;0;1;0;56;Túnez
+Daniel;Campos;01/01/1998;Túnez;10;Delantero Centro;1;0;2;2;58;Túnez
+Adrian;Flores;01/01/1999;Túnez;11;Extremo Izquierdo;1;0;0;0;60;Túnez
+Pablo;Rojas;01/01/1990;Nueva Zelanda;1;Portero;0;1;1;1;58;Nueva Zelanda
+David;Navarro;01/01/1991;Nueva Zelanda;2;Defensa Central;1;0;1;0;57;Nueva Zelanda
+Marco;Molina;01/01/1992;Nueva Zelanda;3;Defensa Central;1;0;1;1;59;Nueva Zelanda
+Cristian;Vargas;01/01/1993;Nueva Zelanda;4;Lateral Izquierdo;0;0;0;0;61;Nueva Zelanda
+Javier;Herrera;01/01/1994;Nueva Zelanda;5;Lateral Derecho;0;0;0;2;56;Nueva Zelanda
+Sergio;Morales;01/01/1995;Nueva Zelanda;6;Mediocentro;0;0;1;1;58;Nueva Zelanda
+Mateo;Campos;01/01/1996;Nueva Zelanda;7;Interior Derecho;0;0;1;0;60;Nueva Zelanda
+Lucas;Flores;01/01/1997;Nueva Zelanda;8;Interior Izquierdo;0;0;0;0;55;Nueva Zelanda
+Daniel;Reyes;01/01/1998;Nueva Zelanda;9;Extremo Derecho;0;0;0;0;57;Nueva Zelanda
+Adrian;Santos;01/01/1999;Nueva Zelanda;10;Delantero Centro;0;0;0;0;59;Nueva Zelanda
+Samuel;Pereira;01/01/2000;Nueva Zelanda;11;Extremo Izquierdo;0;0;1;1;61;Nueva Zelanda
+David;Vargas;01/01/1991;Uruguay;1;Portero;1;0;2;1;85;Uruguay
+Marco;Herrera;01/01/1992;Uruguay;2;Defensa Central;0;0;0;2;85;Uruguay
+Cristian;Morales;01/01/1993;Uruguay;3;Defensa Central;0;0;2;0;87;Uruguay
+Javier;Campos;01/01/1994;Uruguay;4;Lateral Izquierdo;1;0;1;0;82;Uruguay
+Sergio;Flores;01/01/1995;Uruguay;5;Lateral Derecho;1;0;1;1;84;Uruguay
+Mateo;Reyes;01/01/1996;Uruguay;6;Mediocentro;1;0;0;2;86;Uruguay
+Lucas;Santos;01/01/1997;Uruguay;7;Interior Derecho;1;0;0;0;88;Uruguay
+Daniel;Pereira;01/01/1998;Uruguay;8;Interior Izquierdo;0;0;1;1;83;Uruguay
+Adrian;Gomez;01/01/1999;Uruguay;9;Extremo Derecho;0;0;2;2;85;Uruguay
+Samuel;Lopez;01/01/2000;Uruguay;10;Delantero Centro;0;0;1;2;87;Uruguay
+Nicolas;Fernandez;01/01/2001;Uruguay;11;Extremo Izquierdo;0;0;1;0;82;Uruguay
+Marco;Campos;01/01/1992;Noruega;1;Portero;1;0;0;1;74;Noruega
+Cristian;Flores;01/01/1993;Noruega;2;Defensa Central;0;0;1;0;75;Noruega
+Javier;Reyes;01/01/1994;Noruega;3;Defensa Central;1;0;0;1;77;Noruega
+Sergio;Santos;01/01/1995;Noruega;4;Lateral Izquierdo;1;0;0;1;72;Noruega
+Mateo;Pereira;01/01/1996;Noruega;5;Lateral Derecho;1;0;1;1;74;Noruega
+Lucas;Gomez;01/01/1997;Noruega;6;Mediocentro;1;0;0;1;76;Noruega
+Daniel;Lopez;01/01/1998;Noruega;7;Interior Derecho;2;0;2;0;71;Noruega
+Adrian;Fernandez;01/01/1999;Noruega;8;Interior Izquierdo;1;0;1;0;73;Noruega
+Samuel;Rivera;01/01/2000;Noruega;9;Extremo Derecho;0;0;2;1;75;Noruega
+Nicolas;Cruz;01/01/2001;Noruega;10;Delantero Centro;0;0;1;2;77;Noruega
+Gabriel;Ortega;01/01/2002;Noruega;11;Extremo Izquierdo;1;0;2;2;72;Noruega
+Cristian;Santos;01/01/1993;Jordania;1;Portero;0;0;0;1;58;Jordania
+Javier;Pereira;01/01/1994;Jordania;2;Defensa Central;0;0;0;1;60;Jordania
+Sergio;Gomez;01/01/1995;Jordania;3;Defensa Central;0;0;0;2;55;Jordania
+Mateo;Lopez;01/01/1996;Jordania;4;Lateral Izquierdo;0;0;1;0;57;Jordania
+Lucas;Fernandez;01/01/1997;Jordania;5;Lateral Derecho;1;0;2;1;59;Jordania
+Daniel;Rivera;01/01/1998;Jordania;6;Mediocentro;2;0;1;0;61;Jordania
+Adrian;Cruz;01/01/1999;Jordania;7;Interior Derecho;1;0;0;0;56;Jordania
+Samuel;Ortega;01/01/2000;Jordania;8;Interior Izquierdo;1;0;3;1;58;Jordania
+Nicolas;Salazar;01/01/2001;Jordania;9;Extremo Derecho;3;0;2;0;60;Jordania
+Gabriel;Alvarez;01/01/2002;Jordania;10;Delantero Centro;2;0;0;2;55;Jordania
+Martin;Ramirez;01/01/2003;Jordania;11;Extremo Izquierdo;0;0;0;1;57;Jordania
+Javier;Lopez;01/01/1994;Colombia;1;Portero;0;0;2;0;81;Colombia
+Sergio;Fernandez;01/01/1995;Colombia;2;Defensa Central;0;0;2;0;84;Colombia
+Mateo;Rivera;01/01/1996;Colombia;3;Defensa Central;1;0;0;1;79;Colombia
+Lucas;Cruz;01/01/1997;Colombia;4;Lateral Izquierdo;0;0;1;0;81;Colombia
+Daniel;Ortega;01/01/1998;Colombia;5;Lateral Derecho;0;0;0;0;83;Colombia
+Adrian;Salazar;01/01/1999;Colombia;6;Mediocentro;0;0;1;1;78;Colombia
+Samuel;Alvarez;01/01/2000;Colombia;7;Interior Derecho;0;1;0;1;80;Colombia
+Nicolas;Ramirez;01/01/2001;Colombia;8;Interior Izquierdo;2;0;1;1;82;Colombia
+Gabriel;Torres;01/01/2002;Colombia;9;Extremo Derecho;0;0;2;1;84;Colombia
+Martin;Mendez;01/01/2003;Colombia;10;Delantero Centro;1;0;0;2;79;Colombia
+Andres;Castro;01/01/1990;Colombia;11;Extremo Izquierdo;2;0;0;2;81;Colombia
+Sergio;Cruz;01/01/1995;Panamá;1;Portero;0;0;0;1;80;Panamá
+Mateo;Ortega;01/01/1996;Panamá;2;Defensa Central;1;0;0;0;77;Panamá
+Lucas;Salazar;01/01/1997;Panamá;3;Defensa Central;0;0;1;1;79;Panamá
+Daniel;Alvarez;01/01/1998;Panamá;4;Lateral Izquierdo;0;0;0;1;81;Panamá
+Adrian;Ramirez;01/01/1999;Panamá;5;Lateral Derecho;0;0;1;0;83;Panamá
+Samuel;Torres;01/01/2000;Panamá;6;Mediocentro;1;0;1;0;78;Panamá
+Nicolas;Mendez;01/01/2001;Panamá;7;Interior Derecho;3;0;2;0;80;Panamá
+Gabriel;Castro;01/01/2002;Panamá;8;Interior Izquierdo;0;0;0;0;82;Panamá
+Martin;Silva;01/01/2003;Panamá;9;Extremo Derecho;0;0;0;1;77;Panamá
+Andres;Rojas;01/01/1990;Panamá;10;Delantero Centro;0;0;1;0;79;Panamá
+Bruno;Navarro;01/01/1991;Panamá;11;Extremo Izquierdo;0;0;0;2;81;Panamá
+Playito;Pene;9/9/2012;Canadá;99;Extremo Derecho;0;0;0;2;80;Canadá
+1;1;9/8/1959;Canadá;1;Lateral Izquierdo;0;0;0;0;36;
+A;A;10/9/1958;Brasil;12;Lateral Izquierdo;0;0;0;0;8;
+A;D;16/8/1958;Brasil;18;Lateral Izquierdo;0;0;0;0;4;

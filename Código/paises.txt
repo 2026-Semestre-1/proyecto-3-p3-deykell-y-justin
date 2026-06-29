@@ -1,0 +1,49 @@
+GER;Alemania;Europa;1
+USA;Estados Unidos;América;2
+ARG;Argentina;América;3
+FRA;Francia;Europa;4
+ENG;Inglaterra;Europa;5
+BRA;Brasil;América;6
+POR;Portugal;Europa;7
+NED;Países Bajos;Europa;8
+ESP;España;Europa;9
+BEL;Bélgica;Europa;10
+CRO;Croacia;Europa;11
+URU;Uruguay;América;12
+SUI;Suiza;Europa;13
+MAR;Marruecos;África;14
+MEX;México;América;15
+COL;Colombia;América;16
+PAN;Panamá;América;17
+AUT;Austria;Europa;18
+JPN;Japón;Asia;19
+SEN;Senegal;África;20
+GHA;Ghana;África;21
+NOR;Noruega;Europa;22
+KOR;Corea del Sur;Asia;23
+SWE;Suecia;Europa;24
+TUR;Turquía;Europa;25
+ECU;Ecuador;América;26
+IRN;Irán;Asia;27
+SCO;Escocia;Europa;28
+EGY;Egipto;África;29
+ALG;Argelia;África;30
+CZE;Chequia;Europa;31
+UZB;Uzbekistán;Asia;32
+CAN;Canadá;América;33
+PAR;Paraguay;América;34
+AUS;Australia;Oceanía;35
+DRC;República Democrática del Congo;África;36
+CIV;Costa de Marfil;África;37
+KSA;Arabia Saudita;Asia;38
+BIH;Bosnia y Herzegovina;Europa;39
+TUN;Túnez;África;40
+CPV;Cabo Verde;África;41
+QAT;Catar;Asia;42
+JOR;Jordania;Asia;43
+IRQ;Irak;Asia;44
+RSA;Sudáfrica;África;45
+NZL;Nueva Zelanda;Oceanía;46
+CUR;Curazao;América;47
+HAI;Haití;América;48
+CRC;Costa Rica;América;49

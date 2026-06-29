@@ -1,0 +1,48 @@
+Portugal;9;10;19;5;0;Dieciseisavos de Final
+Germany;9;8;24;7;0;Octavos de Final
+England;9;8;23;12;1;Campeón
+Switzerland;9;5;15;8;0;Dieciseisavos de Final
+Iran;9;5;17;13;0;Octavos de Final
+United States;7;4;11;10;1;Dieciseisavos de Final
+Japan;7;3;16;11;2;Octavos de Final
+Brazil;7;3;16;10;0;Cuartos de Final
+Mexico;7;2;15;13;1;Dieciseisavos de Final
+Argentina;6;5;18;9;0;Cuartos de Final
+Bosnia Herzegovina;6;4;14;11;0;Dieciseisavos de Final
+Uruguay;6;4;11;5;0;Fase de grupos
+Spain;6;3;12;6;0;Fase de grupos
+Austria;6;2;8;4;1;Fase de grupos
+Morocco;6;2;9;8;1;Dieciseisavos de Final
+Belgium;6;2;7;6;0;Fase de grupos
+Turkey;6;0;5;5;0;Fase de grupos
+Panama;6;0;6;5;0;Fase de grupos
+Saudi Arabia;6;;11;9;2;Dieciseisavos de Final
+DR Congo;6;;14;8;0;Fase de grupos
+France;5;1;23;7;1;Semifinales
+Norway;5;1;10;9;0;Dieciseisavos de Final
+South Korea;4;2;16;12;1;Octavos de Final
+Sweden;4;2;6;7;1;Fase de grupos
+Paraguay;4;0;3;9;0;Fase de grupos
+Scotland;4;;10;12;0;Fase de grupos
+Senegal;3;0;4;5;0;Fase de grupos
+Colombia;3;;9;6;1;Fase de grupos
+Tunisia;3;;8;3;1;Fase de grupos
+Netherlands;3;;6;4;0;Fase de grupos
+Jordan;3;;9;10;0;Fase de grupos
+Croatia;3;;6;8;0;Fase de grupos
+Algeria;3;;5;9;0;Fase de grupos
+Czechia;2;;7;5;0;Fase de grupos
+Ecuador;2;;8;7;0;Fase de grupos
+Curacao;2;;7;3;0;Fase de grupos
+South Africa;2;;9;1;0;Fase de grupos
+Ivory Coast;2;;8;6;2;Fase de grupos
+Iraq;1;;4;2;0;Fase de grupos
+Egypt;1;;8;6;0;Fase de grupos
+New Zealand;1;;6;2;1;Fase de grupos
+Canada;1;;5;2;1;Fase de grupos
+Qatar;1;;4;2;0;Fase de grupos
+Haiti;0;;9;4;1;Fase de grupos
+Australia;0;;3;4;1;Fase de grupos
+Ghana;0;;3;7;1;Fase de grupos
+Uzbekistan;0;;6;3;0;Fase de grupos
+Cape Verde;0;;3;9;0;Fase de grupos
